@@ -1,0 +1,265 @@
+<!-- Section Title & Live Refresh Status Bar -->
+<div class="content-header">
+  <div class="header-titles">
+    <h2 class="section-heading">{{ t('brandName') }} {{ t('dashboard') }}</h2>
+    <span class="sub-heading">Real-time Emergency Response & Blood Donation SQL Database</span>
+  </div>
+
+  <!-- Live Database Sync Control Panel -->
+    <!-- Live Database Sync Control Panel -->
+  <div class="live-status-pill">
+    @if (dashboardService.isAuthenticated()) {
+      <span class="status-indicator-live"> <span class="live-dot"></span> Live SQL Sync </span>
+      <span class="sync-time">Last: {{ dashboardService.lastSyncTime() | date: 'shortTime' }}</span>
+    } @else {
+      <span class="status-indicator-warning"> ⚠️ Session Disconnected </span>
+      <a class="btn-connect-db text-decoration-none" routerLink="/login">Sign In</a>
+    }
+
+    <button
+      type="button"
+      class="refresh-btn"
+      (click)="refreshAllData()"
+      [disabled]="isLoading()"
+      title="Fetch latest data from SQL Server now"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        class="refresh-icon"
+        [class.spinning]="isLoading()"
+      >
+        <polyline points="23 4 23 10 17 10"></polyline>
+        <polyline points="1 20 1 14 7 14"></polyline>
+        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+      </svg>
+      <span>{{ isLoading() ? 'Syncing...' : 'Sync Now' }}</span>
+    </button>
+  </div>
+</div>
+
+<!-- 4 STATS COUNTING CARDS -->
+<div class="jb-stats-grid">
+  <!-- Card 1: Total Case Request -->
+  <div class="stat-card">
+    <div class="stat-info">
+      <span class="stat-title">{{ t('totalCaseRequest') }}</span>
+      <h3 class="stat-number">
+        @if (isLoading()) {
+          <span class="loading-pulse">...</span>
+        } @else {
+          {{ stats().totalCaseRequest | number }}
+        }
+      </h3>
+      <span class="stat-trend neutral">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
+          <polyline points="17 18 23 18 23 12"></polyline>
+        </svg>
+        Active SQL Requests
+      </span>
+    </div>
+    <div class="stat-icon-badge badge-purple">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+        <polyline points="14 2 14 8 20 8"></polyline>
+        <line x1="16" y1="13" x2="8" y2="13"></line>
+        <line x1="16" y1="17" x2="8" y2="17"></line>
+        <polyline points="10 9 9 9 8 9"></polyline>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Card 2: Total Solved Case -->
+  <div class="stat-card">
+    <div class="stat-info">
+      <span class="stat-title">{{ t('totalSolvedCase') }}</span>
+      <h3 class="stat-number">
+        @if (isLoading()) {
+          <span class="loading-pulse">...</span>
+        } @else {
+          {{ stats().totalSolvedCase | number }}
+        }
+      </h3>
+      <span class="stat-trend positive">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+          <polyline points="17 6 23 6 23 12"></polyline>
+        </svg>
+        Emergency Success
+      </span>
+    </div>
+    <div class="stat-icon-badge badge-green">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Card 3: Total Donor -->
+  <div class="stat-card">
+    <div class="stat-info">
+      <span class="stat-title">{{ t('totalDonor') }}</span>
+      <h3 class="stat-number">
+        @if (isLoading()) {
+          <span class="loading-pulse">...</span>
+        } @else {
+          {{ stats().totalDonor | number }}
+        }
+      </h3>
+      <span class="stat-trend positive">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+          <polyline points="17 6 23 6 23 12"></polyline>
+        </svg>
+        Ready to Donate
+      </span>
+    </div>
+    <div class="stat-icon-badge badge-orange">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- Card 4: Total Members -->
+  <div class="stat-card">
+    <div class="stat-info">
+      <span class="stat-title">{{ t('totalMembers') }}</span>
+      <h3 class="stat-number">
+        @if (isLoading()) {
+          <span class="loading-pulse">...</span>
+        } @else {
+          {{ stats().totalMembers | number }}
+        }
+      </h3>
+      <span class="stat-trend positive">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+          <polyline points="17 6 23 6 23 12"></polyline>
+        </svg>
+        Community Team
+      </span>
+    </div>
+    <div class="stat-icon-badge badge-cyan">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+        <circle cx="9" cy="7" r="4"></circle>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- YEARLY BLOOD DONATION GRAPH SECTION (X: Month, Y: 0-50) -->
+<div class="jb-graph-section">
+  <div class="graph-card">
+    <div class="graph-header">
+      <div>
+        <h4 class="graph-title">{{ t('yearlyBloodDonation') }}</h4>
+        <p class="graph-subtitle">
+          {{ t('bloodDonationSubtitle') }} (Database Year: {{ selectedYear() }})
+        </p>
+      </div>
+      <div class="graph-legend">
+        <span class="legend-indicator"></span>
+        <span class="legend-text">{{ t('unitsDonated') }} (0 - 50 scale)</span>
+      </div>
+    </div>
+
+    <!-- Interactive Responsive SVG Line & Area Graph -->
+    <div class="svg-chart-container">
+      <svg viewBox="0 0 700 230" preserveAspectRatio="none" class="donation-svg-chart">
+        <defs>
+          <linearGradient id="bloodAreaGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ff1744" stop-opacity="0.45" />
+            <stop offset="70%" stop-color="#ff1744" stop-opacity="0.08" />
+            <stop offset="100%" stop-color="#ff1744" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="bloodLineGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#ff1744" />
+            <stop offset="50%" stop-color="#ff5252" />
+            <stop offset="100%" stop-color="#ff8a80" />
+          </linearGradient>
+        </defs>
+
+        <!-- Horizontal Grid Lines for 0 - 50 -->
+        @for (mark of yAxisMarks; track mark) {
+          <line
+            x1="40"
+            [attr.y1]="calculateY(mark, 180)"
+            x2="680"
+            [attr.y2]="calculateY(mark, 180)"
+            class="chart-grid-line"
+          />
+          <text
+            x="30"
+            [attr.y]="calculateY(mark, 180) + 4"
+            class="chart-axis-label y-axis-label"
+            text-anchor="end"
+          >
+            {{ mark }}
+          </text>
+        }
+
+        <!-- Filled Chart Area -->
+        @if (bloodDonations().length > 0) {
+          <polygon
+            [attr.points]="getChartAreaPoints()"
+            class="chart-area-fill"
+            fill="url(#bloodAreaGrad)"
+          />
+
+          <!-- Line Trend Polyline -->
+          <polyline
+            [attr.points]="getChartPoints()"
+            class="chart-line-stroke"
+            stroke="url(#bloodLineGrad)"
+          />
+
+          <!-- Circle Data Markers for Months -->
+          @for (item of bloodDonations(); track item.month; let i = $index) {
+            <g class="chart-point-group">
+              <circle
+                [attr.cx]="i * (640 / 11) + 40"
+                [attr.cy]="calculateY(item.count, 180)"
+                r="5"
+                class="chart-point-outer"
+              />
+              <circle
+                [attr.cx]="i * (640 / 11) + 40"
+                [attr.cy]="calculateY(item.count, 180)"
+                r="3"
+                class="chart-point-inner"
+              />
+              <text
+                [attr.cx]="i * (640 / 11) + 40"
+                [attr.cy]="calculateY(item.count, 180) - 10"
+                class="chart-tooltip-text"
+                text-anchor="middle"
+              >
+                {{ item.count }}
+              </text>
+            </g>
+          }
+        }
+
+        <!-- X-Axis Labels (Months Jan to Dec) -->
+        @for (item of bloodDonations(); track item.month; let i = $index) {
+          <text
+            [attr.x]="i * (640 / 11) + 40"
+            y="215"
+            class="chart-axis-label x-axis-label"
+            text-anchor="middle"
+          >
+            {{ item.month }}
+          </text>
+        }
+      </svg>
+    </div>
+  </div>
+</div>

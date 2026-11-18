@@ -1,0 +1,269 @@
+<div class="content-header">
+  <div class="header-titles">
+    <h2 class="section-heading">Want to be a member</h2>
+    <span class="sub-heading">
+      Register blood donation foundation members, executive coordinators, and field volunteers
+    </span>
+  </div>
+</div>
+
+<div class="form-container">
+  <div class="graph-card form-card">
+    @if (alreadySent()) {
+      <div class="status-card-box success">
+        <div class="status-icon">✓</div>
+        <h3>Request Received!</h3>
+        <p class="status-text">We have received your request. We will reach you soon!</p>
+      </div>
+    } @else {
+      <!-- Close Button -->
+      <button
+        type="button"
+        class="form-close-btn"
+        (click)="cancel()"
+        title="Cancel and return to Dashboard"
+      >
+        &times;
+      </button>
+
+      <!-- Form Card Header (Identical to Member Registration Form) -->
+      <div class="form-card-header">
+        <div class="badge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <div class="header-text">
+          <h3 class="card-main-title">Member Registration Form</h3>
+          <p class="card-sub-title">
+            All members receive sequential JBF ID credentials and foundation authorization
+          </p>
+        </div>
+      </div>
+
+      @if (errorMessage()) {
+        <div class="alert-banner alert-error">
+          <span>{{ errorMessage() }}</span>
+        </div>
+      }
+
+      <form (ngSubmit)="onSubmit()" class="fields-grid">
+        <!-- Photo Upload Row -->
+        <div class="avatar-upload-row">
+          <div class="avatar-preview-box">
+            @if (displayImageUrl) {
+              <img [src]="displayImageUrl" alt="Member Photo" class="avatar-img" />
+            } @else {
+              <div class="avatar-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+            }
+          </div>
+          <div class="avatar-upload-meta">
+            <label class="field-label">Member Photo</label>
+            <input
+              type="file"
+              accept="image/*"
+              (change)="onImageSelected($event)"
+              class="file-input-hidden"
+              #fileInput
+            />
+            <button
+              type="button"
+              class="btn-upload"
+              (click)="fileInput.click()"
+              [disabled]="isUploadingImage()"
+            >
+              @if (isUploadingImage()) {
+                <span class="btn-spinner"></span>
+                <span>Uploading...</span>
+              } @else {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                <span>{{ imageUrl ? 'Change Photo' : 'Upload Photo' }}</span>
+              }
+            </button>
+            <span class="avatar-hint">PNG, JPG or WEBP up to 5MB</span>
+          </div>
+        </div>
+
+        <!-- Row 1: First Name & Last Name -->
+        <div class="field-row-split">
+          <div class="split-col">
+            <label class="field-label" for="firstName">First Name</label>
+            <div class="field-input-box">
+              <input
+                id="firstName"
+                type="text"
+                name="firstName"
+                [(ngModel)]="firstName"
+                placeholder="e.g. Shammi"
+                class="field-input"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="split-col">
+            <label class="field-label" for="lastName">Last Name</label>
+            <div class="field-input-box">
+              <input
+                id="lastName"
+                type="text"
+                name="lastName"
+                [(ngModel)]="lastName"
+                placeholder="e.g. Shashi"
+                class="field-input"
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2: Date of Birth & Contact Number -->
+        <div class="field-row-split">
+          <div class="split-col">
+            <label class="field-label" for="dateOfBirth">Date of Birth (M/D/Y)</label>
+            <div class="field-input-box">
+              <input
+                id="dateOfBirth"
+                type="date"
+                name="dateOfBirth"
+                [(ngModel)]="dateOfBirth"
+                class="field-input date-input-clickable"
+                (click)="openDatePicker($event)"
+              />
+            </div>
+          </div>
+
+          <div class="split-col">
+            <label class="field-label" for="contactNumber">Contact Number</label>
+            <div class="field-input-box">
+              <input
+                id="contactNumber"
+                type="text"
+                name="contactNumber"
+                [(ngModel)]="contactNumber"
+                placeholder="e.g. 01711223344"
+                class="field-input"
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 3: District & Area -->
+        <div class="field-row-split">
+          <div class="split-col">
+            <label class="field-label" for="district">District</label>
+            <div class="field-input-box">
+              <select
+                id="district"
+                name="district"
+                [(ngModel)]="district"
+                class="field-input select-input"
+              >
+                @for (d of districts; track d) {
+                  <option [value]="d">{{ d }}</option>
+                }
+              </select>
+            </div>
+          </div>
+
+          <div class="split-col">
+            <label class="field-label" for="area">Area / Thana / Location</label>
+            <div class="field-input-box">
+              <input
+                id="area"
+                type="text"
+                name="area"
+                [(ngModel)]="area"
+                placeholder="e.g. Uttara / Mirpur / Dhanmondi"
+                class="field-input"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 4: NID Number & Birth Certificate No -->
+        <div class="field-row-split">
+          <div class="split-col">
+            <label class="field-label" for="nidNumber">
+              National ID (NID) Number <span class="label-badge">Required or Birth Cert</span>
+            </label>
+            <div class="field-input-box">
+              <input
+                id="nidNumber"
+                type="text"
+                name="nidNumber"
+                [(ngModel)]="nidNumber"
+                placeholder="e.g. 19982692010000001"
+                class="field-input"
+              />
+            </div>
+          </div>
+
+          <div class="split-col">
+            <label class="field-label" for="birthCertificateNo">
+              Birth Certificate No <span class="label-badge">Required if No NID</span>
+            </label>
+            <div class="field-input-box">
+              <input
+                id="birthCertificateNo"
+                type="text"
+                name="birthCertificateNo"
+                [(ngModel)]="birthCertificateNo"
+                placeholder="e.g. 20002692010000014"
+                class="field-input"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 5: Email Account -->
+        <div class="field-row">
+          <label class="field-label" for="email">
+            Email Account <span class="label-badge">Optional - Connects with User Profile</span>
+          </label>
+          <div class="field-input-box">
+            <input
+              id="email"
+              type="email"
+              name="email"
+              [(ngModel)]="email"
+              placeholder="e.g. member@example.com"
+              class="field-input"
+            />
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="field-actions">
+          <button type="button" class="btn-cancel" (click)="cancel()" [disabled]="isSubmitting()">
+            Cancel
+          </button>
+          <button type="submit" class="btn-submit" [disabled]="isSubmitting()">
+            @if (isSubmitting()) {
+              <span class="btn-spinner"></span>
+              <span>Sending...</span>
+            } @else {
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Send Request</span>
+            }
+          </button>
+        </div>
+      </form>
+    }
+  </div>
+</div>

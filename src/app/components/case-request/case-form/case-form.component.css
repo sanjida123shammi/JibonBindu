@@ -1,0 +1,307 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.case-form-container {
+  width: 100%;
+}
+
+.case-card {
+  position: relative;
+  width: 100%;
+  padding: 2.25rem 2.5rem;
+}
+
+.form-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 60, 90, 0.15);
+  font-size: 1.4rem;
+  line-height: 1;
+  color: #94a3b8;
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.form-close-btn:hover {
+  background: rgba(230, 0, 38, 0.25);
+  color: #ffffff;
+  border-color: #ff3355;
+}
+
+:host-context([data-theme='light']) .form-close-btn,
+[data-theme='light'] .form-close-btn {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #64748b;
+}
+
+.case-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.case-badge-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(230, 0, 38, 0.15);
+  border: 1px solid rgba(255, 60, 90, 0.35);
+  color: #ff3355;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.case-badge-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.case-header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-main-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.25rem 0;
+}
+
+:host-context([data-theme='light']) .card-main-title,
+[data-theme='light'] .card-main-title {
+  color: #0f172a;
+}
+
+.card-sub-title {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+:host-context([data-theme='light']) .card-sub-title,
+[data-theme='light'] .card-sub-title {
+  color: #64748b;
+}
+
+.alert-banner {
+  padding: 0.85rem 1.25rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.alert-error {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #f87171;
+}
+
+.case-fields-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.field-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.field-row-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .field-row-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+.split-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.field-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+:host-context([data-theme='light']) .field-label,
+[data-theme='light'] .field-label {
+  color: #334155;
+}
+
+.field-input-box {
+  width: 100%;
+}
+
+.field-input {
+  width: 100%;
+  background: rgba(14, 3, 7, 0.65);
+  border: 1px solid rgba(255, 60, 90, 0.22);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+:host-context([data-theme='light']) .field-input,
+[data-theme='light'] .field-input {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+.field-input:focus {
+  border-color: #ff3355;
+  box-shadow: 0 0 14px rgba(255, 51, 85, 0.25);
+}
+
+/* Requirement 5: Native Date picker clickable styling */
+.date-input-clickable {
+  cursor: pointer;
+}
+
+.date-input-clickable::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(0.85);
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.date-input-clickable::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+:host-context([data-theme='light']) .date-input-clickable::-webkit-calendar-picker-indicator,
+[data-theme='light'] .date-input-clickable::-webkit-calendar-picker-indicator {
+  filter: none;
+}
+
+.select-input option {
+  background: #1a0307;
+  color: #ffffff;
+}
+
+:host-context([data-theme='light']) .select-input option,
+[data-theme='light'] .select-input option {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.textarea-input {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.checkbox-field-row {
+  margin-top: 0.5rem;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-container input {
+  width: 18px;
+  height: 18px;
+  accent-color: #e60026;
+  cursor: pointer;
+}
+
+.checkbox-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+}
+
+:host-context([data-theme='light']) .checkbox-text,
+[data-theme='light'] .checkbox-text {
+  color: #334155;
+}
+
+.form-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 60, 90, 0.12);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #e60026 0%, #b8001f 100%);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.85rem;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 18px rgba(230, 0, 38, 0.35);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(230, 0, 38, 0.5);
+  background: linear-gradient(135deg, #ff1744 0%, #cc0022 100%);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 60, 90, 0.2);
+  color: #cbd5e1;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+:host-context([data-theme='light']) .btn-secondary,
+[data-theme='light'] .btn-secondary {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #475569;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

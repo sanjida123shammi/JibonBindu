@@ -1,0 +1,173 @@
+<div class="content-header">
+  <div class="header-titles">
+    <h2 class="section-heading">
+      {{ isEditMode() ? 'Edit Fund Costing #Inv-DC-' + costingId : 'Add New Fund Costing' }}
+    </h2>
+    <span class="sub-heading">
+      Record foundation expenses, patient transport costs, banner printing, and food disbursements
+    </span>
+  </div>
+</div>
+
+<div class="form-container">
+  <div class="graph-card form-card">
+    <button
+      type="button"
+      class="form-close-btn"
+      (click)="cancel()"
+      title="Cancel and return to Costing History"
+    >
+      &times;
+    </button>
+
+    <div class="form-card-header">
+      <div class="badge-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+      </div>
+      <div class="header-text">
+        <h3 class="card-main-title">
+          {{ isEditMode() ? 'Update Costing Voucher' : 'New Fund Costing Entry' }}
+        </h3>
+        <p class="card-sub-title">
+          All costing vouchers are stored and audited under foundation daily expenditure
+        </p>
+      </div>
+    </div>
+
+    @if (errorMessage()) {
+      <div class="alert-banner alert-error">
+        <span>{{ errorMessage() }}</span>
+      </div>
+    }
+
+    <form (ngSubmit)="onSubmit()" class="fields-grid">
+      <!-- Row 1: Costing Date & Spent By Person -->
+      <div class="field-row-split">
+        <div class="split-col">
+          <label class="field-label" for="costingDate">Costing Date (M/D/Y)</label>
+          <div class="field-input-box">
+            <input
+              id="costingDate"
+              type="date"
+              name="costingDate"
+              [(ngModel)]="costingDate"
+              class="field-input date-input-clickable"
+              (click)="openDatePicker($event)"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="split-col">
+          <label class="field-label" for="spentByPersonId">Spent By (Person / Member)</label>
+          <div class="field-input-box">
+            <select
+              id="spentByPersonId"
+              name="spentByPersonId"
+              [(ngModel)]="spentByPersonId"
+              class="field-input select-input"
+            >
+              @for (p of people; track p.personId) {
+                <option [value]="p.personId">
+                  {{ p.fullName }} {{ p.memberId ? '(' + p.memberId + ')' : '' }} -
+                  {{ p.contactNo }}
+                </option>
+              }
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: Expense Purpose -->
+      <div class="field-row">
+        <label class="field-label" for="purpose">Expense Purpose / Reason</label>
+        <div class="field-input-box">
+          <input
+            id="purpose"
+            type="text"
+            name="purpose"
+            [(ngModel)]="purpose"
+            placeholder="e.g. JBF Banner / Donor Transportation (Niloy) / Food"
+            class="field-input"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Row 3: Amount & Settlement Status -->
+      <div class="field-row-split">
+        <div class="split-col">
+          <label class="field-label" for="costAmount">Cost Amount (BDT)</label>
+          <div class="field-input-box">
+            <input
+              id="costAmount"
+              type="number"
+              name="costAmount"
+              [(ngModel)]="costAmount"
+              min="1"
+              step="any"
+              placeholder="e.g. 500"
+              class="field-input"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="split-col">
+          <label class="field-label" for="settlementStatusId">Fund Settlement Status</label>
+          <div class="field-input-box">
+            <select
+              id="settlementStatusId"
+              name="settlementStatusId"
+              [(ngModel)]="settlementStatusId"
+              class="field-input select-input"
+            >
+              @for (ss of settlementStatuses; track ss.id) {
+                <option [value]="ss.id">{{ ss.name }}</option>
+              }
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 4: Remarks -->
+      <div class="field-row">
+        <label class="field-label" for="remarks">Audit Remarks / Notes</label>
+        <div class="field-input-box">
+          <input
+            id="remarks"
+            type="text"
+            name="remarks"
+            [(ngModel)]="remarks"
+            placeholder="e.g. Niloy will inform the case number"
+            class="field-input"
+          />
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="field-actions">
+        <button type="button" class="btn-cancel" (click)="cancel()" [disabled]="isSubmitting()">
+          Cancel
+        </button>
+        <button type="submit" class="btn-submit" [disabled]="isSubmitting()">
+          @if (isSubmitting()) {
+            <span class="btn-spinner"></span>
+            <span>Processing...</span>
+          } @else {
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>{{ isEditMode() ? 'Update Costing' : 'Create Costing' }}</span>
+          }
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
