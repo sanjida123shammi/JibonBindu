@@ -1,11 +1,13 @@
 using Api.Data;
 using Api.Repositories;
+using Api.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
+using System.Security.Claims;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -40,7 +42,9 @@ builder.Services.AddAuthentication(options =>
         ValidateLifetime = true,
         ValidIssuer = builder.Configuration["Jwt:Issuer"],
         ValidAudience = builder.Configuration["Jwt:Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!))
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!)),
+        RoleClaimType = ClaimTypes.Role,
+        NameClaimType = ClaimTypes.Name
     };
 });
 
@@ -67,6 +71,8 @@ builder.Services.AddScoped<IFundCostingRepository, FundCostingRepository>();
 builder.Services.AddScoped<IFundLookupRepository, FundLookupRepository>();
 builder.Services.AddScoped<IBloodDonationReportRepository, BloodDonationReportRepository>();
 builder.Services.AddScoped<IFundDonationReportRepository, FundDonationReportRepository>();
+builder.Services.AddScoped<IImageService, ImageService>();
+builder.Services.AddScoped<IMemberRepository, MemberRepository>();
 
 // JsonSerializer Configuration
 builder.Services.AddControllers().AddJsonOptions(options =>
@@ -80,7 +86,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("https://localhost:2717")
+        policy.WithOrigins("https://localhost:2717", "http://localhost:4200")
         .AllowAnyHeader()
         .AllowAnyMethod();
     });

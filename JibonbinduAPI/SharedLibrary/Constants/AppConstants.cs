@@ -5,16 +5,16 @@ namespace SharedLibrary.Constants
     public static class AppRoles
     {
         public const string Admin = "Admin";
-        /// A member of the blood-searching team.
         public const string Member = "Member";
         public const string User = "User";
+        public const string Seeker = "Seeker";
+        public const string BloodDonor = "BloodDonor";
+        public const string FundDonor = "FundDonor";
 
         public const string AdminOrMember = Admin + "," + Member;
-
-        /// <summary>Who may see and manage money (fund deposits, costings, fund reports). Change in ONE place.</summary>
         public const string FundManagers = Admin;
 
-        public static readonly string[] All = { Admin, Member, User };
+        public static readonly string[] All = { Admin, Member, User, Seeker, BloodDonor, FundDonor };
     }
 
     public static class CaseStatusNames
@@ -43,6 +43,7 @@ namespace SharedLibrary.Constants
         public const string NewBloodRequest = "NewBloodRequest";
         public const string CaseStatusChanged = "CaseStatusChanged";
         public const string NewDonorRegistered = "NewDonorRegistered";
+        public const string MemberRequest = "MemberRequest";
     }
 
     public enum DonationType
@@ -57,9 +58,9 @@ namespace SharedLibrary.Constants
         public const int MinDonorAge = 18;
         public const int MaxDonorAge = 65;
 
-        public const int WholeBloodIntervalDays = 100; 
-        public const int PlasmaIntervalDays = 28;     
-        public const int PlateletIntervalDays = 21;    
+        public const int WholeBloodIntervalDays = 100;
+        public const int PlasmaIntervalDays = 28;
+        public const int PlateletIntervalDays = 21;
 
         public static int GetIntervalDays(DonationType donationType) => donationType switch
         {

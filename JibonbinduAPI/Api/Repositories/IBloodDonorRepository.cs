@@ -13,6 +13,8 @@ namespace Api.Repositories
         Task<BloodDonorResponse> RegisterAsync(string userId, BloodDonorDTO dto);
 
         Task<bool> UpdateByUserIdAsync(string userId, BloodDonorDTO dto);
+        Task<bool> UpdateAsync(int bloodDonorId, BloodDonorDTO dto);
+        Task<bool> UpdateStatusAsync(int bloodDonorId, string statusName);
         Task<DeleteResult> DeleteAsync(int bloodDonorId);
     }
 }

@@ -20,13 +20,13 @@ namespace Api.Data
         public virtual DbSet<DailyCost> DailyCosts { get; set; } = null!;
         public virtual DbSet<DonorStatus> DonorStatuses { get; set; } = null!;
         public virtual DbSet<FundDeposit> FundDeposits { get; set; } = null!;
-        public virtual DbSet<FundDonationType> FundDonationTypes { get; set; } = null!;
         public virtual DbSet<FundDonor> FundDonors { get; set; } = null!;
         public virtual DbSet<FundDonorType> FundDonorTypes { get; set; } = null!;
         public virtual DbSet<FundingType> FundingTypes { get; set; } = null!;
         public virtual DbSet<Notification> Notifications { get; set; } = null!;
         public virtual DbSet<Person> Persons { get; set; } = null!;
         public virtual DbSet<PersonRole> PersonRoles { get; set; } = null!;
+        public virtual DbSet<Member> Members { get; set; } = null!;
         public virtual DbSet<SettlementStatus> SettlementStatuses { get; set; } = null!;
         public virtual DbSet<VolunteerAssociate> VolunteerAssociates { get; set; } = null!;
 
@@ -104,6 +104,22 @@ namespace Api.Data
                 .HasForeignKey(d => d.SpentByPersonId)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            // Member entity & relationships
+            builder.Entity<Member>()
+                .HasKey(m => m.MemberID);
+
+            builder.Entity<Member>()
+                .HasOne(m => m.Person)
+                .WithMany()
+                .HasForeignKey(m => m.PersonId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Member>()
+                .HasOne(m => m.PersonRole)
+                .WithMany()
+                .HasForeignKey(m => m.PersonRoleID)
+                .OnDelete(DeleteBehavior.Restrict);
+
             // date columns used by the reports and by the date filters
             builder.Entity<DailyCost>().HasIndex(d => d.CostingDate);
             builder.Entity<FundDeposit>().HasIndex(d => d.FundDonationDate);
@@ -128,12 +144,30 @@ namespace Api.Data
             builder.Entity<CaseStatus>().HasData(
                 new CaseStatus { CaseStatusId = 1, CaseStatusName = "Pending" },
                 new CaseStatus { CaseStatusId = 2, CaseStatusName = "In Progress" },
-                new CaseStatus { CaseStatusId = 3, CaseStatusName = "Fulfilled" },
-                new CaseStatus { CaseStatusId = 4, CaseStatusName = "Cancelled" });
+                new CaseStatus { CaseStatusId = 3, CaseStatusName = "Managed By JBF" },
+                new CaseStatus { CaseStatusId = 4, CaseStatusName = "Managed By Seeker" },
+                new CaseStatus { CaseStatusId = 5, CaseStatusName = "Cancelled" });
 
             builder.Entity<DonorStatus>().HasData(
                 new DonorStatus { DonorStatusId = 1, StatusName = "Available" },
                 new DonorStatus { DonorStatusId = 2, StatusName = "Unavailable" });
+
+            builder.Entity<CashType>().HasData(
+                new CashType { CashTypeId = 1, CashTypeName = "By Cash" },
+                new CashType { CashTypeId = 2, CashTypeName = "By Bkash" },
+                new CashType { CashTypeId = 3, CashTypeName = "By Nagad" });
+
+            builder.Entity<FundingType>().HasData(
+                new FundingType { FundingTypeId = 1, FundingTypeName = "Monthly" },
+                new FundingType { FundingTypeId = 2, FundingTypeName = "Others" });
+
+            builder.Entity<FundDonorType>().HasData(
+                new FundDonorType { FundDonorTypeId = 1, FundDonorTypeName = "General Member Donor" },
+                new FundDonorType { FundDonorTypeId = 2, FundDonorTypeName = "Elite Donor" },
+                new FundDonorType { FundDonorTypeId = 3, FundDonorTypeName = "One Time Donor" },
+                new FundDonorType { FundDonorTypeId = 4, FundDonorTypeName = "Lifetime Donor" },
+                new FundDonorType { FundDonorTypeId = 5, FundDonorTypeName = "Seeker Donor" },
+                new FundDonorType { FundDonorTypeId = 6, FundDonorTypeName = "Volunteer Donor" });
 
             builder.Entity<SettlementStatus>().HasData(
                 new SettlementStatus { SettlementStatusId = 1, SettlementStatusTitle = "Paid" },

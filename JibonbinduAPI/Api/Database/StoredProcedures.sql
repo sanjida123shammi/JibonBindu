@@ -38,7 +38,10 @@ AS
 SELECT  d.BloodDonorId,
         d.PersonId,
         p.ApplicationUserId,
+        p.FirstName,
+        p.LastName,
         p.FirstName + N' ' + p.LastName       AS FullName,
+        p.DateOfBirth,
         CAST(p.ContactNumber AS nvarchar(20)) AS ContactNo,
         p.District,
         p.City,
@@ -48,6 +51,7 @@ SELECT  d.BloodDonorId,
         d.LastDonationType,
         ds.StatusName                         AS [Status],
         d.TotalDonation,
+        ISNULL((SELECT COUNT(*) FROM dbo.BloodDonations bd WHERE bd.BloodDonorId = d.BloodDonorId), 0) AS DonationFromJbf,
         d.PreferredLocation,
         d.PreferredTime,
         d.Remarks
@@ -127,84 +131,6 @@ BEGIN
 END
 GO
 
---CREATE OR ALTER PROCEDURE dbo.usp_CaseRequest_Create
---    @PatientProblem    nvarchar(500),
---    @BloodGroup        nvarchar(10),
---    @Hemoglobin        decimal(18, 4),
---    @Quantity          int,
---    @HospitalName      nvarchar(200),
---    @DonationTime      time(7),
---    @DonationDate      datetime2(7),
---    @ContactNo         nvarchar(20),
---    @IsYourCase        bit,
---    @RequestedByUserId nvarchar(450),
---    @InitialStatus     nvarchar(50)
---AS
---BEGIN
---    SET NOCOUNT ON;
---    SET XACT_ABORT ON;
-
---    DECLARE @BloodGroupId int = (SELECT TOP (1) BloodGroupId FROM dbo.BloodGroups WHERE GroupName = @BloodGroup);
---    IF @BloodGroupId IS NULL
---        THROW 50001, 'Blood group is not seeded in the database.', 1;
-
---    DECLARE @StatusId int = (SELECT TOP (1) CaseStatusId FROM dbo.CaseStatuses WHERE CaseStatusName = @InitialStatus);
---    IF @StatusId IS NULL
---    BEGIN
---        INSERT dbo.CaseStatuses (CaseStatusName) VALUES (@InitialStatus);
---        SET @StatusId = CAST(SCOPE_IDENTITY() AS int);
---    END
-
---    INSERT dbo.CaseInfos
---        ([Date], BloodGroupId, PatientProblem, Quantity, Hemoglobin, DonationDate, DonationTime,
---         DonationPlace, ContactNumber, IsYourCase, RequestedByUserId, CaseStatusId, Remarks)
---    VALUES
---        (SYSUTCDATETIME(), @BloodGroupId, @PatientProblem, @Quantity, @Hemoglobin, @DonationDate, @DonationTime,
---         @HospitalName, @ContactNo, @IsYourCase, @RequestedByUserId, @StatusId, N'');
-
---    SELECT CAST(SCOPE_IDENTITY() AS int) AS [Value];
---END
-GO
-
---CREATE OR ALTER PROCEDURE dbo.usp_CaseRequest_Update
---    @Id             int,
---    @PatientProblem nvarchar(500),
---    @BloodGroup     nvarchar(10),
---    @Hemoglobin     decimal(18, 4),
---    @Quantity       int,
---    @HospitalName   nvarchar(200),
---    @DonationTime   time(7),
---    @DonationDate   datetime2(7),
---    @ContactNo      nvarchar(20),
---    @IsYourCase     bit
---AS
---BEGIN
---    SET NOCOUNT ON;
-
---    DECLARE @BloodGroupId int = (SELECT TOP (1) BloodGroupId FROM dbo.BloodGroups WHERE GroupName = @BloodGroup);
---    IF @BloodGroupId IS NULL
---        THROW 50001, 'Blood group is not seeded in the database.', 1;
-
---    DECLARE @Rows int;
-
---    -- Status and owner are intentionally not editable here.
---    UPDATE dbo.CaseInfos
---    SET PatientProblem = @PatientProblem,
---        BloodGroupId   = @BloodGroupId,
---        Hemoglobin     = @Hemoglobin,
---        Quantity       = @Quantity,
---        DonationPlace  = @HospitalName,
---        DonationTime   = @DonationTime,
---        DonationDate   = @DonationDate,
---        ContactNumber  = @ContactNo,
---        IsYourCase     = @IsYourCase
---    WHERE CaseInfoId = @Id;
-
---    SET @Rows = @@ROWCOUNT;
---    SELECT @Rows AS [Value];
---END
-GO
-
 CREATE OR ALTER PROCEDURE dbo.usp_CaseRequest_UpdateStatus
     @Id     int,
     @Status nvarchar(50)
@@ -265,15 +191,13 @@ CREATE OR ALTER PROCEDURE dbo.usp_BloodDonor_Search
     @Area            nvarchar(100) = NULL,
     @AvailableOnly   bit           = 0,
     @AvailableStatus nvarchar(50)  = N'Available',
-    @IntervalDays    int           = 90
+    @IntervalDays    int           = 100
 AS
 BEGIN
     SET NOCOUNT ON;
-
     DECLARE @Cutoff date = DATEADD(DAY, -@IntervalDays, CAST(GETDATE() AS date));
-
-    SELECT BloodDonorId, PersonId, FullName, ContactNo, District, City, Area, BloodGroup,
-           LastDonationDate, LastDonationType, [Status], TotalDonation, PreferredLocation, PreferredTime, Remarks
+    SELECT BloodDonorId, PersonId, FirstName, LastName, FullName, DateOfBirth, ContactNo, District, City, Area, BloodGroup,
+           LastDonationDate, LastDonationType, [Status], TotalDonation, DonationFromJbf, PreferredLocation, PreferredTime, Remarks
     FROM dbo.vwBloodDonors
     WHERE (@BloodGroup IS NULL OR BloodGroup = @BloodGroup)
       AND (@District   IS NULL OR District   = @District)
@@ -291,8 +215,8 @@ CREATE OR ALTER PROCEDURE dbo.usp_BloodDonor_GetById
 AS
 BEGIN
     SET NOCOUNT ON;
-    SELECT BloodDonorId, PersonId, FullName, ContactNo, District, City, Area, BloodGroup,
-           LastDonationDate, LastDonationType, [Status], TotalDonation, PreferredLocation, PreferredTime, Remarks
+    SELECT BloodDonorId, PersonId, FirstName, LastName, FullName, DateOfBirth, ContactNo, District, City, Area, BloodGroup,
+           LastDonationDate, LastDonationType, [Status], TotalDonation, DonationFromJbf, PreferredLocation, PreferredTime, Remarks
     FROM dbo.vwBloodDonors
     WHERE BloodDonorId = @Id;
 END
@@ -303,157 +227,12 @@ CREATE OR ALTER PROCEDURE dbo.usp_BloodDonor_GetByUserId
 AS
 BEGIN
     SET NOCOUNT ON;
-    SELECT BloodDonorId, PersonId, FullName, ContactNo, District, City, Area, BloodGroup,
-           LastDonationDate, LastDonationType, [Status], TotalDonation,
+    SELECT BloodDonorId, PersonId, FirstName, LastName, FullName, DateOfBirth, ContactNo, District, City, Area, BloodGroup,
+           LastDonationDate, LastDonationType, [Status], TotalDonation, DonationFromJbf,
            PreferredLocation, PreferredTime, Remarks
     FROM dbo.vwBloodDonors
     WHERE ApplicationUserId = @UserId;
 END
-GO
-
---CREATE OR ALTER PROCEDURE dbo.usp_BloodDonor_Register
---    @UserId            nvarchar(450),
---    @FirstName         nvarchar(100),
---    @LastName          nvarchar(100),
---    @DateOfBirth       datetime2(7),
---    @ContactNo         nvarchar(20),
---    @District          nvarchar(100),
---    @City              nvarchar(100),
---    @Area              nvarchar(100),
---    @BloodGroup        nvarchar(10),
---    @LastDonationDate  datetime2(7) = NULL,
---    @PreferredLocation nvarchar(200),
---    @PreferredTime     nvarchar(100),
---    @Remarks           nvarchar(500),
---    @DonorStatus       nvarchar(50),
---    @PersonRoleName    nvarchar(100)
---AS
---BEGIN
---    SET NOCOUNT ON;
---    SET XACT_ABORT ON;
-
---    DECLARE @BloodGroupId int = (SELECT TOP (1) BloodGroupId FROM dbo.BloodGroups WHERE GroupName = @BloodGroup);
---    IF @BloodGroupId IS NULL
---        THROW 50001, 'Blood group is not seeded in the database.', 1;
-
---    DECLARE @DonorId int;
-
---    BEGIN TRAN;
-
---        DECLARE @DonorStatusId int = (SELECT TOP (1) DonorStatusId FROM dbo.DonorStatuses WHERE StatusName = @DonorStatus);
---        IF @DonorStatusId IS NULL
---        BEGIN
---            INSERT dbo.DonorStatuses (StatusName) VALUES (@DonorStatus);
---            SET @DonorStatusId = CAST(SCOPE_IDENTITY() AS int);
---        END
-
---        -- the user may already have a Person row (e.g. as a fund donor): reuse it
---        DECLARE @PersonId int = (SELECT TOP (1) PersonId FROM dbo.Persons WHERE ApplicationUserId = @UserId);
-
---        IF @PersonId IS NULL
---        BEGIN
---            DECLARE @PersonRoleId int = (SELECT TOP (1) PersonRoleId FROM dbo.PersonRoles WHERE PersonRoleName = @PersonRoleName);
---            IF @PersonRoleId IS NULL
---            BEGIN
---                INSERT dbo.PersonRoles (PersonRoleName) VALUES (@PersonRoleName);
---                SET @PersonRoleId = CAST(SCOPE_IDENTITY() AS int);
---            END
-
---            INSERT dbo.Persons
---                (ApplicationUserId, FirstName, LastName, DateOfBirth, ContactNumber, District, City, Area, PersonRoleId)
---            VALUES
---                (@UserId, @FirstName, @LastName, @DateOfBirth, @ContactNo, @District, @City, @Area, @PersonRoleId);
-
---            SET @PersonId = CAST(SCOPE_IDENTITY() AS int);
---        END
---        ELSE
---        BEGIN
---            UPDATE dbo.Persons
---            SET FirstName = @FirstName, LastName = @LastName, DateOfBirth = @DateOfBirth,
---                ContactNumber = @ContactNo, District = @District, City = @City, Area = @Area
---            WHERE PersonId = @PersonId;
---        END
-
---        IF EXISTS (SELECT 1 FROM dbo.BloodDonors WHERE PersonId = @PersonId)
---            THROW 50002, 'This user is already registered as a blood donor.', 1;
-
---        INSERT dbo.BloodDonors
---            (PersonId, BloodGroupId, LastDonationDate, DonorStatusId, TotalDonation, PreferredLocation, PreferredTime, Remarks)
---        VALUES
---            (@PersonId, @BloodGroupId, @LastDonationDate, @DonorStatusId, 0, @PreferredLocation, @PreferredTime, @Remarks);
-
---        SET @DonorId = CAST(SCOPE_IDENTITY() AS int);
-
---    COMMIT;
-
---    SELECT @DonorId AS [Value];
---END
-GO
-
---CREATE OR ALTER PROCEDURE dbo.usp_BloodDonor_UpdateByUser
---    @UserId            nvarchar(450),
---    @FirstName         nvarchar(100),
---    @LastName          nvarchar(100),
---    @DateOfBirth       datetime2(7),
---    @ContactNo         nvarchar(20),
---    @District          nvarchar(100),
---    @City              nvarchar(100),
---    @Area              nvarchar(100),
---    @BloodGroup        nvarchar(10),
---    @LastDonationDate  datetime2(7) = NULL,
---    @PreferredLocation nvarchar(200),
---    @PreferredTime     nvarchar(100),
---    @Remarks           nvarchar(500),
---    @DonorStatus       nvarchar(50)
---AS
---BEGIN
---    SET NOCOUNT ON;
---    SET XACT_ABORT ON;
-
---    DECLARE @DonorId int, @PersonId int;
-
---    SELECT @DonorId = d.BloodDonorId, @PersonId = d.PersonId
---    FROM dbo.BloodDonors d
---    JOIN dbo.Persons p ON p.PersonId = d.PersonId
---    WHERE p.ApplicationUserId = @UserId;
-
---    IF @DonorId IS NULL
---    BEGIN
---        SELECT 0 AS [Value];
---        RETURN;
---    END
-
---    DECLARE @BloodGroupId int = (SELECT TOP (1) BloodGroupId FROM dbo.BloodGroups WHERE GroupName = @BloodGroup);
---    IF @BloodGroupId IS NULL
---        THROW 50001, 'Blood group is not seeded in the database.', 1;
-
---    BEGIN TRAN;
-
---        DECLARE @DonorStatusId int = (SELECT TOP (1) DonorStatusId FROM dbo.DonorStatuses WHERE StatusName = @DonorStatus);
---        IF @DonorStatusId IS NULL
---        BEGIN
---            INSERT dbo.DonorStatuses (StatusName) VALUES (@DonorStatus);
---            SET @DonorStatusId = CAST(SCOPE_IDENTITY() AS int);
---        END
-
---        UPDATE dbo.Persons
---        SET FirstName = @FirstName, LastName = @LastName, DateOfBirth = @DateOfBirth,
---            ContactNumber = @ContactNo, District = @District, City = @City, Area = @Area
---        WHERE PersonId = @PersonId;
-
---        UPDATE dbo.BloodDonors
---        SET BloodGroupId      = @BloodGroupId,
---            LastDonationDate  = @LastDonationDate,
---            DonorStatusId     = @DonorStatusId,
---            PreferredLocation = @PreferredLocation,
---            PreferredTime     = @PreferredTime,
---            Remarks           = @Remarks
---        WHERE BloodDonorId = @DonorId;
-
---    COMMIT;
-
---    SELECT 1 AS [Value];
---END
 GO
 
 CREATE OR ALTER PROCEDURE dbo.usp_BloodDonor_Delete

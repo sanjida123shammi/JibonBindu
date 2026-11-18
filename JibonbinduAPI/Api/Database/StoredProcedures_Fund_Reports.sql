@@ -1,13 +1,5 @@
 /* =====================================================================================
    Blood Donation Foundation - fund deposits, fund costings, fund lookups, aggregate reports
-   Run AFTER "dotnet ef database update" and AFTER StoredProcedures.sql. Safe to re-run.
-   Requires SQL Server 2016 SP1+.
-
-   Conventions (same as StoredProcedures.sql)
-   - SELECT procedures return columns named exactly like the C# DTO properties.
-   - Write procedures return ONE row with ONE column [Value]:
-       delete -> 1 deleted, 0 not found
-   - Create and Update of deposits/costings are NOT here on purpose: they run through EF Core.
    ===================================================================================== */
 
 /* ------------------------------- VIEWS ------------------------------------------- */
@@ -16,9 +8,9 @@ CREATE OR ALTER VIEW dbo.vwFundDeposits
 AS
 SELECT  fd.FundDepositId                    AS FundDepositId,
         fd.FundDonationDate                 AS FundDonationDate,
-        fd.FundDonationTypeId               AS FundDonationTypeId,
-        dt.DonationTypeName                 AS DonationTypeName,
         fd.FundDonorId                      AS FundDonorId,
+        fdn.FundDonorTypeId                 AS FundDonorTypeId,
+        fdt.FundDonorTypeName               AS FundDonorTypeName,
         p.FirstName + N' ' + p.LastName     AS DonorName,
         p.ContactNumber                     AS DonorContactNo,
         fdn.DonationSlot                    AS DonationSlot,
@@ -28,11 +20,13 @@ SELECT  fd.FundDepositId                    AS FundDepositId,
         ft.FundingTypeName                  AS FundingTypeName,
         fd.CashTypeId                       AS CashTypeId,
         ct.CashTypeName                     AS CashTypeName,
-        fd.Months                           AS Months
+        fd.Months                           AS Months,
+        m.MemberID                          AS MemberId
 FROM dbo.FundDeposits fd
-JOIN dbo.FundDonationTypes dt  ON dt.FundDonationTypeId = fd.FundDonationTypeId
 JOIN dbo.FundDonors        fdn ON fdn.FundDonorId       = fd.FundDonorId
+JOIN dbo.FundDonorTypes    fdt ON fdt.FundDonorTypeId   = fdn.FundDonorTypeId
 JOIN dbo.Persons           p   ON p.PersonId            = fdn.PersonId
+LEFT JOIN dbo.Members      m   ON m.PersonId            = p.PersonId
 JOIN dbo.FundingTypes      ft  ON ft.FundingTypeId      = fd.FundingTypeId
 JOIN dbo.CashTypes         ct  ON ct.CashTypeId         = fd.CashTypeId;
 GO
@@ -60,9 +54,9 @@ CREATE OR ALTER PROCEDURE dbo.usp_FundDeposit_GetById
 AS
 BEGIN
     SET NOCOUNT ON;
-    SELECT FundDepositId, FundDonationDate, FundDonationTypeId, DonationTypeName, FundDonorId, DonorName,
-           DonorContactNo, DonationSlot, Amount, FundReceiver, FundingTypeId, FundingTypeName,
-           CashTypeId, CashTypeName, Months
+    SELECT FundDepositId, FundDonationDate, FundDonorId, FundDonorTypeId, FundDonorTypeName,
+           DonorName, DonorContactNo, DonationSlot, Amount, FundReceiver, FundingTypeId, FundingTypeName,
+           CashTypeId, CashTypeName, Months, MemberId
     FROM dbo.vwFundDeposits
     WHERE FundDepositId = @Id;
 END
@@ -73,7 +67,7 @@ CREATE OR ALTER PROCEDURE dbo.usp_FundDeposit_Search
     @FromDate           datetime2(7) = NULL,
     @ToDate             datetime2(7) = NULL,
     @FundDonorId        int = NULL,
-    @FundDonationTypeId int = NULL,
+    @FundDonorTypeId    int = NULL,
     @FundingTypeId      int = NULL,
     @CashTypeId         int = NULL,
     @Page               int = 1,
@@ -81,21 +75,18 @@ CREATE OR ALTER PROCEDURE dbo.usp_FundDeposit_Search
 AS
 BEGIN
     SET NOCOUNT ON;
-
     SET @Page     = CASE WHEN @Page < 1 THEN 1 ELSE @Page END;
     SET @PageSize = CASE WHEN @PageSize < 1 THEN 50 WHEN @PageSize > 200 THEN 200 ELSE @PageSize END;
-
     DECLARE @From datetime2(7) = CAST(CAST(@FromDate AS date) AS datetime2(7));
     DECLARE @ToExclusive datetime2(7) = DATEADD(DAY, 1, CAST(CAST(@ToDate AS date) AS datetime2(7)));
-
-    SELECT FundDepositId, FundDonationDate, FundDonationTypeId, DonationTypeName, FundDonorId, DonorName,
-           DonorContactNo, DonationSlot, Amount, FundReceiver, FundingTypeId, FundingTypeName,
-           CashTypeId, CashTypeName, Months
+    SELECT FundDepositId, FundDonationDate, FundDonorId, FundDonorTypeId, FundDonorTypeName,
+           DonorName, DonorContactNo, DonationSlot, Amount, FundReceiver, FundingTypeId, FundingTypeName,
+           CashTypeId, CashTypeName, Months, MemberId
     FROM dbo.vwFundDeposits
     WHERE (@FromDate           IS NULL OR FundDonationDate >= @From)
       AND (@ToDate             IS NULL OR FundDonationDate <  @ToExclusive)
       AND (@FundDonorId        IS NULL OR FundDonorId        = @FundDonorId)
-      AND (@FundDonationTypeId IS NULL OR FundDonationTypeId = @FundDonationTypeId)
+      AND (@FundDonorTypeId    IS NULL OR FundDonorTypeId    = @FundDonorTypeId)
       AND (@FundingTypeId      IS NULL OR FundingTypeId      = @FundingTypeId)
       AND (@CashTypeId         IS NULL OR CashTypeId         = @CashTypeId)
     ORDER BY FundDonationDate DESC, FundDepositId DESC
@@ -214,9 +205,7 @@ BEGIN
 
     SELECT Kind, Id, [Name]
     FROM (
-        SELECT N'donation-types' AS Kind, FundDonationTypeId AS Id, DonationTypeName     AS [Name] FROM dbo.FundDonationTypes
-        UNION ALL
-        SELECT N'funding-types',          FundingTypeId,            FundingTypeName               FROM dbo.FundingTypes
+        SELECT N'funding-types' AS Kind,  FundingTypeId AS ID,      FundingTypeName    AS [Name]  FROM dbo.FundingTypes
         UNION ALL
         SELECT N'cash-types',             CashTypeId,               CashTypeName                  FROM dbo.CashTypes
         UNION ALL
@@ -439,4 +428,32 @@ BEGIN
         ORDER BY m.[Month];
     END
 END
+GO
+
+/* =======================================================================
+   CREATE dbo.MemberRoles TABLE LINKING Members (JBF-00#) WITH AspNetRoles
+   ======================================================================= */
+IF OBJECT_ID('dbo.MemberRoles', 'U') IS NOT NULL
+    DROP TABLE dbo.MemberRoles;
+GO
+
+/* Create dbo.MemberRoles cleanly with zero warnings */
+CREATE TABLE dbo.MemberRoles (
+    MemberRoleId int IDENTITY(1, 1) NOT NULL,
+    MemberID     nvarchar(20) NOT NULL,
+    RoleId       nvarchar(450) NOT NULL,
+    AssignedAt   datetime2(7) NOT NULL DEFAULT GETDATE(),
+
+    -- 1. Primary Key on integer (only 4 bytes, fast & clean)
+    CONSTRAINT PK_MemberRoles PRIMARY KEY CLUSTERED (MemberRoleId),
+
+    -- 2. Nonclustered Unique Constraint (Max limit is 1,700 bytes; no warning)
+    CONSTRAINT UQ_MemberRoles_Member_Role UNIQUE NONCLUSTERED (MemberID, RoleId),
+
+    -- 3. Foreign Keys
+    CONSTRAINT FK_MemberRoles_Members FOREIGN KEY (MemberID) 
+        REFERENCES dbo.Members(MemberID) ON DELETE CASCADE,
+    CONSTRAINT FK_MemberRoles_AspNetRoles FOREIGN KEY (RoleId) 
+        REFERENCES dbo.AspNetRoles(Id) ON DELETE CASCADE
+);
 GO

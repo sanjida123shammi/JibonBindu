@@ -34,6 +34,14 @@ namespace Api.Controllers
             return result.Flag ? Ok(result) : Unauthorized(result);
         }
 
+        [HttpGet("registration-roles")]
+        [AllowAnonymous]
+        public async Task<ActionResult<IEnumerable<string>>> GetRegistrationRoles()
+        {
+            var roles = await _users.GetRegistrationRolesAsync();
+            return Ok(roles);
+        }
+
         /// <summary>Admin promotes a user to Member (blood-searching team), Admin, or demotes to User.</summary>
         [HttpPost("assign-role")]
         [Authorize(Roles = AppRoles.Admin)]

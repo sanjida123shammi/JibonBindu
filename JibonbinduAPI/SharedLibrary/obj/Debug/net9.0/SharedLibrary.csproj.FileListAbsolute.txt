@@ -9,3 +9,15 @@ F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\SharedLibrary\obj\Debug\net9.0\Sha
 F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\SharedLibrary\obj\Debug\net9.0\refint\SharedLibrary.dll
 F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\SharedLibrary\obj\Debug\net9.0\SharedLibrary.pdb
 F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\SharedLibrary\obj\Debug\net9.0\ref\SharedLibrary.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\SharedLibrary\bin\Debug\net9.0\SharedLibrary.deps.json
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\SharedLibrary\bin\Debug\net9.0\SharedLibrary.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\SharedLibrary\bin\Debug\net9.0\SharedLibrary.pdb
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\SharedLibrary\obj\Debug\net9.0\SharedLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\SharedLibrary\obj\Debug\net9.0\SharedLibrary.AssemblyInfoInputs.cache
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\SharedLibrary\obj\Debug\net9.0\SharedLibrary.AssemblyInfo.cs
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\SharedLibrary\obj\Debug\net9.0\SharedLibrary.csproj.CoreCompileInputs.cache
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\SharedLibrary\obj\Debug\net9.0\SharedLibrary.sourcelink.json
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\SharedLibrary\obj\Debug\net9.0\SharedLibrary.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\SharedLibrary\obj\Debug\net9.0\refint\SharedLibrary.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\SharedLibrary\obj\Debug\net9.0\SharedLibrary.pdb
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\SharedLibrary\obj\Debug\net9.0\ref\SharedLibrary.dll

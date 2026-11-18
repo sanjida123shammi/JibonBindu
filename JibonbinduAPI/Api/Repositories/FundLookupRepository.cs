@@ -28,7 +28,6 @@ namespace Api.Repositories
 
             return new FundLookupsResponse
             {
-                DonationTypes = Pick(FundLookupKinds.DonationTypes),
                 FundingTypes = Pick(FundLookupKinds.FundingTypes),
                 CashTypes = Pick(FundLookupKinds.CashTypes),
                 DonorTypes = Pick(FundLookupKinds.DonorTypes),
@@ -63,14 +62,6 @@ namespace Api.Repositories
             // The database collation is case-insensitive, so "cash" and "Cash" count as the same name.
             switch (kind)
             {
-                case FundLookupKinds.DonationTypes:
-                {
-                    if (await _context.FundDonationTypes.AnyAsync(x => x.DonationTypeName == name)) return null;
-                    var entity = new FundDonationType { DonationTypeName = name };
-                    _context.FundDonationTypes.Add(entity);
-                    await _context.SaveChangesAsync();
-                    return new LookupItem { Id = entity.FundDonationTypeId, Name = entity.DonationTypeName };
-                }
                 case FundLookupKinds.FundingTypes:
                 {
                     if (await _context.FundingTypes.AnyAsync(x => x.FundingTypeName == name)) return null;

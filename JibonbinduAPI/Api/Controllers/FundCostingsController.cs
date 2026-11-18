@@ -12,7 +12,7 @@ namespace Api.Controllers
     /// </summary>
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize(Roles = AppRoles.FundManagers)]
+    [Authorize]
     public class FundCostingsController : ControllerBase
     {
         private readonly IFundCostingRepository _costings;

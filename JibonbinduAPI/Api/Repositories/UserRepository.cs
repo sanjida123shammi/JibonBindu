@@ -39,31 +39,41 @@ namespace Api.Repositories
             if (await _userManager.FindByEmailAsync(userDTO.Email) is not null)
                 return new GeneralResponse(false, "User already exists");
 
-            // The very first account (no Admin exists yet) becomes the Admin; everybody else is a normal User.
-            // Decide this BEFORE the new user is created.
+            // Determine the selected role (defaults to Seeker if unspecified)
+            var normalizedRole = userDTO.Role?.Trim() switch
+            {
+                "BloodDonor" or "Blood-Donor" => AppRoles.BloodDonor,
+                "FundDonor" or "Fund-Donor" => AppRoles.FundDonor,
+                "Member" => AppRoles.Member,
+                _ => AppRoles.Seeker
+            };
+
+            // If this is the very first account, assign Admin; otherwise assign the selected role
             var isFirstAccount = (await _userManager.GetUsersInRoleAsync(AppRoles.Admin)).Count == 0;
-            var roleToAssign = isFirstAccount ? AppRoles.Admin : AppRoles.User;
+            var primaryRole = isFirstAccount ? AppRoles.Admin : normalizedRole;
 
             var newUser = new ApplicationUser
             {
                 Name = userDTO.Name,
                 Email = userDTO.Email,
-                UserName = userDTO.Email
+                UserName = userDTO.Email,
+                Location = "Dhaka, Bangladesh",
+                AvatarUrl = "/images/users/default-avatar.jpg"
             };
 
             var createUser = await _userManager.CreateAsync(newUser, userDTO.Password);
             if (!createUser.Succeeded)
                 return new GeneralResponse(false, string.Join("; ", createUser.Errors.Select(e => e.Description)));
 
-            foreach (var role in AppRoles.All)
-                await EnsureRoleAsync(role);
+            // Ensure roles exist in dbo.AspNetRoles
+            await EnsureRoleAsync(AppRoles.User);
+            await EnsureRoleAsync(primaryRole);
 
-            var addRole = await _userManager.AddToRoleAsync(newUser, roleToAssign);
-            if (!addRole.Succeeded)
+            // Assign base 'User' role and the chosen joining role in dbo.AspNetUserRoles
+            await _userManager.AddToRoleAsync(newUser, AppRoles.User);
+            if (primaryRole != AppRoles.User)
             {
-                // do not leave an account behind without a role
-                await _userManager.DeleteAsync(newUser);
-                return new GeneralResponse(false, "Account creation failed while assigning the role");
+                await _userManager.AddToRoleAsync(newUser, primaryRole);
             }
 
             return new GeneralResponse(true, "Account created successfully");
@@ -78,7 +88,6 @@ namespace Api.Repositories
             if (getUser is null)
                 return new LoginResponse(false, "Invalid email or password", null!);
 
-            // lockoutOnFailure: true => repeated wrong passwords temporarily lock the account
             var signIn = await _signInManager.CheckPasswordSignInAsync(getUser, loginDTO.Password, lockoutOnFailure: true);
             if (signIn.IsLockedOut)
                 return new LoginResponse(false, "Account is temporarily locked. Please try again later", null!);
@@ -86,9 +95,17 @@ namespace Api.Repositories
                 return new LoginResponse(false, "Invalid email or password", null!);
 
             var roles = await _userManager.GetRolesAsync(getUser);
-            var userSession = new UserSession(getUser.Id, getUser.Name, getUser.Email, roles.FirstOrDefault() ?? AppRoles.User);
 
-            return new LoginResponse(true, "Login successful", GenerateToken(userSession));
+            // Prioritize higher privileges: Admin > Member > User
+            var primaryRole = roles.Contains(AppRoles.Admin)
+                ? AppRoles.Admin
+                : roles.Contains(AppRoles.Member)
+                    ? AppRoles.Member
+                    : roles.FirstOrDefault() ?? AppRoles.User;
+
+            var userSession = new UserSession(getUser.Id, getUser.Name, getUser.Email, primaryRole);
+
+            return new LoginResponse(true, "Login successful", GenerateToken(userSession, roles));
         }
 
         public async Task<GeneralResponse> AssignRoleAsync(AssignRoleDTO dto)
@@ -138,30 +155,55 @@ namespace Api.Repositories
             return ids;
         }
 
+        public async Task<IEnumerable<string>> GetRegistrationRolesAsync()
+        {
+            var roles = new[] { AppRoles.Seeker, AppRoles.BloodDonor, AppRoles.FundDonor, AppRoles.Member };
+            foreach (var r in roles)
+            {
+                await EnsureRoleAsync(r);
+            }
+            return roles;
+        }
+
         private async Task EnsureRoleAsync(string roleName)
         {
             if (!await _roleManager.RoleExistsAsync(roleName))
                 await _roleManager.CreateAsync(new IdentityRole { Name = roleName });
         }
 
-        private string GenerateToken(UserSession user)
+        private string GenerateToken(UserSession user, IEnumerable<string>? roles = null)
         {
             var securityKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(_config["Jwt:Key"]!));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-            // Claim's constructor throws on null values, so every value is guarded.
-            var userClaims = new[]
+            var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id ?? string.Empty),
                 new Claim(ClaimTypes.Name, user.Name ?? user.Email ?? string.Empty),
                 new Claim(ClaimTypes.Email, user.Email ?? string.Empty),
-                new Claim(ClaimTypes.Role, user.Role ?? AppRoles.User)
             };
+
+            var roleList = roles?.ToList() ?? new List<string>();
+            if (roleList.Count == 0 && !string.IsNullOrWhiteSpace(user.Role))
+            {
+                roleList.Add(user.Role);
+            }
+            if (roleList.Count == 0)
+            {
+                roleList.Add(AppRoles.User);
+            }
+
+            // Add claims for all user roles using both standard ClaimTypes.Role and "role"
+            foreach (var r in roleList)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, r));
+                claims.Add(new Claim("role", r));
+            }
 
             var token = new JwtSecurityToken(
                 issuer: _config["Jwt:Issuer"]!,
                 audience: _config["Jwt:Audience"]!,
-                claims: userClaims,
+                claims: claims,
                 expires: DateTime.UtcNow.AddDays(1),
                 signingCredentials: credentials);
 

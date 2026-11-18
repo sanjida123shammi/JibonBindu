@@ -28,6 +28,10 @@ namespace SharedLibrary.DTOs
 
         public DonationType LastDonationType { get; set; } = DonationType.WholeBlood;
 
+        public int TotalDonation { get; set; } = 0;
+
+        public int DonationFromJbf { get; set; } = 0;
+
         [StringLength(200)] public string PreferredLocation { get; set; } = string.Empty;
         [StringLength(100)] public string PreferredTime { get; set; } = string.Empty;
         [StringLength(500)] public string Remarks { get; set; } = string.Empty;
@@ -39,7 +43,10 @@ namespace SharedLibrary.DTOs
     {
         public int BloodDonorId { get; set; }
         public int PersonId { get; set; }
+        public string FirstName { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
         public string FullName { get; set; } = string.Empty;
+        public DateTime? DateOfBirth { get; set; }
         public string ContactNo { get; set; } = string.Empty;
         public string District { get; set; } = string.Empty;
         public string City { get; set; } = string.Empty;
@@ -47,12 +54,12 @@ namespace SharedLibrary.DTOs
         public string BloodGroup { get; set; } = string.Empty;
         public string Status { get; set; } = string.Empty;
         public int TotalDonation { get; set; }
+        public int DonationFromJbf { get; set; }
         public string PreferredLocation { get; set; } = string.Empty;
         public string PreferredTime { get; set; } = string.Empty;
         public string Remarks { get; set; } = string.Empty;
         public DateTime? LastDonationDate { get; set; }
         public DonationType LastDonationType { get; set; } = DonationType.WholeBlood;
-
         public DateTime? NextEligibleDate => LastDonationDate?.AddDays(DonationRules.GetIntervalDays(LastDonationType));
         public bool IsEligibleNow => NextEligibleDate is null || NextEligibleDate.Value.Date <= DateTime.Today;
     }

@@ -16,9 +16,6 @@ namespace SharedLibrary.Models
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime FundDonationDate { get; set; }
 
-        public int FundDonationTypeId { get; set; }
-        public virtual FundDonationType FundDonationType { get; set; } = null!;
-
         public int FundDonorId { get; set; }
         public virtual FundDonor FundDonor { get; set; } = null!;
 

@@ -7,12 +7,6 @@ using System.Security.Claims;
 
 namespace Api.Controllers
 {
-    /// <summary>
-    /// Step 2 of the workflow: giving information as a blood donor.
-    /// Step 3: a new donor registration notifies the Admin and the blood-searching team.
-    /// Donor lists (which contain phone numbers) are visible only to Admin and team members.
-    /// Data access is done by stored procedures through IBloodDonorRepository / INotificationRepository.
-    /// </summary>
     [ApiController]
     [Route("api/[controller]")]
     [Authorize]
@@ -124,6 +118,44 @@ namespace Api.Controllers
                 DeleteResult.NotFound => NotFound(),
                 _ => Conflict(new { message = "This donor has donation history. Mark the donor as Unavailable instead of deleting." })
             };
+        }
+
+        // POST api/blooddonors   (Admin or Member creates a new donor)
+        [HttpPost]
+        [Authorize(Roles = AppRoles.AdminOrMember)]
+        public async Task<ActionResult<BloodDonorResponse>> Create([FromBody] BloodDonorDTO dto)
+        {
+            ValidateDonorRules(dto);
+            if (!ModelState.IsValid) return ValidationProblem(ModelState);
+
+            var donor = await _donors.RegisterAsync(CurrentUserId ?? "admin", dto);
+            return CreatedAtAction(nameof(GetById), new { id = donor.BloodDonorId }, donor);
+        }
+
+        // PUT api/blooddonors/5   (Admin or Member updates donor by ID)
+        [HttpPut("{id:int}")]
+        [Authorize(Roles = AppRoles.AdminOrMember)]
+        public async Task<IActionResult> Update(int id, [FromBody] BloodDonorDTO dto)
+        {
+            ValidateDonorRules(dto);
+            if (!ModelState.IsValid) return ValidationProblem(ModelState);
+
+            var existing = await _donors.GetByIdAsync(id);
+            if (existing is null) return NotFound();
+
+            return await _donors.UpdateAsync(id, dto) ? NoContent() : NotFound();
+        }
+
+        // PATCH api/blooddonors/5/discontinue
+        [HttpPatch("{id:int}/discontinue")]
+        [Authorize(Roles = AppRoles.AdminOrMember)]
+        public async Task<IActionResult> ToggleDiscontinue(int id)
+        {
+            var existing = await _donors.GetByIdAsync(id);
+            if (existing is null) return NotFound();
+
+            var newStatus = existing.Status == DonorStatusNames.Available ? DonorStatusNames.Unavailable : DonorStatusNames.Available;
+            return await _donors.UpdateStatusAsync(id, newStatus) ? NoContent() : NotFound();
         }
 
         // ---- helpers ----

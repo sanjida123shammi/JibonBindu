@@ -12,5 +12,7 @@ namespace Api.Repositories
 
         /// Ids of every user that holds at least one of the given roles (used for notifications).
         Task<IReadOnlyCollection<string>> GetUserIdsInRolesAsync(params string[] roles);
+
+        Task<IEnumerable<string>> GetRegistrationRolesAsync();
     }
 }

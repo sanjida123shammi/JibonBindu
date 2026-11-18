@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api.Migrations
 {
     [DbContext(typeof(JBFIdentityDbContext))]
-    [Migration("20261101101545_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20261107114023_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -946,11 +946,16 @@ namespace Api.Migrations
                         new
                         {
                             CaseStatusId = 3,
-                            CaseStatusName = "Fulfilled"
+                            CaseStatusName = "Managed By JBF"
                         },
                         new
                         {
                             CaseStatusId = 4,
+                            CaseStatusName = "Managed By Seeker"
+                        },
+                        new
+                        {
+                            CaseStatusId = 5,
                             CaseStatusName = "Cancelled"
                         });
                 });
@@ -970,6 +975,23 @@ namespace Api.Migrations
                     b.HasKey("CashTypeId");
 
                     b.ToTable("CashTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            CashTypeId = 1,
+                            CashTypeName = "By Cash"
+                        },
+                        new
+                        {
+                            CashTypeId = 2,
+                            CashTypeName = "By Bkash"
+                        },
+                        new
+                        {
+                            CashTypeId = 3,
+                            CashTypeName = "By Nagad"
+                        });
                 });
 
             modelBuilder.Entity("SharedLibrary.Models.DailyCost", b =>
@@ -1057,9 +1079,6 @@ namespace Api.Migrations
                     b.Property<DateTime>("FundDonationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("FundDonationTypeId")
-                        .HasColumnType("int");
-
                     b.Property<int>("FundDonorId")
                         .HasColumnType("int");
 
@@ -1079,30 +1098,11 @@ namespace Api.Migrations
 
                     b.HasIndex("FundDonationDate");
 
-                    b.HasIndex("FundDonationTypeId");
-
                     b.HasIndex("FundDonorId");
 
                     b.HasIndex("FundingTypeId");
 
                     b.ToTable("FundDeposits");
-                });
-
-            modelBuilder.Entity("SharedLibrary.Models.FundDonationType", b =>
-                {
-                    b.Property<int>("FundDonationTypeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FundDonationTypeId"));
-
-                    b.Property<string>("DonationTypeName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("FundDonationTypeId");
-
-                    b.ToTable("FundDonationTypes");
                 });
 
             modelBuilder.Entity("SharedLibrary.Models.FundDonor", b =>
@@ -1150,6 +1150,38 @@ namespace Api.Migrations
                     b.HasKey("FundDonorTypeId");
 
                     b.ToTable("FundDonorTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            FundDonorTypeId = 1,
+                            FundDonorTypeName = "General Member Donor"
+                        },
+                        new
+                        {
+                            FundDonorTypeId = 2,
+                            FundDonorTypeName = "Elite Donor"
+                        },
+                        new
+                        {
+                            FundDonorTypeId = 3,
+                            FundDonorTypeName = "One Time Donor"
+                        },
+                        new
+                        {
+                            FundDonorTypeId = 4,
+                            FundDonorTypeName = "Lifetime Donor"
+                        },
+                        new
+                        {
+                            FundDonorTypeId = 5,
+                            FundDonorTypeName = "Seeker Donor"
+                        },
+                        new
+                        {
+                            FundDonorTypeId = 6,
+                            FundDonorTypeName = "Volunteer Donor"
+                        });
                 });
 
             modelBuilder.Entity("SharedLibrary.Models.FundingType", b =>
@@ -1167,6 +1199,50 @@ namespace Api.Migrations
                     b.HasKey("FundingTypeId");
 
                     b.ToTable("FundingTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            FundingTypeId = 1,
+                            FundingTypeName = "Monthly"
+                        },
+                        new
+                        {
+                            FundingTypeId = 2,
+                            FundingTypeName = "Others"
+                        });
+                });
+
+            modelBuilder.Entity("SharedLibrary.Models.Member", b =>
+                {
+                    b.Property<string>("MemberID")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("BirthCertificateNo")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NIDNumber")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("PersonId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PersonRoleID")
+                        .HasColumnType("int");
+
+                    b.HasKey("MemberID");
+
+                    b.HasIndex("PersonId");
+
+                    b.HasIndex("PersonRoleID");
+
+                    b.ToTable("Members");
                 });
 
             modelBuilder.Entity("SharedLibrary.Models.Notification", b =>
@@ -1229,9 +1305,6 @@ namespace Api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("BirthCertificateNo")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("City")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -1256,9 +1329,6 @@ namespace Api.Migrations
 
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NIDNumber")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PersonRoleId")
@@ -1540,12 +1610,6 @@ namespace Api.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("SharedLibrary.Models.FundDonationType", "FundDonationType")
-                        .WithMany()
-                        .HasForeignKey("FundDonationTypeId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("SharedLibrary.Models.FundDonor", "FundDonor")
                         .WithMany()
                         .HasForeignKey("FundDonorId")
@@ -1559,8 +1623,6 @@ namespace Api.Migrations
                         .IsRequired();
 
                     b.Navigation("CashType");
-
-                    b.Navigation("FundDonationType");
 
                     b.Navigation("FundDonor");
 
@@ -1584,6 +1646,25 @@ namespace Api.Migrations
                     b.Navigation("FundDonorType");
 
                     b.Navigation("Person");
+                });
+
+            modelBuilder.Entity("SharedLibrary.Models.Member", b =>
+                {
+                    b.HasOne("SharedLibrary.Models.Person", "Person")
+                        .WithMany()
+                        .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("SharedLibrary.Models.PersonRole", "PersonRole")
+                        .WithMany()
+                        .HasForeignKey("PersonRoleID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Person");
+
+                    b.Navigation("PersonRole");
                 });
 
             modelBuilder.Entity("SharedLibrary.Models.Notification", b =>

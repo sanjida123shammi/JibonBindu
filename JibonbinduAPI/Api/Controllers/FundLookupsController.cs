@@ -12,7 +12,7 @@ namespace Api.Controllers
     /// </summary>
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize(Roles = AppRoles.FundManagers)]
+    [Authorize]
     public class FundLookupsController : ControllerBase
     {
         private readonly IFundLookupRepository _lookups;

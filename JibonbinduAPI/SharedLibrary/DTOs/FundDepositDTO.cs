@@ -8,11 +8,15 @@ namespace SharedLibrary.DTOs
         [Required]
         public DateTime FundDonationDate { get; set; }
 
-        [Range(1, int.MaxValue, ErrorMessage = "Select a donation type.")]
-        public int FundDonationTypeId { get; set; }
+        public int? FundDonorTypeId { get; set; }
 
-        [Range(1, int.MaxValue, ErrorMessage = "Select a fund donor.")]
-        public int FundDonorId { get; set; }
+        public int? FundDonorId { get; set; }
+
+        [Required, StringLength(150)]
+        public string DonorName { get; set; } = string.Empty;
+
+        [StringLength(30)]
+        public string? DonorContactNo { get; set; }
 
         [Range(0.01, 100000000.0, ErrorMessage = "Amount must be greater than 0.")]
         public decimal Amount { get; set; }
@@ -37,7 +41,7 @@ namespace SharedLibrary.DTOs
         public DateTime? From { get; set; }
         public DateTime? To { get; set; }
         public int? FundDonorId { get; set; }
-        public int? FundDonationTypeId { get; set; }
+        public int? FundDonorTypeId { get; set; }
         public int? FundingTypeId { get; set; }
         public int? CashTypeId { get; set; }
 
@@ -53,9 +57,9 @@ namespace SharedLibrary.DTOs
     {
         public int FundDepositId { get; set; }
         public DateTime FundDonationDate { get; set; }
-        public int FundDonationTypeId { get; set; }
-        public string DonationTypeName { get; set; } = string.Empty;
         public int FundDonorId { get; set; }
+        public int FundDonorTypeId { get; set; }
+        public string FundDonorTypeName { get; set; } = string.Empty;
         public string DonorName { get; set; } = string.Empty;
         public string DonorContactNo { get; set; } = string.Empty;
         public string DonationSlot { get; set; } = string.Empty;
@@ -66,5 +70,6 @@ namespace SharedLibrary.DTOs
         public int CashTypeId { get; set; }
         public string CashTypeName { get; set; } = string.Empty;
         public string Months { get; set; } = string.Empty;
+        public string? MemberId { get; set; }
     }
 }

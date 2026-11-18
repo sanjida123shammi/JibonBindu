@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Api.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -129,19 +129,6 @@ namespace Api.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DonorStatuses", x => x.DonorStatusId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "FundDonationTypes",
-                columns: table => new
-                {
-                    FundDonationTypeId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    DonationTypeName = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_FundDonationTypes", x => x.FundDonationTypeId);
                 });
 
             migrationBuilder.CreateTable(
@@ -340,8 +327,6 @@ namespace Api.Migrations
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ContactNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    NIDNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    BirthCertificateNo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     District = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     City = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Area = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -463,6 +448,34 @@ namespace Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Members",
+                columns: table => new
+                {
+                    MemberID = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    PersonId = table.Column<int>(type: "int", nullable: false),
+                    NIDNumber = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    BirthCertificateNo = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PersonRoleID = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Members", x => x.MemberID);
+                    table.ForeignKey(
+                        name: "FK_Members_PersonRoles_PersonRoleID",
+                        column: x => x.PersonRoleID,
+                        principalTable: "PersonRoles",
+                        principalColumn: "PersonRoleId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Members_Persons_PersonId",
+                        column: x => x.PersonId,
+                        principalTable: "Persons",
+                        principalColumn: "PersonId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "VolunteerAssociates",
                 columns: table => new
                 {
@@ -495,7 +508,6 @@ namespace Api.Migrations
                     FundDepositId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FundDonationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    FundDonationTypeId = table.Column<int>(type: "int", nullable: false),
                     FundDonorId = table.Column<int>(type: "int", nullable: false),
                     Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     FundReceiver = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -511,12 +523,6 @@ namespace Api.Migrations
                         column: x => x.CashTypeId,
                         principalTable: "CashTypes",
                         principalColumn: "CashTypeId",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_FundDeposits_FundDonationTypes_FundDonationTypeId",
-                        column: x => x.FundDonationTypeId,
-                        principalTable: "FundDonationTypes",
-                        principalColumn: "FundDonationTypeId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_FundDeposits_FundDonors_FundDonorId",
@@ -683,8 +689,19 @@ namespace Api.Migrations
                 {
                     { 1, "Pending" },
                     { 2, "In Progress" },
-                    { 3, "Fulfilled" },
-                    { 4, "Cancelled" }
+                    { 3, "Managed By JBF" },
+                    { 4, "Managed By Seeker" },
+                    { 5, "Cancelled" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "CashTypes",
+                columns: new[] { "CashTypeId", "CashTypeName" },
+                values: new object[,]
+                {
+                    { 1, "By Cash" },
+                    { 2, "By Bkash" },
+                    { 3, "By Nagad" }
                 });
 
             migrationBuilder.InsertData(
@@ -694,6 +711,28 @@ namespace Api.Migrations
                 {
                     { 1, "Available" },
                     { 2, "Unavailable" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "FundDonorTypes",
+                columns: new[] { "FundDonorTypeId", "FundDonorTypeName" },
+                values: new object[,]
+                {
+                    { 1, "General Member Donor" },
+                    { 2, "Elite Donor" },
+                    { 3, "One Time Donor" },
+                    { 4, "Lifetime Donor" },
+                    { 5, "Seeker Donor" },
+                    { 6, "Volunteer Donor" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "FundingTypes",
+                columns: new[] { "FundingTypeId", "FundingTypeName" },
+                values: new object[,]
+                {
+                    { 1, "Monthly" },
+                    { 2, "Others" }
                 });
 
             migrationBuilder.InsertData(
@@ -846,11 +885,6 @@ namespace Api.Migrations
                 column: "FundDonationDate");
 
             migrationBuilder.CreateIndex(
-                name: "IX_FundDeposits_FundDonationTypeId",
-                table: "FundDeposits",
-                column: "FundDonationTypeId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_FundDeposits_FundDonorId",
                 table: "FundDeposits",
                 column: "FundDonorId");
@@ -869,6 +903,16 @@ namespace Api.Migrations
                 name: "IX_FundDonors_PersonId",
                 table: "FundDonors",
                 column: "PersonId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Members_PersonId",
+                table: "Members",
+                column: "PersonId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Members_PersonRoleID",
+                table: "Members",
+                column: "PersonRoleID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Notifications_CaseInfoId",
@@ -931,6 +975,9 @@ namespace Api.Migrations
                 name: "FundDeposits");
 
             migrationBuilder.DropTable(
+                name: "Members");
+
+            migrationBuilder.DropTable(
                 name: "Notifications");
 
             migrationBuilder.DropTable(
@@ -944,9 +991,6 @@ namespace Api.Migrations
 
             migrationBuilder.DropTable(
                 name: "CashTypes");
-
-            migrationBuilder.DropTable(
-                name: "FundDonationTypes");
 
             migrationBuilder.DropTable(
                 name: "FundDonors");
