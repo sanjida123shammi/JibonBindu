@@ -1,0 +1,78 @@
+<div class="auth-page">
+  <div class="auth-bg" aria-hidden="true"></div>
+  <main class="auth-card">
+    <aside class="auth-side">
+      <h1>Welcome back</h1>
+      <span class="auth-bar"></span>
+      <p>Sign in to post blood requests, follow their status and respond when someone needs your help.</p>
+    </aside>
+
+    <section class="auth-main">
+      @if (registeredSuccess()) {
+        <div class="alert alert-success py-2">
+          Account created successfully. Please log in.
+        </div>
+      }
+
+      @if (errorMessage()) {
+        <div class="alert alert-danger py-2">
+          {{ errorMessage() }}
+        </div>
+      }
+
+      <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+        <div class="mb-3">
+          <label for="login-email" class="form-label">Email</label>
+          <input
+            id="login-email"
+            type="email"
+            class="form-control"
+            [(ngModel)]="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+            autocomplete="email"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="login-pass" class="form-label">Password</label>
+          <div class="password-box">
+            <input
+              id="login-pass"
+              [type]="showPassword ? 'text' : 'password'"
+              class="form-control"
+              [(ngModel)]="password"
+              name="password"
+              placeholder="Type your password"
+              required
+              autocomplete="current-password"
+            />
+            <button
+              type="button"
+              class="password-toggle-btn"
+              (click)="showPassword = !showPassword"
+              [title]="showPassword ? 'Hide password' : 'Show password'"
+            >
+              {{ showPassword ? '🙈' : '👁️' }}
+            </button>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="btn-jbf-action w-100"
+          [disabled]="isSubmitting() || !email || !password"
+        >
+          {{ isSubmitting() ? 'Logging in…' : 'Login' }}
+        </button>
+      </form>
+
+      <nav class="auth-footer-links">
+        <span>
+          New here? <a routerLink="/register">Create an account</a>
+        </span>
+      </nav>
+    </section>
+  </main>
+</div>

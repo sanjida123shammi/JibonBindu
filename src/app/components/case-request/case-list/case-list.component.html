@@ -1,0 +1,481 @@
+<div class="content-header">
+  <div class="header-titles">
+    <h2 class="section-heading">Case Requests</h2>
+    <span class="sub-heading"
+      >Live emergency requests registered across hospitals and blood banks</span
+    >
+  </div>
+
+  <div class="header-actions">
+    <a routerLink="/cases/new" class="btn-new-case">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+      </svg>
+      <span>New Request</span>
+    </a>
+  </div>
+</div>
+
+<!-- Status Update Feedback Toast -->
+@if (statusUpdateFeedback()) {
+  <div class="status-toast">
+    <span class="toast-dot"></span>
+    <span>{{ statusUpdateFeedback() }}</span>
+  </div>
+}
+
+<div class="case-list-card graph-card">
+  <!-- Card Header with Title and Search Input -->
+  <div class="card-top-bar">
+    <div class="card-title-group">
+      <div class="card-icon-bag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+      </div>
+      <h3 class="card-title">All Case Requests</h3>
+    </div>
+
+    <!-- Search Input with Magnifying Glass -->
+    <div class="search-box-wrapper">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        class="search-icon"
+      >
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input
+        type="text"
+        [ngModel]="searchKeyword()"
+        (ngModelChange)="searchKeyword.set($event); currentPage.set(1)"
+        placeholder="Enter Keywords..."
+        class="search-input"
+      />
+    </div>
+  </div>
+
+  <!-- Horizontal Scrollable Table Container -->
+  <div class="table-scroll-container">
+    <table class="jb-custom-table">
+      <thead>
+        <tr>
+          <!-- 1. Checkbox Select All -->
+          <th class="th-checkbox">
+            <input
+              type="checkbox"
+              [checked]="isAllSelected()"
+              (change)="toggleSelectAll()"
+              class="table-checkbox"
+            />
+          </th>
+
+          <!-- 2. Case ID -->
+          <th (click)="onSort('id')" class="sortable-th">
+            <div class="th-content">
+              <span>Case ID</span>
+              <span class="sort-arrows">
+                @if (sortColumn() === 'id') {
+                  {{ sortDirection() === 'asc' ? '▲' : '▼' }}
+                } @else {
+                  <span class="sort-idle">⇅</span>
+                }
+              </span>
+            </div>
+          </th>
+
+          <!-- 3. Date -->
+          <th (click)="onSort('date')" class="sortable-th">
+            <div class="th-content">
+              <span>Date</span>
+              <span class="sort-arrows">
+                @if (sortColumn() === 'date') {
+                  {{ sortDirection() === 'asc' ? '▲' : '▼' }}
+                } @else {
+                  <span class="sort-idle">⇅</span>
+                }
+              </span>
+            </div>
+          </th>
+
+          <!-- 4. Case No (Daily serial number resets each day) -->
+          <th (click)="onSort('caseNo')" class="sortable-th">
+            <div class="th-content">
+              <span>Case No</span>
+              <span class="sort-arrows">
+                @if (sortColumn() === 'caseNo') {
+                  {{ sortDirection() === 'asc' ? '▲' : '▼' }}
+                } @else {
+                  <span class="sort-idle">⇅</span>
+                }
+              </span>
+            </div>
+          </th>
+
+          <!-- 5. Blood Group -->
+          <th (click)="onSort('bloodGroup')" class="sortable-th">
+            <div class="th-content">
+              <span>Blood Group</span>
+              <span class="sort-arrows">
+                @if (sortColumn() === 'bloodGroup') {
+                  {{ sortDirection() === 'asc' ? '▲' : '▼' }}
+                } @else {
+                  <span class="sort-idle">⇅</span>
+                }
+              </span>
+            </div>
+          </th>
+
+          <!-- 6. Patient Problem (Pure text, NO image) -->
+          <th (click)="onSort('patientProblem')" class="sortable-th">
+            <div class="th-content">
+              <span>Patient Problem</span>
+              <span class="sort-arrows">
+                @if (sortColumn() === 'patientProblem') {
+                  {{ sortDirection() === 'asc' ? '▲' : '▼' }}
+                } @else {
+                  <span class="sort-idle">⇅</span>
+                }
+              </span>
+            </div>
+          </th>
+
+          <!-- 7. Bags Quantity -->
+          <th (click)="onSort('bloodQuantity')" class="sortable-th">
+            <div class="th-content">
+              <span>Bags Quantity</span>
+              <span class="sort-arrows">
+                @if (sortColumn() === 'bloodQuantity') {
+                  {{ sortDirection() === 'asc' ? '▲' : '▼' }}
+                } @else {
+                  <span class="sort-idle">⇅</span>
+                }
+              </span>
+            </div>
+          </th>
+
+          <!-- 8. Hemoglobin Level -->
+          <th (click)="onSort('hemoglobin')" class="sortable-th">
+            <div class="th-content">
+              <span>Hemoglobin Level</span>
+              <span class="sort-arrows">
+                @if (sortColumn() === 'hemoglobin') {
+                  {{ sortDirection() === 'asc' ? '▲' : '▼' }}
+                } @else {
+                  <span class="sort-idle">⇅</span>
+                }
+              </span>
+            </div>
+          </th>
+
+          <!-- 9. Donation Date -->
+          <th (click)="onSort('donationDate')" class="sortable-th">
+            <div class="th-content">
+              <span>Donation Date</span>
+              <span class="sort-arrows">
+                @if (sortColumn() === 'donationDate') {
+                  {{ sortDirection() === 'asc' ? '▲' : '▼' }}
+                } @else {
+                  <span class="sort-idle">⇅</span>
+                }
+              </span>
+            </div>
+          </th>
+
+          <!-- 10. Donation Time -->
+          <th (click)="onSort('donationTime')" class="sortable-th">
+            <div class="th-content">
+              <span>Donation Time</span>
+              <span class="sort-arrows">
+                @if (sortColumn() === 'donationTime') {
+                  {{ sortDirection() === 'asc' ? '▲' : '▼' }}
+                } @else {
+                  <span class="sort-idle">⇅</span>
+                }
+              </span>
+            </div>
+          </th>
+
+          <!-- 11. Donation Place -->
+          <th (click)="onSort('donationPlace')" class="sortable-th">
+            <div class="th-content">
+              <span>Donation Place</span>
+              <span class="sort-arrows">
+                @if (sortColumn() === 'donationPlace') {
+                  {{ sortDirection() === 'asc' ? '▲' : '▼' }}
+                } @else {
+                  <span class="sort-idle">⇅</span>
+                }
+              </span>
+            </div>
+          </th>
+
+          <!-- 12. Contact Number -->
+          <th (click)="onSort('contactNo')" class="sortable-th">
+            <div class="th-content">
+              <span>Contact Number</span>
+              <span class="sort-arrows">
+                @if (sortColumn() === 'contactNo') {
+                  {{ sortDirection() === 'asc' ? '▲' : '▼' }}
+                } @else {
+                  <span class="sort-idle">⇅</span>
+                }
+              </span>
+            </div>
+          </th>
+
+          <!-- 13. Reference -->
+          <th (click)="onSort('reference')" class="sortable-th">
+            <div class="th-content">
+              <span>Reference</span>
+              <span class="sort-arrows">
+                @if (sortColumn() === 'reference') {
+                  {{ sortDirection() === 'asc' ? '▲' : '▼' }}
+                } @else {
+                  <span class="sort-idle">⇅</span>
+                }
+              </span>
+            </div>
+          </th>
+
+          <!-- 14. Case Status Dropdown -->
+          <th (click)="onSort('status')" class="sortable-th">
+            <div class="th-content">
+              <span>Case Status</span>
+              <span class="sort-arrows">
+                @if (sortColumn() === 'status') {
+                  {{ sortDirection() === 'asc' ? '▲' : '▼' }}
+                } @else {
+                  <span class="sort-idle">⇅</span>
+                }
+              </span>
+            </div>
+          </th>
+
+          <!-- 15. Remarks -->
+          <th (click)="onSort('remarks')" class="sortable-th">
+            <div class="th-content">
+              <span>Remarks</span>
+              <span class="sort-arrows">
+                @if (sortColumn() === 'remarks') {
+                  {{ sortDirection() === 'asc' ? '▲' : '▼' }}
+                } @else {
+                  <span class="sort-idle">⇅</span>
+                }
+              </span>
+            </div>
+          </th>
+
+          <!-- 16. Delete Status -->
+          <th (click)="onSort('deleteStatus')" class="sortable-th">
+            <div class="th-content">
+              <span>Delete Status</span>
+              <span class="sort-arrows">
+                @if (sortColumn() === 'deleteStatus') {
+                  {{ sortDirection() === 'asc' ? '▲' : '▼' }}
+                } @else {
+                  <span class="sort-idle">⇅</span>
+                }
+              </span>
+            </div>
+          </th>
+
+          <!-- 17. Actions -->
+          <th class="th-actions">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @if (isLoading()) {
+          <tr>
+            <td colspan="17" class="td-empty">Loading live case records from database...</td>
+          </tr>
+        } @else if (paginatedCases().length === 0) {
+          <tr>
+            <td colspan="17" class="td-empty">No case requests found matching your query.</td>
+          </tr>
+        } @else {
+          @for (item of paginatedCases(); track item.id) {
+            <tr [class.row-deleted]="item.deleteStatus === 'Deleted'">
+              <!-- 1. Checkbox -->
+              <td class="td-checkbox">
+                <input
+                  type="checkbox"
+                  [checked]="selectedIds().has(item.id)"
+                  (change)="toggleSelectOne(item.id)"
+                  class="table-checkbox"
+                />
+              </td>
+
+              <!-- 2. Case ID -->
+              <td class="td-id">
+                <span class="case-id-tag">#{{ item.id }}</span>
+              </td>
+
+              <!-- 3. Date -->
+              <td class="td-date">
+                {{ item.date | date: 'mediumDate' }}
+              </td>
+
+              <!-- 4. Case No -->
+              <td class="td-caseno">
+                <span class="case-no-badge">{{ item.caseNo }}</span>
+              </td>
+
+              <!-- 5. Blood Group -->
+              <td class="td-blood">
+                <span class="blood-pill">{{ item.bloodGroup }}</span>
+              </td>
+
+              <!-- 6. Patient Problem (Pure text, NO image) -->
+              <td class="td-problem">
+                <span class="problem-text" [title]="item.patientProblem">{{
+                  item.patientProblem
+                }}</span>
+              </td>
+
+              <!-- 7. Bags Quantity -->
+              <td class="td-quantity">
+                <span class="quantity-badge"
+                  >{{ item.bloodQuantity }} {{ item.bloodQuantity === 1 ? 'Bag' : 'Bags' }}</span
+                >
+              </td>
+
+              <!-- 8. Hemoglobin Level -->
+              <td class="td-hemoglobin">{{ item.hemoglobin }} g/dL</td>
+
+              <!-- 9. Donation Date -->
+              <td class="td-donation-date">
+                {{ item.donationDate | date: 'mediumDate' }}
+              </td>
+
+              <!-- 10. Donation Time -->
+              <td class="td-time">
+                {{ item.donationTime }}
+              </td>
+
+              <!-- 11. Donation Place -->
+              <td class="td-place">
+                <span class="place-text" [title]="item.donationPlace">{{
+                  item.donationPlace
+                }}</span>
+              </td>
+
+              <!-- 12. Contact Number -->
+              <td class="td-contact">
+                <span class="contact-text">{{ item.contactNo }}</span>
+              </td>
+
+              <!-- 13. Reference -->
+              <td class="td-reference">
+                <span class="reference-badge">{{ item.reference || 'Self' }}</span>
+              </td>
+
+              <!-- 14. Case Status Dropdown (Partially updates database) -->
+              <td class="td-status">
+                <div class="status-select-container">
+                  <select
+                    [ngModel]="item.status"
+                    (ngModelChange)="onStatusChange(item.id, $event)"
+                    class="status-select-control"
+                    [class.status-pending]="item.status === 'Pending'"
+                    [class.status-progress]="item.status === 'In Progress'"
+                    [class.status-fulfilled]="item.status === 'Fulfilled'"
+                    [class.status-cancelled]="item.status === 'Cancelled'"
+                    title="Change status directly in database"
+                  >
+                    @for (st of availableStatuses(); track st) {
+                      <option [value]="st">{{ st }}</option>
+                    }
+                  </select>
+                </div>
+              </td>
+
+              <!-- 15. Remarks -->
+              <td class="td-remarks">
+                <span class="remarks-text" [title]="item.remarks || '-'">{{
+                  item.remarks || '-'
+                }}</span>
+              </td>
+
+              <!-- 16. Delete Status -->
+              <td class="td-delete-status">
+                <span
+                  class="delete-status-pill"
+                  [class.in-use]="item.deleteStatus !== 'Deleted'"
+                  [class.deleted]="item.deleteStatus === 'Deleted'"
+                >
+                  <span class="status-dot"></span>
+                  <span>{{ item.deleteStatus === 'Deleted' ? 'Deleted' : 'InUse' }}</span>
+                </span>
+              </td>
+
+              <!-- 17. Actions (Edit & Delete) -->
+              <td class="td-actions">
+                <div class="action-buttons-group">
+                  <!-- Edit Button (Pen Icon) -->
+                  <button
+                    type="button"
+                    class="action-icon-btn btn-edit"
+                    (click)="onEditCase(item.id)"
+                    title="Edit Case Information"
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                      <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                    </svg>
+                  </button>
+
+                  <!-- Delete Button (Trash Icon) -->
+                  <button
+                    type="button"
+                    class="action-icon-btn btn-delete"
+                    [class.is-deleted]="item.deleteStatus === 'Deleted'"
+                    (click)="onDeleteCase(item.id)"
+                    [title]="
+                      item.deleteStatus === 'Deleted'
+                        ? 'Restore Case (Set InUse)'
+                        : 'Mark as Deleted'
+                    "
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="3 6 5 6 21 6"></polyline>
+                      <path
+                        d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                      ></path>
+                      <line x1="10" y1="11" x2="10" y2="17"></line>
+                      <line x1="14" y1="11" x2="14" y2="17"></line>
+                    </svg>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Bottom Pagination Bar -->
+  <div class="card-bottom-bar">
+    <div class="table-counts-info">
+      Showing {{ (currentPage() - 1) * pageSize() + 1 }} to
+      {{ Math.min(currentPage() * pageSize(), filteredAndSortedCases().length) }} of
+      {{ filteredAndSortedCases().length }} entries
+    </div>
+
+    <!-- Global Pagination Component -->
+    <app-pagination
+      [totalItems]="filteredAndSortedCases().length"
+      [pageSize]="pageSize()"
+      [currentPage]="currentPage()"
+      (pageChange)="onPageChange($event)"
+    ></app-pagination>
+  </div>
+</div>

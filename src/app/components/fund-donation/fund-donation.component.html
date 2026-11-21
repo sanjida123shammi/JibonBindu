@@ -1,0 +1,91 @@
+<div class="content-header">
+  <div class="header-titles">
+    <h2 class="section-heading">Fund Donation</h2>
+    <span class="sub-heading">Support our mission — donate via mobile banking</span>
+  </div>
+</div>
+
+<div class="form-container">
+  <div class="graph-card form-card">
+    <div class="form-card-header">
+      <div class="badge-icon donate-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path
+            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+          ></path>
+        </svg>
+      </div>
+      <div class="form-header-text">
+        <h3 class="card-main-title">Donate to Jibonbindu Foundation</h3>
+        <p class="card-sub-title">
+          Your generosity saves lives. Use any mobile banking number below to send your donation.
+        </p>
+      </div>
+    </div>
+
+    <!-- Payment Method Cards -->
+    <div class="payment-methods">
+      <div class="payment-card bkash">
+        <div class="payment-logo">bKash</div>
+        <p class="payment-number">01XXXXXXXXX</p>
+        <p class="payment-type">Send Money / Payment</p>
+      </div>
+      <div class="payment-card nagad">
+        <div class="payment-logo">Nagad</div>
+        <p class="payment-number">01XXXXXXXXX</p>
+        <p class="payment-type">Send Money</p>
+      </div>
+      <div class="payment-card rocket">
+        <div class="payment-logo">Rocket</div>
+        <p class="payment-number">01XXXXXXXXX</p>
+        <p class="payment-type">Send Money</p>
+      </div>
+    </div>
+
+    <!-- Instructions -->
+    <div class="payment-instructions">
+      <h4>How to Donate:</h4>
+      <ol>
+        <li>Open your mobile banking app (bKash / Nagad / Rocket).</li>
+        <li>Select <strong>Send Money</strong> (or <strong>Payment</strong> for bKash).</li>
+        <li>Enter our number listed above and your donation amount.</li>
+        <li>Use your name or email as the reference/note.</li>
+        <li>Copy the <strong>Transaction ID</strong> you receive.</li>
+        <li>Paste it below and click <strong>Confirm Donation</strong>.</li>
+      </ol>
+    </div>
+
+    <!-- Confirm Form / Success Message -->
+    @if (!submitted()) {
+      <div class="confirm-section">
+        <label class="form-label" for="ref"
+          >Transaction / Reference ID <span class="required">*</span></label
+        >
+        <input
+          id="ref"
+          class="form-input"
+          type="text"
+          [(ngModel)]="reference"
+          placeholder="e.g. BK24XX12345678"
+          name="reference"
+        />
+        <button
+          class="btn btn-primary"
+          type="button"
+          (click)="onSubmit()"
+          [disabled]="!reference.trim()"
+        >
+          Confirm Donation
+        </button>
+      </div>
+    } @else {
+      <div class="success-message">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+        <p>{{ confirmMessage() }}</p>
+      </div>
+    }
+  </div>
+</div>

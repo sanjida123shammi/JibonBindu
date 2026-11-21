@@ -1,0 +1,250 @@
+<div class="content-header">
+  <div class="header-titles">
+    <h2 class="section-heading">Member Directory</h2>
+    <span class="sub-heading">
+      Official roster of registered Jibonbindu Foundation members, executives and regional field
+      coordinators
+    </span>
+  </div>
+
+  <div class="header-actions">
+    <a routerLink="/members/new" class="btn-new-member">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+      </svg>
+      <span>Add New Member</span>
+    </a>
+  </div>
+</div>
+
+@if (statusFeedback()) {
+  <div class="status-toast">
+    <span class="toast-dot"></span>
+    <span>{{ statusFeedback() }}</span>
+  </div>
+}
+
+@if (errorMessage()) {
+  <div class="alert-banner alert-error">
+    <span>{{ errorMessage() }}</span>
+  </div>
+}
+
+<div class="list-card graph-card">
+  <div class="card-top-bar">
+    <div class="card-title-group">
+      <div class="card-icon-bag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+      </div>
+      <h3 class="card-title">All Registered Members</h3>
+    </div>
+
+    <div class="search-box-wrapper">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        class="search-icon"
+      >
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input
+        type="text"
+        [ngModel]="searchKeyword()"
+        (ngModelChange)="searchKeyword.set($event); currentPage.set(1)"
+        placeholder="Enter Keywords..."
+        class="search-input"
+      />
+    </div>
+  </div>
+
+  <!-- Horizontal Scrollable Container -->
+  <div class="table-scroll-container">
+    <table class="jb-custom-table">
+      <thead>
+        <tr>
+          <!-- 1. Member ID -->
+          <th (click)="onSort('id')" class="sortable-th">
+            <div class="th-content">
+              <span>Member ID</span>
+              <span class="sort-arrows">
+                @if (sortColumn() === 'id') {
+                  {{ sortDirection() === 'asc' ? '▲' : '▼' }}
+                } @else {
+                  <span class="sort-idle">⇅</span>
+                }
+              </span>
+            </div>
+          </th>
+
+          <!-- 2. Photo -->
+          <th class="th-photo">Photo</th>
+
+          <!-- 3. Full Name -->
+          <th (click)="onSort('name')" class="sortable-th">
+            <div class="th-content">
+              <span>Full Name</span>
+              <span class="sort-arrows">
+                @if (sortColumn() === 'name') {
+                  {{ sortDirection() === 'asc' ? '▲' : '▼' }}
+                } @else {
+                  <span class="sort-idle">⇅</span>
+                }
+              </span>
+            </div>
+          </th>
+
+          <!-- 4. Role -->
+          <th (click)="onSort('role')" class="sortable-th">
+            <div class="th-content">
+              <span>Role</span>
+              <span class="sort-arrows">
+                @if (sortColumn() === 'role') {
+                  {{ sortDirection() === 'asc' ? '▲' : '▼' }}
+                } @else {
+                  <span class="sort-idle">⇅</span>
+                }
+              </span>
+            </div>
+          </th>
+
+          <!-- 5. Contact Number -->
+          <th>Contact Number</th>
+
+          <!-- 6. Date of Birth -->
+          <th (click)="onSort('dob')" class="sortable-th">
+            <div class="th-content">
+              <span>Date of Birth</span>
+              <span class="sort-arrows">
+                @if (sortColumn() === 'dob') {
+                  {{ sortDirection() === 'asc' ? '▲' : '▼' }}
+                } @else {
+                  <span class="sort-idle">⇅</span>
+                }
+              </span>
+            </div>
+          </th>
+
+          <!-- 7. Address -->
+          <th>Address</th>
+
+          <!-- 8. NID / Birth Cert -->
+          <th>NID / Birth Cert</th>
+
+          <!-- 9. Actions -->
+          <th class="th-actions">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @if (pagedMembers().length === 0) {
+          <tr>
+            <td colspan="9" class="td-empty">
+              <div class="empty-state">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <p>No members found in directory.</p>
+              </div>
+            </td>
+          </tr>
+        } @else {
+          @for (item of pagedMembers(); track item.memberID) {
+            <tr class="table-row">
+              <td class="td-member-id">
+                <span class="member-id-badge">{{ item.memberID }}</span>
+              </td>
+              <td class="td-photo">
+                <div class="member-avatar">
+                  @if (item.imageUrl) {
+                    <img [src]="getImageUrl(item.imageUrl)" alt="Avatar" class="avatar-thumbnail" />
+                  } @else {
+                    <span class="avatar-initials">{{ getInitials(item.fullName) }}</span>
+                  }
+                </div>
+              </td>
+              <td class="td-name">
+                <strong class="name-text">{{
+                  item.fullName || item.firstName + ' ' + item.lastName
+                }}</strong>
+              </td>
+              <td class="td-role">
+                <span
+                  class="role-badge"
+                  [class.role-exec]="item.roleName?.includes('Executive')"
+                  [class.role-gen]="!item.roleName?.includes('Executive')"
+                >
+                  {{ item.roleName || 'General Member' }}
+                </span>
+              </td>
+              <td class="td-contact">{{ item.contactNumber }}</td>
+              <td class="td-dob">{{ formatDate(item.dateOfBirth) }}</td>
+              <td class="td-address">
+                <span class="address-text">
+                  {{ item.area ? item.area + ', ' : '' }}{{ item.city || item.district }}
+                </span>
+              </td>
+              <td class="td-nid">
+                @if (item.nidNumber) {
+                  <span class="id-doc nid-doc" title="National ID">NID: {{ item.nidNumber }}</span>
+                } @else if (item.birthCertificateNo) {
+                  <span class="id-doc cert-doc" title="Birth Certificate"
+                    >BC: {{ item.birthCertificateNo }}</span
+                  >
+                } @else {
+                  <span class="text-muted">—</span>
+                }
+              </td>
+              <td class="td-actions">
+                <div class="actions-group">
+                  <button
+                    type="button"
+                    class="btn-action btn-edit"
+                    (click)="editMember(item)"
+                    title="Edit Member Profile"
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                      <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                    </svg>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btn-action btn-delete"
+                    (click)="deleteMember(item)"
+                    title="Delete Member"
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="3 6 5 6 21 6"></polyline>
+                      <path
+                        d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <app-pagination
+    [totalItems]="filteredMembers().length"
+    [pageSize]="pageSize()"
+    [currentPage]="currentPage()"
+    (pageChange)="onPageChange($event)"
+  ></app-pagination>
+</div>

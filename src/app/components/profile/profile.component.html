@@ -1,0 +1,217 @@
+<!-- Section Header matching Dashboard Page Layout -->
+<div class="content-header">
+  <div class="header-titles">
+    <h2 class="section-heading">My Profile</h2>
+    <span class="sub-heading">Personal Information, Credentials & Security Settings</span>
+  </div>
+</div>
+
+<!-- PROFILE CONTAINER SIZED EXACTLY LIKE DASHBOARD'S MAIN CONTENT & GRAPH-CARD -->
+<div class="jb-profile-section">
+  <div class="profile-graph-card">
+    <!-- Top Close Button (x) -->
+    <button
+      type="button"
+      class="profile-close-btn"
+      (click)="closeProfile()"
+      title="Close and return to Dashboard"
+    >
+      &times;
+    </button>
+
+    <!-- Avatar & Header info -->
+    <div class="profile-card-header">
+      <div class="avatar-edit-wrapper">
+        <img [src]="displayAvatarUrl" alt="User Avatar" class="profile-card-avatar" />
+        <input
+          type="file"
+          accept="image/*"
+          (change)="onAvatarSelected($event)"
+          class="file-input-hidden"
+          #avatarFileInput
+          style="display: none"
+        />
+        <button
+          type="button"
+          class="avatar-pencil-btn"
+          (click)="avatarFileInput.click()"
+          title="Browse and change avatar photo"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            class="pencil-icon"
+          >
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="profile-card-titles">
+        <h3 class="card-user-name">{{ fullName || 'Your Name' }}</h3>
+        <span class="card-user-email">{{ email }}</span>
+      </div>
+    </div>
+
+    <div class="card-divider"></div>
+
+    <!-- Alerts feedback -->
+    @if (saveSuccessMessage()) {
+      <div class="profile-alert alert-success">✓ {{ saveSuccessMessage() }}</div>
+    }
+    @if (saveErrorMessage()) {
+      <div class="profile-alert alert-danger">⚠ {{ saveErrorMessage() }}</div>
+    }
+
+    <!-- Editable Fields Grid -->
+    <form (ngSubmit)="onSaveChanges()">
+      <div class="profile-fields-grid">
+        <!-- Field 1: Name -->
+        <div class="profile-field-group">
+          <label class="field-label">Name</label>
+          <div class="field-input-box">
+            <input
+              type="text"
+              name="fullName"
+              [(ngModel)]="fullName"
+              class="field-input"
+              placeholder="your name"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Field 2: Email account -->
+        <div class="profile-field-group">
+          <label class="field-label">Email account</label>
+          <div class="field-input-box">
+            <input
+              type="email"
+              name="email"
+              [ngModel]="email"
+              readonly
+              class="field-input text-muted-readonly"
+              placeholder="yourname@gmail.com"
+            />
+          </div>
+        </div>
+
+        <!-- Field 3: Mobile number -->
+        <div class="profile-field-group">
+          <label class="field-label">Mobile number</label>
+          <div class="field-input-box">
+            <input
+              type="text"
+              name="mobileNumber"
+              [(ngModel)]="mobileNumber"
+              class="field-input"
+              placeholder="Add number"
+            />
+          </div>
+        </div>
+
+        <!-- Field 4: Location -->
+        <div class="profile-field-group">
+          <label class="field-label">Location</label>
+          <div class="field-input-box">
+            <input
+              type="text"
+              name="location"
+              [(ngModel)]="location"
+              class="field-input"
+              placeholder="e.g. Bangladesh"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 5: Change Password Toggle -->
+      <div class="password-toggle-row">
+        <button type="button" class="password-toggle-btn" (click)="togglePasswordSection()">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            class="lock-icon"
+          >
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          <span>{{ showPasswordSection() ? 'Hide Password Options' : 'Change Password' }}</span>
+        </button>
+      </div>
+
+      <!-- Expanded Password Fields -->
+      @if (showPasswordSection()) {
+        <div class="password-fields-panel">
+          <div class="profile-fields-grid">
+            <div class="profile-field-group">
+              <label class="field-label">Current Password</label>
+              <div class="field-input-box">
+                <input
+                  type="password"
+                  name="currentPassword"
+                  [(ngModel)]="currentPassword"
+                  class="field-input"
+                  placeholder="Enter current password"
+                />
+              </div>
+            </div>
+
+            <div class="profile-field-group">
+              <label class="field-label">New Password</label>
+              <div class="field-input-box">
+                <input
+                  type="password"
+                  name="newPassword"
+                  [(ngModel)]="newPassword"
+                  class="field-input"
+                  placeholder="At least 6 characters"
+                />
+              </div>
+            </div>
+
+            <div class="profile-field-group">
+              <label class="field-label">Confirm Password</label>
+              <div class="field-input-box">
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  [(ngModel)]="confirmPassword"
+                  class="field-input"
+                  placeholder="Re-type new password"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+
+      <div class="card-divider"></div>
+
+      <!-- Bottom Action Buttons: Save Change & Logout -->
+      <div class="profile-actions-footer">
+        <button type="submit" class="btn-save-change" [disabled]="isSaving()">
+          {{ isSaving() ? 'Saving…' : 'Save Change' }}
+        </button>
+
+        <button
+          type="button"
+          class="btn-logout-link"
+          (click)="onLogout()"
+          title="Log out and return to React Login"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+          <span>Log out</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,269 @@
+/* ==========================================================================
+   GLOBAL DESIGN SYSTEM & SHARED UTILITY STYLES - JIBONBINDU
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  color: #f1f5f9;
+  background-color: #050102;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   UNIVERSAL SLEEK SCROLLBAR WITH TRANSPARENT BACKGROUND
+   ========================================================================== */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 60, 90, 0.35) transparent; /* Firefox */
+}
+
+*::-webkit-scrollbar,
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+}
+
+*::-webkit-scrollbar-track,
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+*::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 60, 90, 0.25);
+  border-radius: 6px;
+}
+
+*::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 60, 90, 0.55);
+}
+
+*::-webkit-scrollbar-corner,
+::-webkit-scrollbar-corner {
+  background: transparent !important;
+}
+
+/* Shared Content Header Styles */
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.header-titles {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-heading {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.25rem 0;
+  color: #ffffff;
+}
+
+[data-theme='light'] .section-heading {
+  color: #0f172a;
+}
+
+.sub-heading {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* Glassmorphism Card Utility */
+.graph-card,
+.profile-graph-card {
+  width: 100%;
+  position: relative;
+  background: rgb(40 34 36);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 60, 90, 0.16);
+  border-radius: 20px;
+  padding: 1.75rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  color: #f1f5f9;
+  transition: all 0.25s ease;
+}
+
+[data-theme='light'] .graph-card,
+[data-theme='light'] .profile-graph-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  color: #0f172a;
+}
+:root {
+  --jbf-navy: #0b2230;
+  --jbf-red: #e0334c;
+  --jbf-red-dark: #b82137;
+}
+
+.auth-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  position: relative;
+  background-color: #0b141a;
+}
+
+.auth-bg {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, #4a1f2a, transparent 55%),
+    radial-gradient(circle at 80% 70%, #123a4d, transparent 55%), #0c151c;
+  z-index: 0;
+}
+
+.auth-card {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  width: min(100%, 600px);
+  min-height: 500px;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+.auth-side {
+  background: var(--jbf-navy);
+  color: #ffffff;
+  padding: 36px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-side h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.auth-bar {
+  display: block;
+  width: 90px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--jbf-red);
+  margin: 20px 0;
+}
+
+.auth-side p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #d1d5db;
+}
+
+.auth-main {
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #1e293b;
+}
+
+.password-box {
+  position: relative;
+}
+
+.password-box .form-control {
+  padding-right: 2.75rem;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 2.75rem;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.btn-jbf-action {
+  background-color: var(--jbf-navy);
+  color: #ffffff;
+  border: none;
+  font-weight: 600;
+  padding: 0.7rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-jbf-action:hover:not(:disabled) {
+  background-color: var(--jbf-red-dark);
+}
+
+.btn-jbf-action:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.auth-footer-links {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+}
+
+.auth-footer-links a {
+  color: var(--jbf-navy);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-footer-links a:hover {
+  text-decoration: underline;
+  color: var(--jbf-red);
+}
+
+@media (max-width: 640px) {
+  .auth-card {
+    grid-template-columns: 1fr;
+  }
+  .auth-side p {
+    display: none;
+  }
+}

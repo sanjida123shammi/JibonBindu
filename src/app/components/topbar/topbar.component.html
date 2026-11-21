@@ -1,0 +1,221 @@
+<header class="jb-topbar">
+  <!-- Brand Logo -->
+  <div class="jb-logo-container" (click)="navigateToDashboard()">
+    <div class="jb-logo-badge">
+      <svg viewBox="0 0 24 24" class="blood-drop-icon" fill="currentColor">
+        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+      </svg>
+    </div>
+    <div class="jb-logo-text">
+      <span class="jb-logo-main">{{ t('brandName') }}</span>
+      <span class="jb-logo-tag">{{ t('tagline') }}</span>
+    </div>
+  </div>
+
+  <!-- Center Search Bar -->
+  <div class="jb-search-box">
+    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+    <input type="text" [placeholder]="t('searchPlaceholder')" />
+  </div>
+
+  <!-- Top-Right Actions -->
+  <div class="jb-topbar-actions">
+    <!-- Notification Icon -->
+    <div class="action-item notification-wrapper">
+      <button
+        type="button"
+        class="icon-btn"
+        (click)="toggleNotificationMenu($event)"
+        title="Notifications"
+        [attr.aria-expanded]="isNotificationMenuOpen()"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          class="action-icon"
+        >
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+          <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+        </svg>
+        @if (unreadNotificationsCount() > 0) {
+          <span class="notification-badge">{{ unreadNotificationsCount() }}</span>
+        }
+      </button>
+
+      @if (isNotificationMenuOpen()) {
+        <div class="jb-dropdown-menu notification-menu">
+          <div class="dropdown-header">
+            <h6>{{ t('notifications') }}</h6>
+            <button class="link-btn" (click)="markAllNotificationsRead()">
+              {{ t('markAllRead') }}
+            </button>
+          </div>
+          <div class="dropdown-divider"></div>
+          <div class="notifications-list">
+            @for (item of notifications(); track item.id) {
+              <div class="notification-item" [class.unread]="!item.isRead">
+                <div class="notif-indicator"></div>
+                <div class="notif-content">
+                  <span class="notif-title">{{ item.title }}</span>
+                  <p class="notif-message">{{ getCleanMessage(item.message) }}</p>
+                  <span class="notif-time">{{ item.createdAt }}</span>
+
+                  @if (item.type === 'MemberRequest' && !item.isRead) {
+                    <div class="notif-actions">
+                      <button
+                        class="notif-btn approve"
+                        type="button"
+                        (click)="approveMemberRequest(item)"
+                      >
+                        ✓ Approve
+                      </button>
+                      <button
+                        class="notif-btn hold"
+                        type="button"
+                        (click)="holdMemberRequest(item)"
+                      >
+                        — Hold
+                      </button>
+                    </div>
+                  }
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Theme Toggle (Dark & Light) -->
+    <div class="action-item theme-toggle-wrapper">
+      <button
+        type="button"
+        class="icon-btn theme-toggle-btn"
+        (click)="toggleTheme()"
+        [title]="
+          themeService.currentTheme() === 'dark' ? 'Switch to Light Theme' : 'Switch to Dark Theme'
+        "
+      >
+        @if (themeService.currentTheme() === 'dark') {
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            class="action-icon sun-icon"
+          >
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        } @else {
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            class="action-icon moon-icon"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        }
+      </button>
+    </div>
+
+    <!-- Language Toggle (Bn/En) -->
+    <div class="action-item lang-toggle-wrapper">
+      <button
+        type="button"
+        class="lang-switch-btn"
+        (click)="toggleLanguage()"
+        title="Switch Language: Bangla / English"
+      >
+        <span [class.active-lang]="themeService.currentLanguage() === 'bn'">Bn</span>
+        <span class="lang-divider">/</span>
+        <span [class.active-lang]="themeService.currentLanguage() === 'en'">En</span>
+      </button>
+    </div>
+
+    <!-- Profile Avatar & Dropdown Menu -->
+    <div class="action-item profile-wrapper">
+      <button
+        type="button"
+        class="profile-avatar-btn"
+        (click)="toggleProfileMenu($event)"
+        title="User Profile Menu"
+      >
+        <img [src]="userAvatarUrl" alt="Avatar" class="profile-avatar-img" />
+      </button>
+
+      @if (isProfileMenuOpen()) {
+        <div class="jb-dropdown-menu profile-dropdown-menu">
+          <div class="profile-header-card">
+            <img [src]="userAvatarUrl" alt="Avatar" class="dropdown-avatar" />
+            <div class="profile-header-details">
+              <span class="user-name">{{ currentUser().fullName }}</span>
+              <span class="user-role">{{ currentUser().email }}</span>
+            </div>
+          </div>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-body-links">
+            <a class="dropdown-item-link" (click)="navigateToDashboard()">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                class="menu-icon"
+              >
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              <span>{{ t('dashboard') }}</span>
+            </a>
+            <a class="dropdown-item-link" (click)="navigateToProfile()">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                class="menu-icon"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span>{{ t('myProfile') }}</span>
+            </a>
+          </div>
+          <div class="dropdown-divider"></div>
+          <!-- Logout Option -->
+          <button class="dropdown-item-link logout-item" (click)="onLogout()">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              class="menu-icon"
+            >
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+            <span>{{ t('logout') }}</span>
+          </button>
+        </div>
+      }
+    </div>
+  </div>
+</header>

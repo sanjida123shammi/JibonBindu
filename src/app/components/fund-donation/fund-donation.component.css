@@ -1,0 +1,102 @@
+.donate-icon {
+  background: linear-gradient(135deg, #e63946, #f4a261);
+}
+
+.payment-methods {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+.payment-card {
+  flex: 1;
+  min-width: 140px;
+  border-radius: 10px;
+  padding: 1.2rem 1rem;
+  text-align: center;
+  color: #fff;
+}
+
+.payment-card.bkash {
+  background: #e2136e;
+}
+.payment-card.nagad {
+  background: #f05a28;
+}
+.payment-card.rocket {
+  background: #8b1a9e;
+}
+
+.payment-logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.4rem;
+}
+
+.payment-number {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.2rem 0;
+  letter-spacing: 1px;
+}
+
+.payment-type {
+  font-size: 0.75rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.payment-instructions {
+  background: var(--jb-surface, #f9fafb);
+  border: 1px solid var(--jb-border, #e5e7eb);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.payment-instructions h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.payment-instructions ol {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.payment-instructions li {
+  margin-bottom: 0.3rem;
+}
+
+.confirm-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 420px;
+}
+
+.success-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: #d1fae5;
+  border: 1px solid #34d399;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  color: #065f46;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.success-message svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  stroke: #059669;
+  margin-top: 2px;
+}

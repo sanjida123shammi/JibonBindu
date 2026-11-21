@@ -1,0 +1,13 @@
+<div class="jb-dashboard-wrapper" [attr.data-theme]="themeService.currentTheme()">
+  @if (isAuthView()) {
+    <router-outlet></router-outlet>
+  } @else {
+    <app-topbar></app-topbar>
+    <div class="jb-layout-body">
+      <app-sidebar></app-sidebar>
+      <main class="jb-main-content">
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+  }
+</div>

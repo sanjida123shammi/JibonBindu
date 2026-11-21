@@ -1,0 +1,216 @@
+<div class="content-header">
+  <div class="header-titles">
+    <h2 class="section-heading">
+      {{ isEditMode() ? 'Edit Fund Deposit #Inv-FD-' + depositId : 'Add New Fund Deposit' }}
+    </h2>
+    <span class="sub-heading">
+      Record donor contributions, foundation grants, campaigns and zakat deposits
+    </span>
+  </div>
+</div>
+
+<div class="form-container">
+  <div class="graph-card form-card">
+    <button
+      type="button"
+      class="form-close-btn"
+      (click)="cancel()"
+      title="Cancel and return to Deposit History"
+    >
+      &times;
+    </button>
+
+    <div class="form-card-header">
+      <div class="badge-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="12" y1="1" x2="12" y2="23"></line>
+          <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+        </svg>
+      </div>
+      <div class="header-text">
+        <h3 class="card-main-title">
+          {{ isEditMode() ? 'Update Deposit Record' : 'New Fund Deposit Entry' }}
+        </h3>
+        <p class="card-sub-title">
+          Deposit vouchers sync in real time with financial ledgers and receipt history
+        </p>
+      </div>
+    </div>
+
+    @if (errorMessage()) {
+      <div class="alert-banner alert-error">
+        <span>{{ errorMessage() }}</span>
+      </div>
+    }
+
+    <form (ngSubmit)="onSubmit()" class="fields-grid">
+      <!-- Row 1: Deposit Date & Fund Donor Type -->
+      <div class="field-row-split">
+        <div class="split-col">
+          <label class="field-label" for="fundDonationDate">Deposit Date (M/D/Y)</label>
+          <div class="field-input-box">
+            <input
+              id="fundDonationDate"
+              type="date"
+              name="fundDonationDate"
+              [(ngModel)]="fundDonationDate"
+              class="field-input date-input-clickable"
+              (click)="openDatePicker($event)"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="split-col">
+          <label class="field-label" for="fundDonorTypeId">Fund Donor Type</label>
+          <div class="field-input-box">
+            <select
+              id="fundDonorTypeId"
+              name="fundDonorTypeId"
+              [(ngModel)]="fundDonorTypeId"
+              class="field-input select-input"
+            >
+              @for (dt of donorTypes; track dt.id) {
+                <option [value]="dt.id">{{ dt.name }}</option>
+              }
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: Donor Name (Normal text input) & Donor Contact Number -->
+      <div class="field-row-split">
+        <div class="split-col">
+          <label class="field-label" for="donorName">Donor Name</label>
+          <div class="field-input-box">
+            <input
+              id="donorName"
+              type="text"
+              name="donorName"
+              [(ngModel)]="donorName"
+              placeholder="e.g. Sharmin Farhana"
+              class="field-input"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="split-col">
+          <label class="field-label" for="donorContactNo">Donor Contact No (Optional)</label>
+          <div class="field-input-box">
+            <input
+              id="donorContactNo"
+              type="text"
+              name="donorContactNo"
+              [(ngModel)]="donorContactNo"
+              placeholder="e.g. +8801321456789"
+              class="field-input"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: Deposit Amount & Received By -->
+      <div class="field-row-split">
+        <div class="split-col">
+          <label class="field-label" for="amount">Deposit Amount (BDT)</label>
+          <div class="field-input-box">
+            <input
+              id="amount"
+              type="number"
+              name="amount"
+              [(ngModel)]="amount"
+              min="1"
+              step="any"
+              placeholder="e.g. 1000"
+              class="field-input"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="split-col">
+          <label class="field-label" for="fundReceiver">Received By</label>
+          <div class="field-input-box">
+            <input
+              id="fundReceiver"
+              type="text"
+              name="fundReceiver"
+              [(ngModel)]="fundReceiver"
+              placeholder="e.g. Niloy Vai / Cashier"
+              class="field-input"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 4: Funding Type & Payment Mode -->
+      <div class="field-row-split">
+        <div class="split-col">
+          <label class="field-label" for="fundingTypeId">Funding Account Category</label>
+          <div class="field-input-box">
+            <select
+              id="fundingTypeId"
+              name="fundingTypeId"
+              [(ngModel)]="fundingTypeId"
+              class="field-input select-input"
+            >
+              @for (ft of fundingTypes; track ft.id) {
+                <option [value]="ft.id">{{ ft.name }}</option>
+              }
+            </select>
+          </div>
+        </div>
+
+        <div class="split-col">
+          <label class="field-label" for="cashTypeId">Payment Method (Cash Type)</label>
+          <div class="field-input-box">
+            <select
+              id="cashTypeId"
+              name="cashTypeId"
+              [(ngModel)]="cashTypeId"
+              class="field-input select-input"
+            >
+              @for (ct of cashTypes; track ct.id) {
+                <option [value]="ct.id">{{ ct.name }}</option>
+              }
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 5: Contribution Month / Notes -->
+      <div class="field-row">
+        <label class="field-label" for="months">Donation Month / Remarks</label>
+        <div class="field-input-box">
+          <input
+            id="months"
+            type="text"
+            name="months"
+            [(ngModel)]="months"
+            placeholder="e.g. June 2025 / Monthly installment"
+            class="field-input"
+          />
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="field-actions">
+        <button type="button" class="btn-cancel" (click)="cancel()" [disabled]="isSubmitting()">
+          Cancel
+        </button>
+        <button type="submit" class="btn-submit" [disabled]="isSubmitting()">
+          @if (isSubmitting()) {
+            <span class="btn-spinner"></span>
+            <span>Processing...</span>
+          } @else {
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>{{ isEditMode() ? 'Update Deposit' : 'Create Deposit' }}</span>
+          }
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
