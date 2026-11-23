@@ -1,11 +1,9 @@
 <div class="content-header">
   <div class="header-titles">
     <h2 class="section-heading">
-      {{ isEditMode() ? 'Edit Member Profile #' + memberId : 'Add New Member' }}
+      {{ isEditMode() ? t('editMemberHeading') + ' #' + memberId : t('newMemberHeading') }}
     </h2>
-    <span class="sub-heading">
-      Register blood donation foundation members, executive coordinators, and field volunteers
-    </span>
+    <span class="sub-heading">{{ t('newMemberSub') }}</span>
   </div>
 </div>
 
@@ -31,7 +29,7 @@
       </div>
       <div class="header-text">
         <h3 class="card-main-title">
-          {{ isEditMode() ? 'Update Member Profile' : 'Member Registration Form' }}
+          {{ isEditMode() ? t('updateMember') : t('newMemberHeading') }}
         </h3>
         <p class="card-sub-title">
           All members receive sequential JBF ID credentials and foundation authorization
@@ -61,7 +59,7 @@
           }
         </div>
         <div class="avatar-upload-meta">
-          <label class="field-label">Member Photo</label>
+          <label class="field-label">{{ t('memberPhoto') }}</label>
           <input
             type="file"
             accept="image/*"
@@ -77,14 +75,14 @@
           >
             @if (isUploadingImage()) {
               <span class="btn-spinner"></span>
-              <span>Uploading...</span>
+              <span>{{ t('loading') }}</span>
             } @else {
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                 <polyline points="17 8 12 3 7 8"></polyline>
                 <line x1="12" y1="3" x2="12" y2="15"></line>
               </svg>
-              <span>{{ imageUrl ? 'Change Photo' : 'Upload Photo' }}</span>
+              <span>{{ imageUrl ? t('changePhoto') : t('uploadPhoto') }}</span>
             }
           </button>
           <span class="avatar-hint">PNG, JPG or WEBP up to 5MB</span>
@@ -94,7 +92,7 @@
       <!-- Row 1: First Name & Last Name -->
       <div class="field-row-split">
         <div class="split-col">
-          <label class="field-label" for="firstName">First Name</label>
+          <label class="field-label" for="firstName">{{ t('firstName') }}</label>
           <div class="field-input-box">
             <input
               id="firstName"
@@ -109,7 +107,7 @@
         </div>
 
         <div class="split-col">
-          <label class="field-label" for="lastName">Last Name</label>
+          <label class="field-label" for="lastName">{{ t('lastName') }}</label>
           <div class="field-input-box">
             <input
               id="lastName"
@@ -127,7 +125,7 @@
       <!-- Row 2: Date of Birth & Contact Number -->
       <div class="field-row-split">
         <div class="split-col">
-          <label class="field-label" for="dateOfBirth">Date of Birth (M/D/Y)</label>
+          <label class="field-label" for="dateOfBirth">{{ t('dateOfBirth') }}</label>
           <div class="field-input-box">
             <input
               id="dateOfBirth"
@@ -142,7 +140,7 @@
         </div>
 
         <div class="split-col">
-          <label class="field-label" for="contactNumber">Contact Number</label>
+          <label class="field-label" for="contactNumber">{{ t('contactNumber') }}</label>
           <div class="field-input-box">
             <input
               id="contactNumber"
@@ -160,7 +158,7 @@
       <!-- Row 3: District & Area -->
       <div class="field-row-split">
         <div class="split-col">
-          <label class="field-label" for="district">District</label>
+          <label class="field-label" for="district">{{ t('district') }}</label>
           <div class="field-input-box">
             <select
               id="district"
@@ -176,7 +174,7 @@
         </div>
 
         <div class="split-col">
-          <label class="field-label" for="area">Area / Thana / Location</label>
+          <label class="field-label" for="area">{{ t('area') }}</label>
           <div class="field-input-box">
             <input
               id="area"
@@ -194,7 +192,7 @@
       <div class="field-row-split">
         <div class="split-col">
           <label class="field-label" for="nidNumber">
-            National ID (NID) Number <span class="label-badge">Required or Birth Cert</span>
+            {{ t('nidNumber') }} <span class="label-badge">Required or Birth Cert</span>
           </label>
           <div class="field-input-box">
             <input
@@ -210,7 +208,7 @@
 
         <div class="split-col">
           <label class="field-label" for="birthCertificateNo">
-            Birth Certificate No <span class="label-badge">Required if No NID</span>
+            {{ t('birthCertificateNo') }} <span class="label-badge">Required if No NID</span>
           </label>
           <div class="field-input-box">
             <input
@@ -225,10 +223,11 @@
         </div>
       </div>
 
-      <!-- Row 5: Email Account (Links to User Account if exists) -->
+      <!-- Row 5: Email Account -->
       <div class="field-row">
         <label class="field-label" for="email">
-          Email Account <span class="label-badge">Optional - Connects with User Profile</span>
+          {{ t('emailAccount') }}
+          <span class="label-badge">Optional - Connects with User Profile</span>
         </label>
         <div class="field-input-box">
           <input
@@ -245,17 +244,17 @@
       <!-- Action Buttons -->
       <div class="field-actions">
         <button type="button" class="btn-cancel" (click)="cancel()" [disabled]="isSubmitting()">
-          Cancel
+          {{ t('cancel') }}
         </button>
         <button type="submit" class="btn-submit" [disabled]="isSubmitting()">
           @if (isSubmitting()) {
             <span class="btn-spinner"></span>
-            <span>Processing...</span>
+            <span>{{ t('loading') }}</span>
           } @else {
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="20 6 9 17 4 12"></polyline>
             </svg>
-            <span>{{ isEditMode() ? 'Update Member' : 'Register Member' }}</span>
+            <span>{{ isEditMode() ? t('updateMember') : t('registerMember') }}</span>
           }
         </button>
       </div>

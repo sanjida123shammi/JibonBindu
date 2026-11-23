@@ -3,6 +3,7 @@ import { ChangeDetectorRef, Component, inject, OnInit, signal } from '@angular/c
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { MemberService, PersonRoleOption } from '../../../services/member.service';
+import { ThemeService } from '../../../services/theme.service';
 
 @Component({
   selector: 'app-member-form',
@@ -16,6 +17,11 @@ export class MemberFormComponent implements OnInit {
   private router = inject(Router);
   private route = inject(ActivatedRoute);
   private cdr = inject(ChangeDetectorRef);
+  readonly themeService = inject(ThemeService);
+  
+  t(key: string): string {
+    return this.themeService.translate(key);
+  }
 
   isEditMode = signal<boolean>(false);
   memberId: string | null = null;

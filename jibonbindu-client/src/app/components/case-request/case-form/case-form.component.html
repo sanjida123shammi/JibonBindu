@@ -1,17 +1,14 @@
 <div class="content-header">
   <div class="header-titles">
     <h2 class="section-heading">
-      {{ isEditMode() ? 'Edit Case Request #' + caseId : 'New Case Request' }}
+      {{ isEditMode() ? t('editCaseRequestHeading') + ' #' + caseId : t('newCaseRequestHeading') }}
     </h2>
-    <span class="sub-heading"
-      >Submit urgent blood requirements with complete clinical and contact details</span
-    >
+    <span class="sub-heading">{{ t('newCaseRequestSub') }}</span>
   </div>
 </div>
 
 <div class="case-form-container">
   <div class="graph-card case-card">
-    <!-- Close / Back Button -->
     <button
       type="button"
       class="form-close-btn"
@@ -21,7 +18,6 @@
       &times;
     </button>
 
-    <!-- Header Section with Icon and Description -->
     <div class="case-card-header">
       <div class="case-badge-icon">
         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -30,27 +26,25 @@
       </div>
       <div class="case-header-text">
         <h3 class="card-main-title">
-          {{ isEditMode() ? 'Update Case Request' : 'Emergency Blood Request Form' }}
+          {{ isEditMode() ? t('updateCaseRequest') : t('emergencyBloodFormTitle') }}
         </h3>
         <p class="card-sub-title">
-          All details sync with the live database and donor broadcast network
+          {{ t('emergencyBloodFormSub') }}
         </p>
       </div>
     </div>
 
-    <!-- Error Banner -->
     @if (errorMessage()) {
       <div class="alert-banner alert-error">
         <span>{{ errorMessage() }}</span>
       </div>
     }
 
-    <!-- Form Fields Grid (Matching Profile Page Layout) -->
     <form (ngSubmit)="onSubmit()" class="case-fields-grid">
       <!-- Row 1: Creation Date & Blood Group -->
       <div class="field-row-split">
         <div class="split-col">
-          <label class="field-label" for="date">Creation Date (Current Date)</label>
+          <label class="field-label" for="date">{{ t('creationDate') }}</label>
           <div class="field-input-box">
             <input
               id="date"
@@ -65,7 +59,7 @@
         </div>
 
         <div class="split-col">
-          <label class="field-label" for="bloodGroup">Required Blood Group</label>
+          <label class="field-label" for="bloodGroup">{{ t('requiredBloodGroup') }}</label>
           <div class="field-input-box">
             <select
               id="bloodGroup"
@@ -81,9 +75,9 @@
         </div>
       </div>
 
-      <!-- Row 2: Patient Problem (Pure text, NO image) -->
+      <!-- Row 2: Patient Problem -->
       <div class="field-row">
-        <label class="field-label" for="patientProblem">Patient Problem / Reason</label>
+        <label class="field-label" for="patientProblem">{{ t('patientProblem') }}</label>
         <div class="field-input-box">
           <input
             id="patientProblem"
@@ -100,7 +94,7 @@
       <!-- Row 3: Bags Quantity & Hemoglobin Level -->
       <div class="field-row-split">
         <div class="split-col">
-          <label class="field-label" for="bloodQuantity">Bags Quantity</label>
+          <label class="field-label" for="bloodQuantity">{{ t('bloodQuantity') }}</label>
           <div class="field-input-box">
             <input
               id="bloodQuantity"
@@ -116,7 +110,7 @@
         </div>
 
         <div class="split-col">
-          <label class="field-label" for="hemoglobin">Hemoglobin Level (g/dL)</label>
+          <label class="field-label" for="hemoglobin">{{ t('hemoglobin') }}</label>
           <div class="field-input-box">
             <input
               id="hemoglobin"
@@ -131,12 +125,10 @@
         </div>
       </div>
 
-      <!-- Row 4: Required Donation Date (Calendar on Click) & Donation Time -->
+      <!-- Row 4: Required Donation Date & Donation Time -->
       <div class="field-row-split">
         <div class="split-col">
-          <label class="field-label" for="donationDate"
-            >Donation Date (Click to open calendar)</label
-          >
+          <label class="field-label" for="donationDate">{{ t('donationDate') }}</label>
           <div class="field-input-box">
             <input
               id="donationDate"
@@ -151,7 +143,7 @@
         </div>
 
         <div class="split-col">
-          <label class="field-label" for="donationTime">Donation Time</label>
+          <label class="field-label" for="donationTime">{{ t('donationTime') }}</label>
           <div class="field-input-box">
             <input
               id="donationTime"
@@ -169,7 +161,7 @@
       <!-- Row 5: Donation Place & Contact Number -->
       <div class="field-row-split">
         <div class="split-col">
-          <label class="field-label" for="donationPlace">Donation Place (Hospital / Clinic)</label>
+          <label class="field-label" for="donationPlace">{{ t('donationPlace') }}</label>
           <div class="field-input-box">
             <input
               id="donationPlace"
@@ -184,7 +176,7 @@
         </div>
 
         <div class="split-col">
-          <label class="field-label" for="contactNo">Contact Number</label>
+          <label class="field-label" for="contactNo">{{ t('contactNumber') }}</label>
           <div class="field-input-box">
             <input
               id="contactNo"
@@ -202,7 +194,7 @@
       <!-- Row 6: Reference & Case Status -->
       <div class="field-row-split">
         <div class="split-col">
-          <label class="field-label" for="reference">Reference (Source or Person)</label>
+          <label class="field-label" for="reference">{{ t('reference') }}</label>
           <div class="field-input-box">
             <input
               id="reference"
@@ -216,7 +208,7 @@
         </div>
 
         <div class="split-col">
-          <label class="field-label" for="status">Case Status</label>
+          <label class="field-label" for="status">{{ t('caseStatus') }}</label>
           <div class="field-input-box">
             <select id="status" name="status" [(ngModel)]="status" class="field-input select-input">
               @for (st of availableStatuses; track st) {
@@ -229,7 +221,7 @@
 
       <!-- Row 7: Remarks -->
       <div class="field-row">
-        <label class="field-label" for="remarks">Remarks</label>
+        <label class="field-label" for="remarks">{{ t('remarks') }}</label>
         <div class="field-input-box">
           <textarea
             id="remarks"
@@ -247,9 +239,7 @@
         <label class="checkbox-container">
           <input type="checkbox" name="isYourCase" [(ngModel)]="isYourCase" />
           <span class="checkmark"></span>
-          <span class="checkbox-text"
-            >This case request is submitted for myself or my direct family member</span
-          >
+          <span class="checkbox-text">{{ t('patientRelationshipCheck') }}</span>
         </label>
       </div>
 
@@ -258,14 +248,14 @@
         <button type="submit" class="btn-primary" [disabled]="isSubmitting()">
           {{
             isSubmitting()
-              ? 'Saving...'
+              ? t('loading')
               : isEditMode()
-                ? 'Update Case Request'
-                : 'Create Case Request'
+                ? t('updateCaseRequest')
+                : t('createCaseRequest')
           }}
         </button>
         <button type="button" class="btn-secondary" (click)="cancel()" [disabled]="isSubmitting()">
-          Cancel
+          {{ t('cancel') }}
         </button>
       </div>
     </form>

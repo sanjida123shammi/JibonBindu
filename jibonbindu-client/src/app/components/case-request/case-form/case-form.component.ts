@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CaseRequestService } from '../../../services/case-request.service';
 import { CreateCaseRequestDTO } from '../../../models/case-request.model';
+import { ThemeService } from '../../../services/theme.service';
 
 @Component({
   selector: 'app-case-form',
@@ -17,6 +18,11 @@ export class CaseFormComponent implements OnInit {
   private router = inject(Router);
   private caseService = inject(CaseRequestService);
   private cdr = inject(ChangeDetectorRef);
+  readonly themeService = inject(ThemeService);
+  
+  t(key: string): string {
+    return this.themeService.translate(key);
+  }
 
   isEditMode = signal<boolean>(false);
   caseId: number | null = null;
@@ -27,8 +33,8 @@ export class CaseFormComponent implements OnInit {
   date = ''; // Current creation date
   patientProblem = '';
   bloodGroup = 'O+';
-  bloodQuantity = 1; // Bags Quantity
-  hemoglobin = 10.0; // Hemoglobin Level
+  bloodQuantity = 1;
+  hemoglobin = 10.0;
   donationDate = ''; // Target donation date
   donationTime = '10:00 AM';
   donationPlace = ''; // Hospital / Location

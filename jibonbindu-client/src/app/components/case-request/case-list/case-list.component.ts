@@ -5,6 +5,7 @@ import { Router, RouterModule } from '@angular/router';
 import { PaginationComponent } from '../../common/pagination/pagination.component';
 import { CaseRequestService } from '../../../services/case-request.service';
 import { CaseRequest } from '../../../models/case-request.model';
+import { ThemeService } from '../../../services/theme.service';
 
 @Component({
   selector: 'app-case-list',
@@ -16,6 +17,11 @@ import { CaseRequest } from '../../../models/case-request.model';
 export class CaseListComponent implements OnInit {
   private caseService = inject(CaseRequestService);
   private router = inject(Router);
+  readonly themeService = inject(ThemeService);
+
+  t(key: string): string {
+    return this.themeService.translate(key);
+  }
 
   cases = signal<CaseRequest[]>([]);
   isLoading = signal<boolean>(true);

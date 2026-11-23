@@ -5,6 +5,7 @@ import { Router, RouterModule } from '@angular/router';
 import { FundCosting } from '../../../models/fund.model';
 import { FundService } from '../../../services/fund.service';
 import { PaginationComponent } from '../../common/pagination/pagination.component';
+import { ThemeService } from '../../../services/theme.service';
 
 @Component({
   selector: 'app-costing-list',
@@ -16,6 +17,10 @@ import { PaginationComponent } from '../../common/pagination/pagination.componen
 export class CostingListComponent implements OnInit {
   private fundService = inject(FundService);
   private router = inject(Router);
+  readonly themeService = inject(ThemeService);
+  t(key: string): string {
+    return this.themeService.translate(key);
+  }
 
   costings = signal<FundCosting[]>([]);
   searchKeyword = signal<string>('');

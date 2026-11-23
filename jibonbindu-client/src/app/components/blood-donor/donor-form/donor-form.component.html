@@ -1,17 +1,14 @@
 <div class="content-header">
   <div class="header-titles">
     <h2 class="section-heading">
-      {{ isEditMode() ? 'Edit Blood Donor ' + (donorCode ? '#' + donorCode : '#' + donorId) : 'Add New Blood Donor' }}
+      {{ isEditMode() ? t('editDonorHeading') : t('newDonorHeading') }}
     </h2>
-    <span class="sub-heading">
-      Register or update active blood donors with clinical, availability, and location details
-    </span>
+    <span class="sub-heading">{{ t('newDonorSub') }}</span>
   </div>
 </div>
 
 <div class="case-form-container">
   <div class="graph-card case-card">
-    <!-- Close / Back Button -->
     <button
       type="button"
       class="form-close-btn"
@@ -21,7 +18,6 @@
       &times;
     </button>
 
-    <!-- Header Section with Icon and Description -->
     <div class="case-card-header">
       <div class="case-badge-icon">
         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -30,7 +26,7 @@
       </div>
       <div class="case-header-text">
         <h3 class="card-main-title">
-          {{ isEditMode() ? 'Update Blood Donor Profile' : 'New Blood Donor Registration' }}
+          {{ isEditMode() ? t('updateBloodDonor') : t('registerAsBloodDonor') }}
         </h3>
         <p class="card-sub-title">
           Syncs with the live donor broadcast directory and emergency blood search registry
@@ -38,19 +34,17 @@
       </div>
     </div>
 
-    <!-- Error Banner -->
     @if (errorMessage()) {
       <div class="alert-banner alert-error">
         <span>{{ errorMessage() }}</span>
       </div>
     }
 
-    <!-- Form Fields Grid (Matching Case Form / Profile Layout) -->
     <form (ngSubmit)="onSubmit()" class="case-fields-grid">
       <!-- Row 1: First Name & Last Name -->
       <div class="field-row-split">
         <div class="split-col">
-          <label class="field-label" for="firstName">First Name</label>
+          <label class="field-label" for="firstName">{{ t('firstName') }}</label>
           <div class="field-input-box">
             <input
               id="firstName"
@@ -65,7 +59,7 @@
         </div>
 
         <div class="split-col">
-          <label class="field-label" for="lastName">Last Name</label>
+          <label class="field-label" for="lastName">{{ t('lastName') }}</label>
           <div class="field-input-box">
             <input
               id="lastName"
@@ -82,7 +76,7 @@
       <!-- Row 2: Blood Group & Contact Number -->
       <div class="field-row-split">
         <div class="split-col">
-          <label class="field-label" for="bloodGroup">Blood Group</label>
+          <label class="field-label" for="bloodGroup">{{ t('bloodGroup') }}</label>
           <div class="field-input-box">
             <select
               id="bloodGroup"
@@ -99,7 +93,7 @@
         </div>
 
         <div class="split-col">
-          <label class="field-label" for="contactNo">Contact Number</label>
+          <label class="field-label" for="contactNo">{{ t('contactNumber') }}</label>
           <div class="field-input-box">
             <input
               id="contactNo"
@@ -117,7 +111,7 @@
       <!-- Row 3: District & City -->
       <div class="field-row-split">
         <div class="split-col">
-          <label class="field-label" for="district">District</label>
+          <label class="field-label" for="district">{{ t('district') }}</label>
           <div class="field-input-box">
             <input
               id="district"
@@ -131,7 +125,7 @@
         </div>
 
         <div class="split-col">
-          <label class="field-label" for="city">City</label>
+          <label class="field-label" for="city">{{ t('city') }}</label>
           <div class="field-input-box">
             <input
               id="city"
@@ -148,7 +142,7 @@
       <!-- Row 4: Area & Specific Address Line -->
       <div class="field-row-split">
         <div class="split-col">
-          <label class="field-label" for="area">Area / Sub-locality</label>
+          <label class="field-label" for="area">{{ t('area') }}</label>
           <div class="field-input-box">
             <input
               id="area"
@@ -162,7 +156,7 @@
         </div>
 
         <div class="split-col">
-          <label class="field-label" for="address">Full Address Line</label>
+          <label class="field-label" for="address">{{ t('address') }}</label>
           <div class="field-input-box">
             <input
               id="address"
@@ -176,10 +170,10 @@
         </div>
       </div>
 
-      <!-- Row 5: Date of Birth & Auto-Calculated Availability Status (Requirement 1) -->
+      <!-- Row 5: Date of Birth & Availability Status -->
       <div class="field-row-split">
         <div class="split-col">
-          <label class="field-label" for="dateOfBirth">Date of Birth (Click to open calendar)</label>
+          <label class="field-label" for="dateOfBirth">{{ t('dateOfBirth') }}</label>
           <div class="field-input-box">
             <input
               id="dateOfBirth"
@@ -195,19 +189,20 @@
 
         <div class="split-col">
           <label class="field-label">
-            Donor Availability Status
-            <span class="auto-badge-hint">(Auto-calculated by DonationRules)</span>
+            {{ t('donorAvailabilityStatus') }}
           </label>
           <div class="field-input-box auto-status-box">
             <div
               class="status-auto-display"
               [class.auto-available]="status === 'Available'"
-              [class.auto-unavailable]="status === 'Unavailable'"
+              [class.auto-unavailable]="status !== 'Available'"
             >
               <span class="status-indicator-dot"></span>
               <span class="status-main-label">{{ status }}</span>
               @if (status === 'Unavailable' && nextEligibleDate) {
-                <span class="status-sub-hint">Eligible on {{ nextEligibleDate | date: 'mediumDate' }}</span>
+                <span class="status-sub-hint"
+                  >Eligible on {{ nextEligibleDate | date: 'mediumDate' }}</span
+                >
               } @else if (status === 'Available') {
                 <span class="status-sub-hint">Eligible to donate now</span>
               }
@@ -216,10 +211,10 @@
         </div>
       </div>
 
-      <!-- Row 6: Last Blood Donation Date & Last Donation Type (Requirement 2) -->
+      <!-- Row 6: Last Blood Donation Date & Last Donation Type -->
       <div class="field-row-split">
         <div class="split-col">
-          <label class="field-label" for="lastDonationDate">Last Blood Donation Date (M/D/Y)</label>
+          <label class="field-label" for="lastDonationDate">{{ t('lastDonationDate') }}</label>
           <div class="field-input-box">
             <input
               id="lastDonationDate"
@@ -233,9 +228,8 @@
           </div>
         </div>
 
-        <!-- Requirement 2: Last Donation Type Dropdown (SharedLibrary.Constants.DonationType) -->
         <div class="split-col">
-          <label class="field-label" for="lastDonationType">Last Donation Type (DonationRules)</label>
+          <label class="field-label" for="lastDonationType">{{ t('lastDonationType') }}</label>
           <div class="field-input-box">
             <select
               id="lastDonationType"
@@ -252,10 +246,10 @@
         </div>
       </div>
 
-      <!-- Row 7: Total Previous Donations & Donation From JBF -->
+      <!-- Row 7: Total Previous Donations -->
       <div class="field-row-split">
         <div class="split-col">
-          <label class="field-label" for="totalDonation">Total Previous Donations</label>
+          <label class="field-label" for="totalDonation">{{ t('totalDonations') }}</label>
           <div class="field-input-box">
             <input
               id="totalDonation"
@@ -269,24 +263,7 @@
         </div>
 
         <div class="split-col">
-          <label class="field-label" for="donationFromJbf">Donation From JBF</label>
-          <div class="field-input-box">
-            <input
-              id="donationFromJbf"
-              type="number"
-              name="donationFromJbf"
-              [(ngModel)]="donationFromJbf"
-              min="0"
-              class="field-input"
-            />
-          </div>
-        </div>
-      </div>
-
-      <!-- Row 8: Discontinue Status & Preferable Location -->
-      <div class="field-row-split">
-        <div class="split-col">
-          <label class="field-label" for="discontinueStatus">Discontinue Status (Active / Inactive)</label>
+          <label class="field-label" for="discontinueStatus">{{ t('discontinueStatus') }}</label>
           <div class="field-input-box">
             <select
               id="discontinueStatus"
@@ -299,9 +276,12 @@
             </select>
           </div>
         </div>
+      </div>
 
+      <!-- Row 8: Preferable Location & Time -->
+      <div class="field-row-split">
         <div class="split-col">
-          <label class="field-label" for="preferredLocation">Preferable Location</label>
+          <label class="field-label" for="preferredLocation">{{ t('preferableLocation') }}</label>
           <div class="field-input-box">
             <input
               id="preferredLocation"
@@ -313,33 +293,32 @@
             />
           </div>
         </div>
-      </div>
 
-      <!-- Row 9: Preferable Time -->
-      <div class="field-row">
-        <label class="field-label" for="preferredTime">Preferable Time</label>
-        <div class="field-input-box">
-          <input
-            id="preferredTime"
-            type="text"
-            name="preferredTime"
-            [(ngModel)]="preferredTime"
-            placeholder="e.g. After 04:00 PM / Weekends"
-            class="field-input"
-          />
+        <div class="split-col">
+          <label class="field-label" for="preferredTime">{{ t('preferableTime') }}</label>
+          <div class="field-input-box">
+            <input
+              id="preferredTime"
+              type="text"
+              name="preferredTime"
+              [(ngModel)]="preferredTime"
+              placeholder="e.g. After 04:00 PM / Weekends"
+              class="field-input"
+            />
+          </div>
         </div>
       </div>
 
-      <!-- Row 10: Remarks -->
+      <!-- Row 9: Remarks -->
       <div class="field-row">
-        <label class="field-label" for="remarks">Remarks</label>
+        <label class="field-label" for="remarks">{{ t('remarks') }}</label>
         <div class="field-input-box">
           <textarea
             id="remarks"
             name="remarks"
             [(ngModel)]="remarks"
             rows="3"
-            placeholder="e.g. His exam is ongoing. He will be available when his exams completely finishes."
+            placeholder="e.g. Available anytime for emergencies."
             class="field-input textarea-input"
           ></textarea>
         </div>
@@ -348,10 +327,16 @@
       <!-- Action Buttons -->
       <div class="form-actions-row">
         <button type="submit" class="btn-primary" [disabled]="isSubmitting()">
-          {{ isSubmitting() ? 'Saving...' : isEditMode() ? 'Update Blood Donor' : 'Create Blood Donor' }}
+          {{
+            isSubmitting()
+              ? t('loading')
+              : isEditMode()
+                ? t('updateBloodDonor')
+                : t('registerAsBloodDonor')
+          }}
         </button>
         <button type="button" class="btn-secondary" (click)="cancel()" [disabled]="isSubmitting()">
-          Cancel
+          {{ t('cancel') }}
         </button>
       </div>
     </form>

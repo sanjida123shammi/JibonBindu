@@ -1,9 +1,7 @@
 <div class="content-header">
   <div class="header-titles">
-    <h2 class="section-heading">Case Requests</h2>
-    <span class="sub-heading"
-      >Live emergency requests registered across hospitals and blood banks</span
-    >
+    <h2 class="section-heading">{{ t('caseRequestsHeading') }}</h2>
+    <span class="sub-heading">{{ t('caseRequestsSub') }}</span>
   </div>
 
   <div class="header-actions">
@@ -12,7 +10,7 @@
         <line x1="12" y1="5" x2="12" y2="19"></line>
         <line x1="5" y1="12" x2="19" y2="12"></line>
       </svg>
-      <span>New Request</span>
+      <span>{{ t('newRequest') }}</span>
     </a>
   </div>
 </div>
@@ -36,7 +34,7 @@
           <path d="M16 10a4 4 0 0 1-8 0"></path>
         </svg>
       </div>
-      <h3 class="card-title">All Case Requests</h3>
+      <h3 class="card-title">{{ t('allCaseRequests') }}</h3>
     </div>
 
     <!-- Search Input with Magnifying Glass -->

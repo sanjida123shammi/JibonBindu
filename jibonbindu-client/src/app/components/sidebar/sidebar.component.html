@@ -60,8 +60,7 @@
           <div class="sidebar-sub-menu">
             <a class="sub-item" routerLink="/cases/new" routerLinkActive="active-sub">
               <span class="sub-bullet">○</span>
-              <!-- <span class="sub-title">New Request</span> -->
-              <span class="item-title sub-title">{{ t('newRequest') }}</span>
+              <span class="sub-title">{{ t('newRequest') }}</span>
             </a>
             <a
               class="sub-item"
@@ -70,7 +69,7 @@
               routerLinkActive="active-sub"
             >
               <span class="sub-bullet">○</span>
-              <span class="sub-title">Case List</span>
+              <span class="sub-title">{{ t('caseList') }}</span>
             </a>
           </div>
         }
@@ -120,7 +119,7 @@
           <div class="sidebar-sub-menu">
             <a class="sub-item" routerLink="/donors/new" routerLinkActive="active-sub">
               <span class="sub-bullet">○</span>
-              <span class="sub-title">Add New Donor</span>
+              <span class="sub-title">{{ t('addNewDonor') }}</span>
             </a>
             <a
               class="sub-item"
@@ -129,7 +128,7 @@
               routerLinkActive="active-sub"
             >
               <span class="sub-bullet">○</span>
-              <span class="sub-title">Blood Donor List</span>
+              <span class="sub-title">{{ t('bloodDonorList') }}</span>
             </a>
           </div>
         }
@@ -172,7 +171,7 @@
               >
                 <div class="branch-left">
                   <span class="sub-bullet">○</span>
-                  <span class="branch-title">Fund Deposit</span>
+                  <span class="branch-title">{{ t('fundDeposit') }}</span>
                 </div>
                 <div class="dropdown-chevron mini-chevron" [class.rotated]="isFundDepositOpen()">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -189,7 +188,7 @@
                     routerLinkActive="active-sub"
                   >
                     <span class="sub-bullet mini-bullet">•</span>
-                    <span class="sub-title">Add New Deposit</span>
+                    <span class="sub-title">{{ t('addNewDeposit') }}</span>
                   </a>
                   <a
                     class="sub-item level-3-item"
@@ -198,7 +197,7 @@
                     routerLinkActive="active-sub"
                   >
                     <span class="sub-bullet mini-bullet">•</span>
-                    <span class="sub-title">Deposit History</span>
+                    <span class="sub-title">{{ t('depositHistory') }}</span>
                   </a>
                 </div>
               }
@@ -213,7 +212,7 @@
               >
                 <div class="branch-left">
                   <span class="sub-bullet">○</span>
-                  <span class="branch-title">Fund Costing</span>
+                  <span class="branch-title">{{ t('fundCosting') }}</span>
                 </div>
                 <div class="dropdown-chevron mini-chevron" [class.rotated]="isFundCostingOpen()">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -230,7 +229,7 @@
                     routerLinkActive="active-sub"
                   >
                     <span class="sub-bullet mini-bullet">•</span>
-                    <span class="sub-title">Add New Costing</span>
+                    <span class="sub-title">{{ t('addNewCosting') }}</span>
                   </a>
                   <a
                     class="sub-item level-3-item"
@@ -239,7 +238,7 @@
                     routerLinkActive="active-sub"
                   >
                     <span class="sub-bullet mini-bullet">•</span>
-                    <span class="sub-title">Costing History</span>
+                    <span class="sub-title">{{ t('costingHistory') }}</span>
                   </a>
                 </div>
               }
@@ -280,7 +279,7 @@
           <div class="sidebar-sub-menu">
             <a class="sub-item" routerLink="/members/new" routerLinkActive="active-sub">
               <span class="sub-bullet">○</span>
-              <span class="sub-title">Add New Member</span>
+              <span class="sub-title">{{ t('addNewMember') }}</span>
             </a>
             <a
               class="sub-item"
@@ -289,7 +288,7 @@
               routerLinkActive="active-sub"
             >
               <span class="sub-bullet">○</span>
-              <span class="sub-title">Member List</span>
+              <span class="sub-title">{{ t('memberList') }}</span>
             </a>
           </div>
         }
@@ -311,7 +310,7 @@
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
               </svg>
             </div>
-            <span class="item-title">Role Assign</span>
+            <span class="item-title">{{ t('roleAssign') }}</span>
           </div>
           <div class="dropdown-chevron" [class.rotated]="isRoleAssignOpen()">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -329,11 +328,11 @@
               routerLinkActive="active-sub"
             >
               <span class="sub-bullet">○</span>
-              <span class="sub-title">Roles</span>
+              <span class="sub-title">{{ t('roles') }}</span>
             </a>
             <a class="sub-item" routerLink="/roles/member-roles" routerLinkActive="active-sub">
               <span class="sub-bullet">○</span>
-              <span class="sub-title">Member Roles</span>
+              <span class="sub-title">{{ t('memberRoles') }}</span>
             </a>
           </div>
         }
@@ -351,7 +350,7 @@
             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
           </svg>
         </div>
-        <span class="item-title">View All Users</span>
+        <span class="item-title">{{ t('viewAllUsers') }}</span>
       </a>
     }
 
@@ -365,7 +364,7 @@
             ></path>
           </svg>
         </div>
-        <span class="item-title">Fund Donation</span>
+        <span class="item-title">{{ t('fundDonation') }}</span>
       </a>
     }
 
@@ -380,7 +379,7 @@
             <line x1="22" y1="11" x2="16" y2="11"></line>
           </svg>
         </div>
-        <span class="item-title">Want to be a member</span>
+        <span class="item-title">{{ t('wantToBeMember') }}</span>
       </a>
     }
 
@@ -392,7 +391,7 @@
             <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
           </svg>
         </div>
-        <span class="item-title">Donate Blood</span>
+        <span class="item-title">{{ t('donateBlood') }}</span>
       </a>
     }
 
@@ -407,13 +406,4 @@
       <span class="item-title">{{ t('myProfile') }}</span>
     </a>
   </nav>
-
-  <!-- Sidebar Footer Card -->
-  <div class="sidebar-footer-card">
-    <div class="footer-badge">
-      <span class="pulse-dot"></span>
-      <span>VERIFIED ACCOUNT</span>
-    </div>
-    <p class="footer-desc">Connected with React SPA Portal</p>
-  </div>
 </aside>

@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { BloodDonorService } from '../../../services/blood-donor.service';
 import { CreateBloodDonorDTO, DonationType } from '../../../models/blood-donor.model';
+import { ThemeService } from '../../../services/theme.service';
 
 @Component({
   selector: 'app-donor-form',
@@ -17,6 +18,11 @@ export class DonorFormComponent implements OnInit {
   private router = inject(Router);
   private donorService = inject(BloodDonorService);
   private cdr = inject(ChangeDetectorRef);
+  readonly themeService = inject(ThemeService);
+
+  t(key: string): string {
+    return this.themeService.translate(key);
+  }
 
   isEditMode = signal<boolean>(false);
   donorId: number | null = null;

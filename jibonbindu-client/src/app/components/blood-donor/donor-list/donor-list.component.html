@@ -1,9 +1,7 @@
 <div class="content-header">
   <div class="header-titles">
-    <h2 class="section-heading">Blood Donors</h2>
-    <span class="sub-heading">
-      Directory of volunteer blood donors registered across hospitals and foundation network
-    </span>
+    <h2 class="section-heading">{{ t('bloodDonorsHeading') }}</h2>
+    <span class="sub-heading">{{ t('bloodDonorsSub') }}</span>
   </div>
 
   <div class="header-actions">
@@ -12,7 +10,7 @@
         <line x1="12" y1="5" x2="12" y2="19"></line>
         <line x1="5" y1="12" x2="19" y2="12"></line>
       </svg>
-      <span>Add New Donor</span>
+      <span>{{ t('addNewDonor') }}</span>
     </a>
   </div>
 </div>
@@ -27,7 +25,7 @@
 
 <!-- API Error Alert Banner -->
 @if (errorMessage()) {
-  <div class="alert-banner alert-error" style="margin-bottom: 1.25rem;">
+  <div class="alert-banner alert-error" style="margin-bottom: 1.25rem">
     <span>{{ errorMessage() }}</span>
   </div>
 }
@@ -46,7 +44,13 @@
 
     <!-- Search Input with Magnifying Glass -->
     <div class="search-box-wrapper">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="search-icon">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        class="search-icon"
+      >
         <circle cx="11" cy="11" r="8"></circle>
         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
       </svg>
@@ -468,7 +472,11 @@
                   class="status-pill"
                   [class.status-available]="item.status === 'Available'"
                   [class.status-unavailable]="item.status === 'Unavailable'"
-                  [title]="item.status === 'Unavailable' && item.nextEligibleDate ? 'Next eligible: ' + item.nextEligibleDate : 'Eligible to donate'"
+                  [title]="
+                    item.status === 'Unavailable' && item.nextEligibleDate
+                      ? 'Next eligible: ' + item.nextEligibleDate
+                      : 'Eligible to donate'
+                  "
                 >
                   {{ item.status }}
                 </span>
@@ -537,11 +545,17 @@
                     class="action-icon-btn btn-delete"
                     [class.is-discontinued]="item.discontinueStatus === 'InActive'"
                     (click)="onDeleteDonor(item.id)"
-                    [title]="item.discontinueStatus === 'InActive' ? 'Restore Donor (Set IsActive)' : 'Discontinue Donor (Set InActive)'"
+                    [title]="
+                      item.discontinueStatus === 'InActive'
+                        ? 'Restore Donor (Set IsActive)'
+                        : 'Discontinue Donor (Set InActive)'
+                    "
                   >
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <polyline points="3 6 5 6 21 6"></polyline>
-                      <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                      <path
+                        d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                      ></path>
                       <line x1="10" y1="11" x2="10" y2="17"></line>
                       <line x1="14" y1="11" x2="14" y2="17"></line>
                     </svg>

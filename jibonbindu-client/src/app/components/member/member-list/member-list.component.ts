@@ -5,6 +5,7 @@ import { Router, RouterModule } from '@angular/router';
 import { Member } from '../../../models/member.model';
 import { MemberService } from '../../../services/member.service';
 import { PaginationComponent } from '../../common/pagination/pagination.component';
+import { ThemeService } from '../../../services/theme.service';
 
 @Component({
   selector: 'app-member-list',
@@ -16,6 +17,10 @@ import { PaginationComponent } from '../../common/pagination/pagination.componen
 export class MemberListComponent implements OnInit {
   private memberService = inject(MemberService);
   private router = inject(Router);
+  readonly themeService = inject(ThemeService);
+  t(key: string): string {
+    return this.themeService.translate(key);
+  }
 
   members = signal<Member[]>([]);
   searchKeyword = signal<string>('');

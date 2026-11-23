@@ -5,6 +5,7 @@ import { Router, RouterModule } from '@angular/router';
 import { PaginationComponent } from '../../common/pagination/pagination.component';
 import { BloodDonorService } from '../../../services/blood-donor.service';
 import { BloodDonor, DonationType } from '../../../models/blood-donor.model';
+import { ThemeService } from '../../../services/theme.service';
 
 @Component({
   selector: 'app-donor-list',
@@ -16,6 +17,10 @@ import { BloodDonor, DonationType } from '../../../models/blood-donor.model';
 export class DonorListComponent implements OnInit {
   private donorService = inject(BloodDonorService);
   private router = inject(Router);
+  readonly themeService = inject(ThemeService);
+  t(key: string): string {
+    return this.themeService.translate(key);
+  }
 
   donors = signal<BloodDonor[]>([]);
   isLoading = signal<boolean>(true);
