@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "l2bIpBCzWNk=",
+  "dgSpecHash": "lGYp5gfaYww=",
   "success": true,
-  "projectFilePath": "D:\\Shammi\\IDB\\FinalProject\\JibonBindu\\JibonbinduAPI\\Api\\Api.csproj",
+  "projectFilePath": "C:\\Users\\SHAMMI-SHASHI\\Downloads\\Jibonbindu\\Jibonbindu\\JibonbinduAPI\\Api\\Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SHAMMI-SHASHI\\.nuget\\packages\\azure.core\\1.41.0\\azure.core.1.41.0.nupkg.sha512",
     "C:\\Users\\SHAMMI-SHASHI\\.nuget\\packages\\azure.identity\\1.12.1\\azure.identity.1.12.1.nupkg.sha512",

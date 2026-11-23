@@ -117,23 +117,6 @@ export class CaseListComponent implements OnInit {
     this.currentPage.set(page);
   }
 
-  isAllSelected(): boolean {
-    const pageItems = this.paginatedCases();
-    if (pageItems.length === 0) return false;
-    return pageItems.every((item) => this.selectedIds().has(item.id));
-  }
-
-  toggleSelectAll(): void {
-    const pageItems = this.paginatedCases();
-    const set = new Set(this.selectedIds());
-    if (this.isAllSelected()) {
-      pageItems.forEach((item) => set.delete(item.id));
-    } else {
-      pageItems.forEach((item) => set.add(item.id));
-    }
-    this.selectedIds.set(set);
-  }
-
   toggleSelectOne(id: number): void {
     const set = new Set(this.selectedIds());
     if (set.has(id)) {

@@ -6,7 +6,7 @@
   </div>
 
   <!-- Live Database Sync Control Panel -->
-    <!-- Live Database Sync Control Panel -->
+  <!-- Live Database Sync Control Panel -->
   <div class="live-status-pill">
     @if (dashboardService.isAuthenticated()) {
       <span class="status-indicator-live"> <span class="live-dot"></span> Live SQL Sync </span>
@@ -53,13 +53,6 @@
           {{ stats().totalCaseRequest | number }}
         }
       </h3>
-      <span class="stat-trend neutral">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
-          <polyline points="17 18 23 18 23 12"></polyline>
-        </svg>
-        Active SQL Requests
-      </span>
     </div>
     <div class="stat-icon-badge badge-purple">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -83,13 +76,6 @@
           {{ stats().totalSolvedCase | number }}
         }
       </h3>
-      <span class="stat-trend positive">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-          <polyline points="17 6 23 6 23 12"></polyline>
-        </svg>
-        Emergency Success
-      </span>
     </div>
     <div class="stat-icon-badge badge-green">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -110,13 +96,6 @@
           {{ stats().totalDonor | number }}
         }
       </h3>
-      <span class="stat-trend positive">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-          <polyline points="17 6 23 6 23 12"></polyline>
-        </svg>
-        Ready to Donate
-      </span>
     </div>
     <div class="stat-icon-badge badge-orange">
       <svg viewBox="0 0 24 24" fill="currentColor">
@@ -136,13 +115,6 @@
           {{ stats().totalMembers | number }}
         }
       </h3>
-      <span class="stat-trend positive">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-          <polyline points="17 6 23 6 23 12"></polyline>
-        </svg>
-        Community Team
-      </span>
     </div>
     <div class="stat-icon-badge badge-cyan">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

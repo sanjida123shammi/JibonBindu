@@ -74,6 +74,12 @@ builder.Services.AddScoped<IFundDonationReportRepository, FundDonationReportRepo
 builder.Services.AddScoped<IImageService, ImageService>();
 builder.Services.AddScoped<IMemberRepository, MemberRepository>();
 
+// 1. Add HttpClient
+builder.Services.AddHttpClient<ISslCommerzService, SslCommerzService>();
+
+// 2. Register SslCommerzService
+builder.Services.AddScoped<ISslCommerzService, SslCommerzService>();
+
 // JsonSerializer Configuration
 builder.Services.AddControllers().AddJsonOptions(options =>
 {

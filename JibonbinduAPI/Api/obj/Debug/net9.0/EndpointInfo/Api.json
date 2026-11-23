@@ -3354,6 +3354,566 @@
         ]
       }
     },
+    "/api/SslCommerz/initiate": {
+      "post": {
+        "tags": [
+          "SslCommerz"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SslCommerzInitRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SslCommerzInitRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SslCommerzInitRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SslCommerzInitResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SslCommerzInitResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SslCommerzInitResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/SslCommerz/success": {
+      "post": {
+        "tags": [
+          "SslCommerz"
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  },
+                  "tran_date": {
+                    "type": "string"
+                  },
+                  "tran_id": {
+                    "type": "string"
+                  },
+                  "val_id": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "store_amount": {
+                    "type": "string"
+                  },
+                  "currency": {
+                    "type": "string"
+                  },
+                  "bank_tran_id": {
+                    "type": "string"
+                  },
+                  "card_type": {
+                    "type": "string"
+                  },
+                  "card_no": {
+                    "type": "string"
+                  },
+                  "card_issuer": {
+                    "type": "string"
+                  },
+                  "card_brand": {
+                    "type": "string"
+                  },
+                  "error": {
+                    "type": "string"
+                  },
+                  "value_a": {
+                    "type": "string"
+                  },
+                  "value_b": {
+                    "type": "string"
+                  },
+                  "value_c": {
+                    "type": "string"
+                  },
+                  "value_d": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "status": {
+                  "style": "form"
+                },
+                "tran_date": {
+                  "style": "form"
+                },
+                "tran_id": {
+                  "style": "form"
+                },
+                "val_id": {
+                  "style": "form"
+                },
+                "amount": {
+                  "style": "form"
+                },
+                "store_amount": {
+                  "style": "form"
+                },
+                "currency": {
+                  "style": "form"
+                },
+                "bank_tran_id": {
+                  "style": "form"
+                },
+                "card_type": {
+                  "style": "form"
+                },
+                "card_no": {
+                  "style": "form"
+                },
+                "card_issuer": {
+                  "style": "form"
+                },
+                "card_brand": {
+                  "style": "form"
+                },
+                "error": {
+                  "style": "form"
+                },
+                "value_a": {
+                  "style": "form"
+                },
+                "value_b": {
+                  "style": "form"
+                },
+                "value_c": {
+                  "style": "form"
+                },
+                "value_d": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SslCommerz/fail": {
+      "post": {
+        "tags": [
+          "SslCommerz"
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  },
+                  "tran_date": {
+                    "type": "string"
+                  },
+                  "tran_id": {
+                    "type": "string"
+                  },
+                  "val_id": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "store_amount": {
+                    "type": "string"
+                  },
+                  "currency": {
+                    "type": "string"
+                  },
+                  "bank_tran_id": {
+                    "type": "string"
+                  },
+                  "card_type": {
+                    "type": "string"
+                  },
+                  "card_no": {
+                    "type": "string"
+                  },
+                  "card_issuer": {
+                    "type": "string"
+                  },
+                  "card_brand": {
+                    "type": "string"
+                  },
+                  "error": {
+                    "type": "string"
+                  },
+                  "value_a": {
+                    "type": "string"
+                  },
+                  "value_b": {
+                    "type": "string"
+                  },
+                  "value_c": {
+                    "type": "string"
+                  },
+                  "value_d": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "status": {
+                  "style": "form"
+                },
+                "tran_date": {
+                  "style": "form"
+                },
+                "tran_id": {
+                  "style": "form"
+                },
+                "val_id": {
+                  "style": "form"
+                },
+                "amount": {
+                  "style": "form"
+                },
+                "store_amount": {
+                  "style": "form"
+                },
+                "currency": {
+                  "style": "form"
+                },
+                "bank_tran_id": {
+                  "style": "form"
+                },
+                "card_type": {
+                  "style": "form"
+                },
+                "card_no": {
+                  "style": "form"
+                },
+                "card_issuer": {
+                  "style": "form"
+                },
+                "card_brand": {
+                  "style": "form"
+                },
+                "error": {
+                  "style": "form"
+                },
+                "value_a": {
+                  "style": "form"
+                },
+                "value_b": {
+                  "style": "form"
+                },
+                "value_c": {
+                  "style": "form"
+                },
+                "value_d": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SslCommerz/cancel": {
+      "post": {
+        "tags": [
+          "SslCommerz"
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  },
+                  "tran_date": {
+                    "type": "string"
+                  },
+                  "tran_id": {
+                    "type": "string"
+                  },
+                  "val_id": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "store_amount": {
+                    "type": "string"
+                  },
+                  "currency": {
+                    "type": "string"
+                  },
+                  "bank_tran_id": {
+                    "type": "string"
+                  },
+                  "card_type": {
+                    "type": "string"
+                  },
+                  "card_no": {
+                    "type": "string"
+                  },
+                  "card_issuer": {
+                    "type": "string"
+                  },
+                  "card_brand": {
+                    "type": "string"
+                  },
+                  "error": {
+                    "type": "string"
+                  },
+                  "value_a": {
+                    "type": "string"
+                  },
+                  "value_b": {
+                    "type": "string"
+                  },
+                  "value_c": {
+                    "type": "string"
+                  },
+                  "value_d": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "status": {
+                  "style": "form"
+                },
+                "tran_date": {
+                  "style": "form"
+                },
+                "tran_id": {
+                  "style": "form"
+                },
+                "val_id": {
+                  "style": "form"
+                },
+                "amount": {
+                  "style": "form"
+                },
+                "store_amount": {
+                  "style": "form"
+                },
+                "currency": {
+                  "style": "form"
+                },
+                "bank_tran_id": {
+                  "style": "form"
+                },
+                "card_type": {
+                  "style": "form"
+                },
+                "card_no": {
+                  "style": "form"
+                },
+                "card_issuer": {
+                  "style": "form"
+                },
+                "card_brand": {
+                  "style": "form"
+                },
+                "error": {
+                  "style": "form"
+                },
+                "value_a": {
+                  "style": "form"
+                },
+                "value_b": {
+                  "style": "form"
+                },
+                "value_c": {
+                  "style": "form"
+                },
+                "value_d": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SslCommerz/ipn": {
+      "post": {
+        "tags": [
+          "SslCommerz"
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  },
+                  "tran_date": {
+                    "type": "string"
+                  },
+                  "tran_id": {
+                    "type": "string"
+                  },
+                  "val_id": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "store_amount": {
+                    "type": "string"
+                  },
+                  "currency": {
+                    "type": "string"
+                  },
+                  "bank_tran_id": {
+                    "type": "string"
+                  },
+                  "card_type": {
+                    "type": "string"
+                  },
+                  "card_no": {
+                    "type": "string"
+                  },
+                  "card_issuer": {
+                    "type": "string"
+                  },
+                  "card_brand": {
+                    "type": "string"
+                  },
+                  "error": {
+                    "type": "string"
+                  },
+                  "value_a": {
+                    "type": "string"
+                  },
+                  "value_b": {
+                    "type": "string"
+                  },
+                  "value_c": {
+                    "type": "string"
+                  },
+                  "value_d": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "status": {
+                  "style": "form"
+                },
+                "tran_date": {
+                  "style": "form"
+                },
+                "tran_id": {
+                  "style": "form"
+                },
+                "val_id": {
+                  "style": "form"
+                },
+                "amount": {
+                  "style": "form"
+                },
+                "store_amount": {
+                  "style": "form"
+                },
+                "currency": {
+                  "style": "form"
+                },
+                "bank_tran_id": {
+                  "style": "form"
+                },
+                "card_type": {
+                  "style": "form"
+                },
+                "card_no": {
+                  "style": "form"
+                },
+                "card_issuer": {
+                  "style": "form"
+                },
+                "card_brand": {
+                  "style": "form"
+                },
+                "error": {
+                  "style": "form"
+                },
+                "value_a": {
+                  "style": "form"
+                },
+                "value_b": {
+                  "style": "form"
+                },
+                "value_c": {
+                  "style": "form"
+                },
+                "value_d": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Users": {
       "get": {
         "tags": [
@@ -4753,6 +5313,70 @@
             "nullable": true
           },
           "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SslCommerzInitRequest": {
+        "required": [
+          "amount",
+          "donorContactNo",
+          "donorEmail",
+          "donorName"
+        ],
+        "type": "object",
+        "properties": {
+          "amount": {
+            "maximum": 500000,
+            "minimum": 10,
+            "type": "number",
+            "format": "double"
+          },
+          "donorName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "donorEmail": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
+          },
+          "donorContactNo": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "donorAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "note": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SslCommerzInitResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "gatewayUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "tranId": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
             "type": "string",
             "nullable": true
           }

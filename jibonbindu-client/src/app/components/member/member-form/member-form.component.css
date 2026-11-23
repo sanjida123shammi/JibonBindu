@@ -135,7 +135,7 @@
   border-radius: 50%;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.05);
-  border: 2px solid #8b5cf6;
+  border: 2px solid #7a3333;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -173,9 +173,9 @@
   gap: 0.45rem;
   padding: 0.5rem 1rem;
   border-radius: 8px;
-  background: rgba(139, 92, 246, 0.15);
-  border: 1px solid rgba(139, 92, 246, 0.35);
-  color: #c084fc;
+  background: rgba(246, 92, 92, 0.15);
+  border: 1px solid #7a3333;
+  color: #ff5555;
   font-size: 0.82rem;
   font-weight: 600;
   cursor: pointer;

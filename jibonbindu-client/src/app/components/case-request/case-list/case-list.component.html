@@ -66,17 +66,7 @@
     <table class="jb-custom-table">
       <thead>
         <tr>
-          <!-- 1. Checkbox Select All -->
-          <th class="th-checkbox">
-            <input
-              type="checkbox"
-              [checked]="isAllSelected()"
-              (change)="toggleSelectAll()"
-              class="table-checkbox"
-            />
-          </th>
-
-          <!-- 2. Case ID -->
+          <!-- 1. Case ID -->
           <th (click)="onSort('id')" class="sortable-th">
             <div class="th-content">
               <span>Case ID</span>
@@ -90,7 +80,7 @@
             </div>
           </th>
 
-          <!-- 3. Date -->
+          <!-- 2. Date -->
           <th (click)="onSort('date')" class="sortable-th">
             <div class="th-content">
               <span>Date</span>
@@ -104,7 +94,7 @@
             </div>
           </th>
 
-          <!-- 4. Case No (Daily serial number resets each day) -->
+          <!-- 3. Case No (Daily serial number resets each day) -->
           <th (click)="onSort('caseNo')" class="sortable-th">
             <div class="th-content">
               <span>Case No</span>
@@ -118,7 +108,7 @@
             </div>
           </th>
 
-          <!-- 5. Blood Group -->
+          <!-- 4. Blood Group -->
           <th (click)="onSort('bloodGroup')" class="sortable-th">
             <div class="th-content">
               <span>Blood Group</span>
@@ -132,7 +122,7 @@
             </div>
           </th>
 
-          <!-- 6. Patient Problem (Pure text, NO image) -->
+          <!-- 5. Patient Problem (Pure text, NO image) -->
           <th (click)="onSort('patientProblem')" class="sortable-th">
             <div class="th-content">
               <span>Patient Problem</span>
@@ -146,7 +136,7 @@
             </div>
           </th>
 
-          <!-- 7. Bags Quantity -->
+          <!-- 6. Bags Quantity -->
           <th (click)="onSort('bloodQuantity')" class="sortable-th">
             <div class="th-content">
               <span>Bags Quantity</span>
@@ -160,7 +150,7 @@
             </div>
           </th>
 
-          <!-- 8. Hemoglobin Level -->
+          <!-- 7. Hemoglobin Level -->
           <th (click)="onSort('hemoglobin')" class="sortable-th">
             <div class="th-content">
               <span>Hemoglobin Level</span>
@@ -174,7 +164,7 @@
             </div>
           </th>
 
-          <!-- 9. Donation Date -->
+          <!-- 8. Donation Date -->
           <th (click)="onSort('donationDate')" class="sortable-th">
             <div class="th-content">
               <span>Donation Date</span>
@@ -188,7 +178,7 @@
             </div>
           </th>
 
-          <!-- 10. Donation Time -->
+          <!-- 9. Donation Time -->
           <th (click)="onSort('donationTime')" class="sortable-th">
             <div class="th-content">
               <span>Donation Time</span>
@@ -202,7 +192,7 @@
             </div>
           </th>
 
-          <!-- 11. Donation Place -->
+          <!-- 10. Donation Place -->
           <th (click)="onSort('donationPlace')" class="sortable-th">
             <div class="th-content">
               <span>Donation Place</span>
@@ -216,7 +206,7 @@
             </div>
           </th>
 
-          <!-- 12. Contact Number -->
+          <!-- 11. Contact Number -->
           <th (click)="onSort('contactNo')" class="sortable-th">
             <div class="th-content">
               <span>Contact Number</span>
@@ -230,7 +220,7 @@
             </div>
           </th>
 
-          <!-- 13. Reference -->
+          <!-- 12. Reference -->
           <th (click)="onSort('reference')" class="sortable-th">
             <div class="th-content">
               <span>Reference</span>
@@ -244,7 +234,7 @@
             </div>
           </th>
 
-          <!-- 14. Case Status Dropdown -->
+          <!-- 13. Case Status Dropdown -->
           <th (click)="onSort('status')" class="sortable-th">
             <div class="th-content">
               <span>Case Status</span>
@@ -258,7 +248,7 @@
             </div>
           </th>
 
-          <!-- 15. Remarks -->
+          <!-- 14. Remarks -->
           <th (click)="onSort('remarks')" class="sortable-th">
             <div class="th-content">
               <span>Remarks</span>
@@ -272,7 +262,7 @@
             </div>
           </th>
 
-          <!-- 16. Delete Status -->
+          <!-- 15. Delete Status -->
           <th (click)="onSort('deleteStatus')" class="sortable-th">
             <div class="th-content">
               <span>Delete Status</span>
@@ -286,7 +276,7 @@
             </div>
           </th>
 
-          <!-- 17. Actions -->
+          <!-- 16. Actions -->
           <th class="th-actions">Actions</th>
         </tr>
       </thead>
@@ -303,81 +293,71 @@
         } @else {
           @for (item of paginatedCases(); track item.id) {
             <tr [class.row-deleted]="item.deleteStatus === 'Deleted'">
-              <!-- 1. Checkbox -->
-              <td class="td-checkbox">
-                <input
-                  type="checkbox"
-                  [checked]="selectedIds().has(item.id)"
-                  (change)="toggleSelectOne(item.id)"
-                  class="table-checkbox"
-                />
-              </td>
-
-              <!-- 2. Case ID -->
+              <!-- 1. Case ID -->
               <td class="td-id">
                 <span class="case-id-tag">#{{ item.id }}</span>
               </td>
 
-              <!-- 3. Date -->
+              <!-- 2. Date -->
               <td class="td-date">
                 {{ item.date | date: 'mediumDate' }}
               </td>
 
-              <!-- 4. Case No -->
+              <!-- 3. Case No -->
               <td class="td-caseno">
                 <span class="case-no-badge">{{ item.caseNo }}</span>
               </td>
 
-              <!-- 5. Blood Group -->
+              <!-- 4. Blood Group -->
               <td class="td-blood">
                 <span class="blood-pill">{{ item.bloodGroup }}</span>
               </td>
 
-              <!-- 6. Patient Problem (Pure text, NO image) -->
+              <!-- 5. Patient Problem (Pure text, NO image) -->
               <td class="td-problem">
                 <span class="problem-text" [title]="item.patientProblem">{{
                   item.patientProblem
                 }}</span>
               </td>
 
-              <!-- 7. Bags Quantity -->
+              <!-- 6. Bags Quantity -->
               <td class="td-quantity">
                 <span class="quantity-badge"
                   >{{ item.bloodQuantity }} {{ item.bloodQuantity === 1 ? 'Bag' : 'Bags' }}</span
                 >
               </td>
 
-              <!-- 8. Hemoglobin Level -->
+              <!-- 7. Hemoglobin Level -->
               <td class="td-hemoglobin">{{ item.hemoglobin }} g/dL</td>
 
-              <!-- 9. Donation Date -->
+              <!-- 8. Donation Date -->
               <td class="td-donation-date">
                 {{ item.donationDate | date: 'mediumDate' }}
               </td>
 
-              <!-- 10. Donation Time -->
+              <!-- 9. Donation Time -->
               <td class="td-time">
                 {{ item.donationTime }}
               </td>
 
-              <!-- 11. Donation Place -->
+              <!-- 10. Donation Place -->
               <td class="td-place">
                 <span class="place-text" [title]="item.donationPlace">{{
                   item.donationPlace
                 }}</span>
               </td>
 
-              <!-- 12. Contact Number -->
+              <!-- 11. Contact Number -->
               <td class="td-contact">
                 <span class="contact-text">{{ item.contactNo }}</span>
               </td>
 
-              <!-- 13. Reference -->
+              <!-- 12. Reference -->
               <td class="td-reference">
                 <span class="reference-badge">{{ item.reference || 'Self' }}</span>
               </td>
 
-              <!-- 14. Case Status Dropdown (Partially updates database) -->
+              <!-- 13. Case Status Dropdown (Partially updates database) -->
               <td class="td-status">
                 <div class="status-select-container">
                   <select
@@ -397,14 +377,14 @@
                 </div>
               </td>
 
-              <!-- 15. Remarks -->
+              <!-- 14. Remarks -->
               <td class="td-remarks">
                 <span class="remarks-text" [title]="item.remarks || '-'">{{
                   item.remarks || '-'
                 }}</span>
               </td>
 
-              <!-- 16. Delete Status -->
+              <!-- 15. Delete Status -->
               <td class="td-delete-status">
                 <span
                   class="delete-status-pill"
@@ -416,7 +396,7 @@
                 </span>
               </td>
 
-              <!-- 17. Actions (Edit & Delete) -->
+              <!-- 16. Actions (Edit & Delete) -->
               <td class="td-actions">
                 <div class="action-buttons-group">
                   <!-- Edit Button (Pen Icon) -->

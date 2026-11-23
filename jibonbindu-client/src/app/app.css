@@ -17,7 +17,7 @@
 }
 
 .jb-dashboard-wrapper[data-theme='light'] {
-  background-image: linear-gradient(to bottom right, #fff0f0, #ffd9d6);
+  background: #fff6f6;
   color: #0f172a;
 }
 

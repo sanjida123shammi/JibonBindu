@@ -45,7 +45,6 @@
 .case-list-card {
   width: 100%;
   padding: 1.5rem 1.75rem;
-  background: rgba(20, 5, 10, 0.75);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   border: 1px solid rgba(255, 60, 90, 0.16);
@@ -65,14 +64,13 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #e60026 0%, #a1001b 100%);
+  background: linear-gradient(135deg, #231738 0%, #434077 100%);
   color: #ffffff;
   text-decoration: none;
   font-size: 0.88rem;
   font-weight: 700;
   padding: 0.6rem 1.25rem;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(230, 0, 38, 0.35);
   transition: all 0.2s ease;
 }
 
@@ -288,20 +286,6 @@
 :host-context([data-theme='light']) .jb-custom-table tbody tr:hover,
 [data-theme='light'] .jb-custom-table tbody tr:hover {
   background: #f8fafc;
-}
-
-/* Checkbox Column */
-.th-checkbox,
-.td-checkbox {
-  width: 40px;
-  text-align: center;
-}
-
-.table-checkbox {
-  width: 16px;
-  height: 16px;
-  accent-color: #7c3aed;
-  cursor: pointer;
 }
 
 /* Case ID Tag */

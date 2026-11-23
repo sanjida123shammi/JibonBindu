@@ -1,102 +1,371 @@
-.donate-icon {
-  background: linear-gradient(135deg, #e63946, #f4a261);
+/* ==========================================================================
+   FUND DONATION COMPONENT STYLES - JIBONBINDU
+   ========================================================================== */
+
+.form-container {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 1rem 0 2.5rem;
 }
 
-.payment-methods {
+/* Glassmorphic Form Card */
+.form-card {
+  border-radius: 18px;
+  padding: 1.75rem 2rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 60, 90, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  color: #f1f5f9;
+}
+
+[data-theme='light'] .form-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  color: #0f172a;
+}
+
+/* --------------------------------------------------------------------------
+   HEADER & COMPACT SMALL LOGO / ICON
+   -------------------------------------------------------------------------- */
+.form-card-header {
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin: 1.5rem 0;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.payment-card {
-  flex: 1;
-  min-width: 140px;
+[data-theme='light'] .form-card-header {
+  border-bottom-color: #f1f5f9;
+}
+
+/* Small, elegant logo badge */
+.badge-icon.donate-icon {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
   border-radius: 10px;
-  padding: 1.2rem 1rem;
-  text-align: center;
-  color: #fff;
+  background: rgba(224, 51, 76, 0.15);
+  border: 1px solid rgba(255, 60, 90, 0.25);
+  color: #ff3c5a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
-.payment-card.bkash {
-  background: #e2136e;
-}
-.payment-card.nagad {
-  background: #f05a28;
-}
-.payment-card.rocket {
-  background: #8b1a9e;
+/* Small inner SVG icon */
+.badge-icon.donate-icon svg {
+  width: 20px;
+  height: 20px;
 }
 
-.payment-logo {
-  font-size: 1.1rem;
+.form-header-text {
+  flex: 1;
+}
+
+.card-main-title {
+  margin: 0;
+  font-size: 1.15rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.01em;
+}
+
+.card-sub-title {
+  margin: 0.2rem 0 0;
+  font-size: 0.82rem;
+  color: #94a3b8;
+  line-height: 1.4;
+}
+
+[data-theme='light'] .card-sub-title {
+  color: #64748b;
+}
+
+/* --------------------------------------------------------------------------
+   GATEWAY CHIPS / BADGES
+   -------------------------------------------------------------------------- */
+.gateway-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.badge-tag {
+  background: rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  letter-spacing: 0.2px;
+}
+
+[data-theme='light'] .badge-tag {
+  background: #f1f5f9;
+  color: #475569;
+  border-color: #e2e8f0;
+}
+
+/* --------------------------------------------------------------------------
+   PRESET AMOUNT SELECTORS
+   -------------------------------------------------------------------------- */
+.form-section {
+  margin-bottom: 1.25rem;
+}
+
+.amount-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+.amount-btn {
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  color: #e2e8f0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+[data-theme='light'] .amount-btn {
+  background: #f8fafc;
+  color: #1e293b;
+  border-color: #cbd5e1;
+}
+
+.amount-btn:hover {
+  border-color: #ff3c5a;
+  color: #ff3c5a;
+}
+
+.amount-btn.active {
+  background: linear-gradient(135deg, #e0334c, #c02138);
+  color: #ffffff;
+  border-color: #e0334c;
+}
+
+.custom-amount-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.currency-prefix {
+  position: absolute;
+  left: 0.85rem;
+  font-weight: 700;
+  color: #94a3b8;
+  font-size: 1rem;
+}
+
+.custom-amount-input .form-input {
+  padding-left: 2rem;
+}
+
+/* --------------------------------------------------------------------------
+   FORM LABELS & INPUTS
+   -------------------------------------------------------------------------- */
+.form-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  margin-bottom: 0.35rem;
+}
+
+[data-theme='light'] .form-label {
+  color: #334155;
+}
+
+.required {
+  color: #ff3c5a;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(15, 10, 12, 0.6);
+  color: #ffffff;
+  outline: none;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+[data-theme='light'] .form-input {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+.form-input:focus {
+  border-color: #ff3c5a;
+  box-shadow: 0 0 0 3px rgba(255, 60, 90, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   SUBMIT BUTTON & SECURITY FOOTER
+   -------------------------------------------------------------------------- */
+.submit-action {
+  margin-top: 1.5rem;
+}
+
+.submit-action .btn-primary {
+  background: linear-gradient(135deg, #e0334c, #b82137);
+  border: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.submit-action .btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #f03d57, #c9243c);
+  transform: translateY(-1px);
+}
+
+.secure-notice {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   PAYMENT RESULT CARDS (SUCCESS / FAILED)
+   -------------------------------------------------------------------------- */
+.result-card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+/* Compact result status badge */
+.result-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-icon-wrapper svg {
+  width: 24px;
+  height: 24px;
+}
+
+.result-icon-wrapper.success {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.result-icon-wrapper.failed {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.result-icon-wrapper.cancelled {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.result-title {
+  font-size: 1.3rem;
+  font-weight: 700;
   margin-bottom: 0.4rem;
 }
 
-.payment-number {
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0.2rem 0;
-  letter-spacing: 1px;
-}
-
-.payment-type {
-  font-size: 0.75rem;
-  opacity: 0.9;
-  margin: 0;
-}
-
-.payment-instructions {
-  background: var(--jb-surface, #f9fafb);
-  border: 1px solid var(--jb-border, #e5e7eb);
-  border-radius: 8px;
-  padding: 1rem 1.2rem;
-  margin-bottom: 1.5rem;
+.result-desc {
+  color: #94a3b8;
   font-size: 0.88rem;
-  line-height: 1.6;
+  max-width: 480px;
+  margin: 0 auto 1.25rem;
 }
 
-.payment-instructions h4 {
-  margin: 0 0 0.5rem;
-  font-size: 0.95rem;
-  font-weight: 600;
+[data-theme='light'] .result-desc {
+  color: #64748b;
 }
 
-.payment-instructions ol {
-  margin: 0;
-  padding-left: 1.2rem;
-}
-
-.payment-instructions li {
-  margin-bottom: 0.3rem;
-}
-
-.confirm-section {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+/* Printable Receipt Card */
+.receipt-box {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
   max-width: 420px;
+  margin: 0 auto 1.5rem;
+  text-align: left;
 }
 
-.success-message {
+[data-theme='light'] .receipt-box {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.receipt-row {
   display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  background: #d1fae5;
-  border: 1px solid #34d399;
-  border-radius: 8px;
-  padding: 1rem 1.2rem;
-  color: #065f46;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  justify-content: space-between;
+  padding: 0.35rem 0;
+  font-size: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.success-message svg {
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  stroke: #059669;
-  margin-top: 2px;
+[data-theme='light'] .receipt-row {
+  border-bottom-color: #f1f5f9;
+}
+
+.receipt-row:last-child {
+  border-bottom: none;
+}
+
+.receipt-amount {
+  color: #22c55e;
+  font-size: 1rem;
+}
+
+.result-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   PRINT STYLES FOR DONATION RECEIPT
+   -------------------------------------------------------------------------- */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .result-card,
+  .result-card * {
+    visibility: visible;
+  }
+  .result-card {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  .result-actions {
+    display: none !important;
+  }
 }

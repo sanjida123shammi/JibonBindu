@@ -103,7 +103,7 @@ body {
 .profile-graph-card {
   width: 100%;
   position: relative;
-  background: rgb(40 34 36);
+  background: rgb(30 25 27);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 60, 90, 0.16);

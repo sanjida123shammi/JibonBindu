@@ -30,6 +30,9 @@ namespace Api.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("AvatarUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -40,6 +43,9 @@ namespace Api.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -263,7 +269,17 @@ namespace Api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime?>("DateOfBirth")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("District")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DonationFromJbf")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -276,6 +292,10 @@ namespace Api.Migrations
 
                     b.Property<int>("LastDonationType")
                         .HasColumnType("int");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PersonId")
                         .HasColumnType("int");
@@ -426,10 +446,6 @@ namespace Api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DonationTypeName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("DonorContactNo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -444,11 +460,15 @@ namespace Api.Migrations
                     b.Property<DateTime>("FundDonationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("FundDonationTypeId")
-                        .HasColumnType("int");
-
                     b.Property<int>("FundDonorId")
                         .HasColumnType("int");
+
+                    b.Property<int>("FundDonorTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FundDonorTypeName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FundReceiver")
                         .HasColumnType("nvarchar(max)");
@@ -458,6 +478,9 @@ namespace Api.Migrations
 
                     b.Property<string>("FundingTypeName")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MemberId")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Months")

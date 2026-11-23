@@ -1,91 +1,258 @@
 <div class="content-header">
   <div class="header-titles">
-    <h2 class="section-heading">Fund Donation</h2>
-    <span class="sub-heading">Support our mission — donate via mobile banking</span>
+    <h2 class="section-heading">Support Jibonbindu Foundation</h2>
+    <span class="sub-heading">Every life-saving drop begins with your generosity</span>
   </div>
 </div>
 
 <div class="form-container">
-  <div class="graph-card form-card">
-    <div class="form-card-header">
-      <div class="badge-icon donate-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path
-            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-          ></path>
-        </svg>
-      </div>
-      <div class="form-header-text">
-        <h3 class="card-main-title">Donate to Jibonbindu Foundation</h3>
-        <p class="card-sub-title">
-          Your generosity saves lives. Use any mobile banking number below to send your donation.
-        </p>
-      </div>
-    </div>
-
-    <!-- Payment Method Cards -->
-    <div class="payment-methods">
-      <div class="payment-card bkash">
-        <div class="payment-logo">bKash</div>
-        <p class="payment-number">01XXXXXXXXX</p>
-        <p class="payment-type">Send Money / Payment</p>
-      </div>
-      <div class="payment-card nagad">
-        <div class="payment-logo">Nagad</div>
-        <p class="payment-number">01XXXXXXXXX</p>
-        <p class="payment-type">Send Money</p>
-      </div>
-      <div class="payment-card rocket">
-        <div class="payment-logo">Rocket</div>
-        <p class="payment-number">01XXXXXXXXX</p>
-        <p class="payment-type">Send Money</p>
-      </div>
-    </div>
-
-    <!-- Instructions -->
-    <div class="payment-instructions">
-      <h4>How to Donate:</h4>
-      <ol>
-        <li>Open your mobile banking app (bKash / Nagad / Rocket).</li>
-        <li>Select <strong>Send Money</strong> (or <strong>Payment</strong> for bKash).</li>
-        <li>Enter our number listed above and your donation amount.</li>
-        <li>Use your name or email as the reference/note.</li>
-        <li>Copy the <strong>Transaction ID</strong> you receive.</li>
-        <li>Paste it below and click <strong>Confirm Donation</strong>.</li>
-      </ol>
-    </div>
-
-    <!-- Confirm Form / Success Message -->
-    @if (!submitted()) {
-      <div class="confirm-section">
-        <label class="form-label" for="ref"
-          >Transaction / Reference ID <span class="required">*</span></label
-        >
-        <input
-          id="ref"
-          class="form-input"
-          type="text"
-          [(ngModel)]="reference"
-          placeholder="e.g. BK24XX12345678"
-          name="reference"
-        />
-        <button
-          class="btn btn-primary"
-          type="button"
-          (click)="onSubmit()"
-          [disabled]="!reference.trim()"
-        >
-          Confirm Donation
-        </button>
-      </div>
-    } @else {
-      <div class="success-message">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <!-- 1. PAYMENT RESULT: SUCCESS RECEIPT -->
+  @if (paymentResult()?.status === 'success') {
+    <div class="graph-card result-card success-card">
+      <div class="result-icon-wrapper success">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
           <polyline points="22 4 12 14.01 9 11.01"></polyline>
         </svg>
-        <p>{{ confirmMessage() }}</p>
       </div>
-    }
-  </div>
+      <h3 class="result-title text-success">Donation Successful!</h3>
+      <p class="result-desc">
+        Thank you for your noble contribution. Your donation helps us provide emergency blood
+        support and medical aid.
+      </p>
+
+      <div class="receipt-box">
+        <div class="receipt-row">
+          <span>Transaction ID:</span>
+          <strong>{{ paymentResult()?.tranId }}</strong>
+        </div>
+        <div class="receipt-row">
+          <span>Validation ID:</span>
+          <strong>{{ paymentResult()?.valId }}</strong>
+        </div>
+        <div class="receipt-row">
+          <span>Amount Donated:</span>
+          <strong class="receipt-amount">৳ {{ paymentResult()?.amount | number }}</strong>
+        </div>
+        <div class="receipt-row">
+          <span>Payment Method:</span>
+          <span>{{ paymentResult()?.method || 'SSLCOMMERZ Online' }}</span>
+        </div>
+        <div class="receipt-row">
+          <span>Status:</span>
+          <span class="badge bg-success">Verified & Deposited</span>
+        </div>
+      </div>
+
+      <div class="result-actions">
+        <button class="btn btn-outline-secondary" type="button" (click)="printReceipt()">
+          Print Receipt
+        </button>
+        <button class="btn btn-primary" type="button" (click)="resetForm()">Donate Again</button>
+      </div>
+    </div>
+  }
+
+  <!-- 2. PAYMENT RESULT: FAILED / CANCELLED -->
+  @else if (paymentResult()?.status === 'failed' || paymentResult()?.status === 'cancelled') {
+    <div class="graph-card result-card" [class.failed-card]="paymentResult()?.status === 'failed'">
+      <div
+        class="result-icon-wrapper"
+        [class.failed]="paymentResult()?.status === 'failed'"
+        [class.cancelled]="paymentResult()?.status === 'cancelled'"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="15" y1="9" x2="9" y2="15"></line>
+          <line x1="9" y1="9" x2="15" y2="15"></line>
+        </svg>
+      </div>
+      <h3 class="result-title">
+        {{ paymentResult()?.status === 'failed' ? 'Payment Failed' : 'Payment Cancelled' }}
+      </h3>
+      <p class="result-desc">
+        {{
+          paymentResult()?.message ||
+            (paymentResult()?.status === 'failed'
+              ? 'Your payment could not be processed. Please try again or use another payment method.'
+              : 'The transaction was cancelled.')
+        }}
+      </p>
+
+      <div class="result-actions">
+        <button class="btn btn-primary" type="button" (click)="resetForm()">Try Again</button>
+      </div>
+    </div>
+  }
+
+  <!-- 3. ONLINE DONATION FORM -->
+  @else {
+    <div class="graph-card form-card">
+      <div class="form-card-header">
+        <div class="badge-icon donate-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+            ></path>
+          </svg>
+        </div>
+        <div class="form-header-text">
+          <h3 class="card-main-title">Online Fund Donation</h3>
+          <p class="card-sub-title">
+            Securely pay via SSLCOMMERZ using bKash, Nagad, Rocket, Cards (Visa/Mastercard), or Net
+            Banking.
+          </p>
+        </div>
+      </div>
+
+      <!-- Payment Gateways Visual Tags -->
+      <div class="gateway-badges">
+        <span class="badge-tag">bKash</span>
+        <span class="badge-tag">Nagad</span>
+        <span class="badge-tag">Rocket</span>
+        <span class="badge-tag">Visa</span>
+        <span class="badge-tag">Mastercard</span>
+        <span class="badge-tag">Amex</span>
+        <span class="badge-tag">Internet Banking</span>
+      </div>
+
+      <!-- Error Alert -->
+      @if (errorMessage()) {
+        <div class="alert alert-danger" role="alert">
+          {{ errorMessage() }}
+        </div>
+      }
+
+      <form (ngSubmit)="onPayOnline()">
+        <!-- Preset Amount Selector -->
+        <div class="form-section">
+          <label class="form-label"
+            >Select Donation Amount (BDT) <span class="required">*</span></label
+          >
+          <div class="amount-buttons">
+            @for (amt of presetAmounts; track amt) {
+              <button
+                type="button"
+                class="amount-btn"
+                [class.active]="!isCustomAmount && donationData.amount === amt"
+                (click)="selectAmount(amt)"
+              >
+                ৳ {{ amt }}
+              </button>
+            }
+            <button
+              type="button"
+              class="amount-btn"
+              [class.active]="isCustomAmount"
+              (click)="enableCustomAmount()"
+            >
+              Custom
+            </button>
+          </div>
+
+          @if (isCustomAmount) {
+            <div class="custom-amount-input mt-2">
+              <span class="currency-prefix">৳</span>
+              <input
+                type="number"
+                class="form-input"
+                [(ngModel)]="donationData.amount"
+                name="customAmount"
+                min="10"
+                placeholder="Enter custom amount"
+                required
+              />
+            </div>
+          }
+        </div>
+
+        <!-- Donor Information Fields -->
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label" for="donorName"
+              >Your Full Name <span class="required">*</span></label
+            >
+            <input
+              id="donorName"
+              type="text"
+              class="form-input"
+              [(ngModel)]="donationData.donorName"
+              name="donorName"
+              placeholder="e.g. Tanvir Ahmed"
+              required
+            />
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label" for="donorEmail"
+              >Email Address <span class="required">*</span></label
+            >
+            <input
+              id="donorEmail"
+              type="email"
+              class="form-input"
+              [(ngModel)]="donationData.donorEmail"
+              name="donorEmail"
+              placeholder="e.g. tanvir@example.com"
+              required
+            />
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label" for="donorContactNo"
+              >Contact Number <span class="required">*</span></label
+            >
+            <input
+              id="donorContactNo"
+              type="tel"
+              class="form-input"
+              [(ngModel)]="donationData.donorContactNo"
+              name="donorContactNo"
+              placeholder="e.g. 01711000000"
+              required
+            />
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label" for="city">City / District</label>
+            <input
+              id="city"
+              type="text"
+              class="form-input"
+              [(ngModel)]="donationData.city"
+              name="city"
+              placeholder="e.g. Dhaka"
+            />
+          </div>
+
+          <div class="col-12">
+            <label class="form-label" for="note">Personal Note (Optional)</label>
+            <input
+              id="note"
+              type="text"
+              class="form-input"
+              [(ngModel)]="donationData.note"
+              name="note"
+              placeholder="e.g. Donation for emergency patient support"
+            />
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="submit-action mt-4">
+          <button class="btn btn-primary w-100 py-3" type="submit" [disabled]="isSubmitting()">
+            @if (isSubmitting()) {
+              <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+              Redirecting to SSLCOMMERZ...
+            } @else {
+              Proceed to Secure Payment (৳ {{ donationData.amount | number }})
+            }
+          </button>
+          <p class="secure-notice">
+            🔒 Secured by 128-bit SSL Encryption via SSLCOMMERZ Payment Gateway
+          </p>
+        </div>
+      </form>
+    </div>
+  }
 </div>

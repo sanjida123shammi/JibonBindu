@@ -8,7 +8,7 @@ import { AuthService } from '../../../services/auth.service';
   selector: 'app-login',
   standalone: true,
   imports: [CommonModule, FormsModule, RouterModule],
-  templateUrl: './login.component.html'
+  templateUrl: './login.component.html',
 })
 export class LoginComponent {
   private auth = inject(AuthService);
@@ -26,6 +26,10 @@ export class LoginComponent {
     if (this.route.snapshot.queryParams['registered'] === 'true') {
       this.registeredSuccess.set(true);
     }
+    // Wipes Angular session if user clicked Logout from React
+    if (this.route.snapshot.queryParams['logout'] === 'true') {
+      this.auth.logout();
+    }
   }
 
   onSubmit(): void {
@@ -33,7 +37,7 @@ export class LoginComponent {
     this.errorMessage.set('');
     this.isSubmitting.set(true);
 
-    this.auth.login({ email: this.email.trim(), password: this.password }).subscribe(res => {
+    this.auth.login({ email: this.email.trim(), password: this.password }).subscribe((res) => {
       this.isSubmitting.set(false);
       if (res.flag) {
         const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/dashboard';

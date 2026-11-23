@@ -170,7 +170,11 @@ export class SidebarComponent implements OnInit {
 
   navigateToHome(): void {
     if (typeof window !== 'undefined') {
-      window.location.href = `${environment.reactPortalUrl}/`;
+      const token = this.authService.retrieveToken();
+      // Pass the active token in the URL query so React instantly recognizes the user
+      window.location.href = token
+        ? `${environment.reactPortalUrl}/?token=${encodeURIComponent(token)}`
+        : `${environment.reactPortalUrl}/`;
     }
   }
 

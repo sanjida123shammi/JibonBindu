@@ -1551,6 +1551,416 @@
     ]
   },
   {
+    "ContainingType": "Api.Controllers.SslCommerzController",
+    "Method": "PaymentCancel",
+    "RelativePath": "api/SslCommerz/cancel",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "tran_date",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "tran_id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "val_id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "amount",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "store_amount",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "currency",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bank_tran_id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "card_type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "card_no",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "card_issuer",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "card_brand",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "error",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "value_a",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "value_b",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "value_c",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "value_d",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Api.Controllers.SslCommerzController",
+    "Method": "PaymentFail",
+    "RelativePath": "api/SslCommerz/fail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "tran_date",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "tran_id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "val_id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "amount",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "store_amount",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "currency",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bank_tran_id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "card_type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "card_no",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "card_issuer",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "card_brand",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "error",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "value_a",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "value_b",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "value_c",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "value_d",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Api.Controllers.SslCommerzController",
+    "Method": "Initiate",
+    "RelativePath": "api/SslCommerz/initiate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SharedLibrary.DTOs.SslCommerzInitRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SharedLibrary.DTOs.SslCommerzInitResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Api.Controllers.SslCommerzController",
+    "Method": "PaymentIpn",
+    "RelativePath": "api/SslCommerz/ipn",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "tran_date",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "tran_id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "val_id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "amount",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "store_amount",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "currency",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bank_tran_id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "card_type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "card_no",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "card_issuer",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "card_brand",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "error",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "value_a",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "value_b",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "value_c",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "value_d",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Api.Controllers.SslCommerzController",
+    "Method": "PaymentSuccess",
+    "RelativePath": "api/SslCommerz/success",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "tran_date",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "tran_id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "val_id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "amount",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "store_amount",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "currency",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bank_tran_id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "card_type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "card_no",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "card_issuer",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "card_brand",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "error",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "value_a",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "value_b",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "value_c",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "value_d",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Api.Controllers.UsersController",
     "Method": "GetAllUsers",
     "RelativePath": "api/Users",

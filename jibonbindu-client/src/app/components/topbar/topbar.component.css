@@ -79,42 +79,6 @@
   color: #e11d48;
 }
 
-/* Search Box */
-.jb-search-box {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(30, 8, 14, 0.6);
-  border: 1px solid rgba(255, 60, 90, 0.18);
-  border-radius: 12px;
-  padding: 0.45rem 0.9rem;
-  width: 280px;
-}
-
-:host-context([data-theme='light']) .jb-search-box {
-  background: #f1f5f9;
-  border: 1px solid #cbd5e1;
-}
-
-.search-icon {
-  width: 17px;
-  height: 17px;
-  color: #94a3b8;
-}
-
-.jb-search-box input {
-  background: transparent;
-  border: none;
-  outline: none;
-  color: inherit;
-  font-size: 0.85rem;
-  width: 100%;
-}
-
-.jb-search-box input::placeholder {
-  color: #64748b;
-}
-
 /* Actions */
 .jb-topbar-actions {
   display: flex;
