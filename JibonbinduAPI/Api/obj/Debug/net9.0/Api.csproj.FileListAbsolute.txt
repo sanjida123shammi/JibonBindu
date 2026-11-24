@@ -1,0 +1,720 @@
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\appsettings.Development.json
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\appsettings.json
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Api.staticwebassets.endpoints.json
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Api.exe
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Api.deps.json
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Api.runtimeconfig.json
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Api.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Api.pdb
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Azure.Core.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Azure.Identity.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Humanizer.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Bcl.Cryptography.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.OpenApi.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Mono.TextTemplating.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Scrutor.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.Filters.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\System.ClientModel.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\System.CodeDom.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\System.Composition.Convention.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\System.Composition.Hosting.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\System.Composition.Runtime.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\System.Composition.TypedParts.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\System.Drawing.Common.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\System.Memory.Data.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\System.Runtime.Caching.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\System.Security.Permissions.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\System.Text.Json.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\System.Windows.Extensions.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\SharedLibrary.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\SharedLibrary.pdb
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\obj\Debug\net9.0\Api.csproj.AssemblyReference.cache
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\obj\Debug\net9.0\rpswa.dswa.cache.json
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\obj\Debug\net9.0\Api.GeneratedMSBuildEditorConfig.editorconfig
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\obj\Debug\net9.0\Api.AssemblyInfoInputs.cache
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\obj\Debug\net9.0\Api.AssemblyInfo.cs
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\obj\Debug\net9.0\Api.csproj.CoreCompileInputs.cache
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\obj\Debug\net9.0\Api.MvcApplicationPartsAssemblyInfo.cs
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\obj\Debug\net9.0\Api.MvcApplicationPartsAssemblyInfo.cache
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\obj\Debug\net9.0\rjimswa.dswa.cache.json
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\obj\Debug\net9.0\scopedcss\bundle\Api.styles.css
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\obj\Debug\net9.0\staticwebassets.build.json
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\obj\Debug\net9.0\staticwebassets.build.json.cache
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\obj\Debug\net9.0\staticwebassets.development.json
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\obj\Debug\net9.0\Api.csproj.Up2Date
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\obj\Debug\net9.0\Api.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\obj\Debug\net9.0\refint\Api.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\obj\Debug\net9.0\Api.pdb
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\obj\Debug\net9.0\Api.genruntimeconfig.cache
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\obj\Debug\net9.0\ref\Api.dll
+F:\Shammi_R_70\IDB\FinalProject\JibonbinduAPI\Api\bin\Debug\net9.0\Api.staticwebassets.runtime.json
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\appsettings.Development.json
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\appsettings.json
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Api.staticwebassets.runtime.json
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Api.staticwebassets.endpoints.json
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Api.exe
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Api.deps.json
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Api.runtimeconfig.json
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Api.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Api.pdb
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Azure.Core.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Azure.Identity.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Humanizer.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Bcl.Cryptography.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.OpenApi.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Mono.TextTemplating.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Scrutor.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.Filters.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.ClientModel.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.CodeDom.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Composition.Convention.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Composition.Hosting.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Composition.Runtime.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Composition.TypedParts.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Drawing.Common.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Memory.Data.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Runtime.Caching.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Security.Permissions.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Text.Json.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Windows.Extensions.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\SharedLibrary.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\bin\Debug\net9.0\SharedLibrary.pdb
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.csproj.AssemblyReference.cache
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\obj\Debug\net9.0\rpswa.dswa.cache.json
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.GeneratedMSBuildEditorConfig.editorconfig
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.AssemblyInfoInputs.cache
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.AssemblyInfo.cs
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.csproj.CoreCompileInputs.cache
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.MvcApplicationPartsAssemblyInfo.cs
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.MvcApplicationPartsAssemblyInfo.cache
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.sourcelink.json
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\obj\Debug\net9.0\rjimswa.dswa.cache.json
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\obj\Debug\net9.0\scopedcss\bundle\Api.styles.css
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\obj\Debug\net9.0\staticwebassets.build.json
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\obj\Debug\net9.0\staticwebassets.build.json.cache
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\obj\Debug\net9.0\staticwebassets.development.json
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.csproj.Up2Date
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\obj\Debug\net9.0\refint\Api.dll
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.pdb
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.genruntimeconfig.cache
+D:\Shammi\IDB\FinalProject\JibonBindu\JibonbinduAPI\Api\obj\Debug\net9.0\ref\Api.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\appsettings.Development.json
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\appsettings.json
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Api.staticwebassets.runtime.json
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Api.staticwebassets.endpoints.json
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Api.exe
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Api.deps.json
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Api.runtimeconfig.json
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Api.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Api.pdb
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Azure.Core.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Azure.Identity.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Humanizer.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Bcl.Cryptography.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.OpenApi.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Mono.TextTemplating.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Scrutor.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.Filters.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.ClientModel.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.CodeDom.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Composition.Convention.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Composition.Hosting.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Composition.Runtime.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Composition.TypedParts.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Drawing.Common.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Memory.Data.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Runtime.Caching.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Security.Permissions.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Text.Json.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Windows.Extensions.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\SharedLibrary.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\SharedLibrary.pdb
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.csproj.AssemblyReference.cache
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\rpswa.dswa.cache.json
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.GeneratedMSBuildEditorConfig.editorconfig
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.AssemblyInfoInputs.cache
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.AssemblyInfo.cs
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.csproj.CoreCompileInputs.cache
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.MvcApplicationPartsAssemblyInfo.cs
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.MvcApplicationPartsAssemblyInfo.cache
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\rjimswa.dswa.cache.json
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\scopedcss\bundle\Api.styles.css
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\staticwebassets.build.json
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\staticwebassets.build.json.cache
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\staticwebassets.development.json
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.csproj.Up2Date
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\refint\Api.dll
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.pdb
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.genruntimeconfig.cache
+E:\Shammi\IDB\Final Project\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\ref\Api.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\appsettings.Development.json
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\appsettings.json
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Api.staticwebassets.endpoints.json
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Api.staticwebassets.runtime.json
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Api.exe
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Api.deps.json
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Api.runtimeconfig.json
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Api.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Api.pdb
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Azure.Core.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Azure.Identity.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Humanizer.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Bcl.Cryptography.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.OpenApi.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Mono.TextTemplating.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Scrutor.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.ClientModel.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.CodeDom.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Composition.Convention.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Composition.Hosting.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Composition.Runtime.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Composition.TypedParts.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Drawing.Common.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Memory.Data.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Runtime.Caching.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Security.Permissions.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Text.Json.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\System.Windows.Extensions.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\SharedLibrary.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\bin\Debug\net9.0\SharedLibrary.pdb
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.csproj.AssemblyReference.cache
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.AssemblyInfoInputs.cache
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.AssemblyInfo.cs
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.csproj.CoreCompileInputs.cache
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\rjimswa.dswa.cache.json
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\scopedcss\bundle\Api.styles.css
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\staticwebassets.build.json
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\staticwebassets.build.json.cache
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\staticwebassets.development.json
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.csproj.Up2Date
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\refint\Api.dll
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.pdb
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\Api.genruntimeconfig.cache
+C:\Users\SHAMMI-SHASHI\Downloads\Jibonbindu\Jibonbindu\JibonbinduAPI\Api\obj\Debug\net9.0\ref\Api.dll
